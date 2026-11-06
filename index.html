@@ -2,1037 +2,1531 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>周易六十四卦 · 卦典</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#14171b">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="卦典">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
-<link rel="icon" href="data:image/png;base64,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">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>搬家装箱清单</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#14171b;
-    --ink-2:#1b1f24;
-    --ink-3:#22272d;
-    --ink-line: rgba(232,226,208,0.09);
-    --ivory:#e9e3d3;
-    --ivory-dim:#9a968a;
-    --ivory-faint:#6b6a63;
-    --seal:#b0392c;
-    --seal-bright:#d4483a;
-    --bronze:#a9823d;
-    --bronze-dim:#7a6636;
-    --yang: linear-gradient(180deg,#efe9d8,#dcd4bd);
-    --radius: 2px;
-    --wx-jin:#c9c2a0;
-    --wx-mu:#7c9873;
-    --wx-shui:#5e84a3;
-    --wx-huo:#c1503f;
-    --wx-tu:#b08b4f;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:
-      radial-gradient(ellipse 120% 80% at 50% -10%, rgba(176,57,44,0.07), transparent 60%),
-      var(--ink);
-    color:var(--ivory);
-    font-family:'Noto Sans SC', sans-serif;
-    -webkit-font-smoothing:antialiased;
-    min-height:100vh;
-  }
-  ::selection{background:var(--seal); color:var(--ivory);}
+:root{
+  /* Layout: one column of frosted-glass panels over a sky-and-sea scene (sibling of Due 倒计时). Tabs: 物品 / 箱子 / 装箱. */
+  --sky1:#9cb6d0; --sky2:#7a9bbd; --sea1:#45698c; --sea2:#1f3854; --glare:rgba(255,232,210,.75);
+  --ink:#ffffff; --muted:rgba(255,255,255,.76); --faint:rgba(255,255,255,.54);
+  --glass:rgba(255,255,255,.16); --edge:rgba(255,255,255,.45); --edge-soft:rgba(255,255,255,.25);
+  --sheet:rgba(34,58,86,.84); --navy:#23405e;
+  --s-packed:#a8f0bd; --s-planned:#ffe38f; --s-none:#ffb995; --s-skip:rgba(255,255,255,.42);
+  --serif:"Cormorant Garamond","Songti SC","STSong","Noto Serif SC",Georgia,serif;
+  --body:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Segoe UI",sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --sky1:#3a5572; --sky2:#2a425d; --sea1:#1b3350; --sea2:#0d1c30; --glare:rgba(235,220,255,.3); --glass:rgba(255,255,255,.10); --edge:rgba(255,255,255,.3); --edge-soft:rgba(255,255,255,.16); --sheet:rgba(18,32,52,.9); }
+}
+:root[data-theme="dark"]{ --sky1:#3a5572; --sky2:#2a425d; --sea1:#1b3350; --sea2:#0d1c30; --glare:rgba(235,220,255,.3); --glass:rgba(255,255,255,.10); --edge:rgba(255,255,255,.3); --edge-soft:rgba(255,255,255,.16); --sheet:rgba(18,32,52,.9); }
+*,*::before,*::after{box-sizing:inherit}
+html.locked,html.locked body{overflow:hidden}
+body{margin:0;background:var(--sea2);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+button,input,textarea{font:inherit;color:inherit}
+img{max-width:100%}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+[hidden]{display:none!important}
+.vh{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none}
 
-  /* ---------- Header ---------- */
-  header{
-    padding: 34px 20px 20px;
-    text-align:center;
-    position:relative;
-  }
-  .seal-mark{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:34px;height:34px;
-    background: var(--seal);
-    color:#f3e9d8;
-    font-family:'Noto Serif SC', serif;
-    font-weight:900;
-    font-size:16px;
-    border-radius:3px;
-    margin-bottom:14px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 4px 14px rgba(176,57,44,0.35);
-    transform:rotate(-2deg);
-  }
-  h1{
-    font-family:'Noto Serif SC', serif;
-    font-weight:900;
-    font-size: clamp(28px, 8vw, 42px);
-    letter-spacing: 0.08em;
-    margin: 0 0 6px;
-    color: var(--ivory);
-  }
-  h1 small{
-    display:block;
-    font-size: 13px;
-    font-weight:400;
-    letter-spacing:0.3em;
-    color: var(--bronze);
-    margin-top: 8px;
-    text-transform:uppercase;
-  }
-  .subtitle{
-    color: var(--ivory-dim);
-    font-size: 13.5px;
-    max-width: 480px;
-    margin: 10px auto 0;
-    line-height:1.7;
-  }
+.scene{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 30%,var(--sea1) 37%,var(--sea2) 100%)}
+.scene::before{content:"";position:absolute;left:50%;top:34%;width:130vmax;height:60vmax;transform:translate(-50%,-10%);
+  background:radial-gradient(ellipse at 50% 0%,var(--glare) 0%,rgba(255,255,255,.22) 18%,transparent 55%);filter:blur(8px)}
+.scene::after{content:"";position:absolute;inset:0;mix-blend-mode:screen;
+  background:radial-gradient(40vmax 18vmax at 18% 12%,rgba(255,255,255,.45),transparent 70%),radial-gradient(30vmax 14vmax at 86% 20%,rgba(255,255,255,.3),transparent 70%),repeating-linear-gradient(180deg,transparent 0 6px,rgba(255,255,255,.035) 6px 7px)}
 
-  /* ---------- Search ---------- */
-  .search-wrap{
-    max-width: 560px;
-    margin: 22px auto 0;
-    padding: 0 20px;
-  }
-  .search-box{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background: var(--ink-2);
-    border: 1px solid var(--ink-line);
-    border-radius: 999px;
-    padding: 12px 18px;
-    transition: border-color .2s, box-shadow .2s;
-  }
-  .search-box:focus-within{
-    border-color: var(--bronze-dim);
-    box-shadow: 0 0 0 3px rgba(169,130,61,0.12);
-  }
-  .search-box svg{ flex:none; opacity:0.55; }
-  .search-box input{
-    flex:1;
-    background:transparent;
-    border:none;
-    outline:none;
-    color: var(--ivory);
-    font-family:'Noto Sans SC', sans-serif;
-    font-size:15px;
-    min-width:0;
-  }
-  .search-box input::placeholder{ color: var(--ivory-faint); }
-  .search-hint{
-    text-align:center;
-    font-size:11.5px;
-    color: var(--ivory-faint);
-    margin-top: 9px;
-    letter-spacing: 0.02em;
-  }
+.scene.has-img{background-size:cover;background-position:center}
+.scene.has-img::before,.scene.has-img::after{display:none}
+.wrap{max-width:920px;margin:0 auto;padding:26px 16px 120px}
+.glass{background:var(--glass);border:1px solid var(--edge-soft);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);
+  box-shadow:inset 0 1px 0 var(--edge),inset 0 -1px 0 rgba(255,255,255,.08),0 20px 50px rgba(10,30,55,.18)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){ .glass,.pr{background:rgba(60,95,130,.6)} .sheet{background:#26405c} }
 
-  /* ---------- Filter chips (upper/lower trigram quick filter) ---------- */
-  .chip-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-    justify-content:center;
-    max-width:640px;
-    margin: 16px auto 0;
-    padding: 0 20px;
-  }
-  .chip{
-    font-size:12px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    border:1px solid var(--ink-line);
-    color: var(--ivory-dim);
-    cursor:pointer;
-    background: var(--ink-2);
-    transition: all .15s;
-    user-select:none;
-  }
-  .chip:hover{ border-color: var(--bronze-dim); color: var(--ivory); }
-  .chip.active{ background: var(--seal); border-color: var(--seal); color:#f3e9d8; }
+/* header */
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:10px 16px;flex-wrap:wrap;margin-bottom:18px;text-shadow:0 1px 12px rgba(20,40,70,.32)}
+.ttl{font-family:var(--serif);font-weight:500;font-size:clamp(38px,8vw,56px);line-height:1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:13.5px;margin-top:8px}
+.top-r{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.bgwrap{position:relative}
+.bgbtn{border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;min-height:38px;text-shadow:none}
+.bgmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:20;display:flex;flex-direction:column;gap:2px;min-width:190px;padding:8px;border-radius:20px;text-shadow:none;
+  background:var(--sheet);border:1px solid var(--edge-soft);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);box-shadow:0 20px 50px rgba(0,10,25,.35)}
+.bgitem{display:block;width:100%;text-align:left;background:transparent;border:0;padding:10px 12px;border-radius:12px;cursor:pointer;font-size:14px}
+.bgitem:hover{background:rgba(255,255,255,.14)}
+.bghint{font-size:11.5px;color:var(--faint);padding:2px 12px 4px}
+.sync{font-size:12px;color:var(--faint);display:flex;align-items:center;gap:6px}
+.sync::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dot,rgba(255,255,255,.5))}
 
-  /* ---------- Grid ---------- */
-  .grid-wrap{
-    max-width: 980px;
-    margin: 30px auto 60px;
-    padding: 0 16px;
-  }
-  .count-line{
-    font-size:12px;
-    color:var(--ivory-faint);
-    padding: 0 6px 12px;
-    letter-spacing:0.04em;
-  }
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 9px;
-  }
-  @media (min-width: 480px){ .grid{ grid-template-columns: repeat(6, 1fr);} }
-  @media (min-width: 720px){ .grid{ grid-template-columns: repeat(8, 1fr);} }
+/* hero */
+.hero{background:rgba(35,64,94,.26);border-radius:30px;padding:22px 24px;margin-bottom:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 30px;align-items:center}
+.hk{color:var(--muted);font-size:13px}
+.hn{font-family:var(--serif);font-weight:500;font-size:clamp(58px,14vw,92px);line-height:.95;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hn small{font-family:var(--body);font-size:14px;color:var(--muted);margin-left:8px;font-weight:400}
+.seg{display:flex;height:10px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.14);box-shadow:inset 0 1px 2px rgba(0,0,0,.15)}
+.seg i{display:block;height:100%}
+.stats{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.stat{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 12px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.12);font-size:13px;cursor:pointer;min-height:34px}
+.stat:hover{background:rgba(255,255,255,.2)}
+.stat .d{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c)}
+.stat b{font-variant-numeric:tabular-nums;font-weight:600}
+@media (max-width:620px){ .hero{grid-template-columns:1fr;padding:20px} }
 
-  .tile{
-    background: var(--ink-2);
-    border: 1px solid var(--ink-line);
-    border-radius: var(--radius);
-    padding: 10px 6px 9px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:7px;
-    cursor:pointer;
-    transition: transform .15s, border-color .15s, background .15s;
-    opacity:0;
-    animation: rise .45s ease forwards;
-  }
-  .tile:hover, .tile:focus-visible{
-    border-color: var(--bronze);
-    background: var(--ink-3);
-    transform: translateY(-2px);
-    outline:none;
-  }
-  .tile.hidden{ display:none; }
-  @keyframes rise{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+/* tabs */
+.tabs{display:flex;gap:4px;padding:5px;border-radius:999px;margin:0 0 16px}
+.tab{flex:1;white-space:nowrap;border:0;background:transparent;color:var(--muted);padding:9px 14px;border-radius:999px;cursor:pointer;font-size:14.5px;min-height:42px}
+.tab[aria-selected="true"]{background:rgba(255,255,255,.9);color:var(--navy);font-weight:600;box-shadow:0 4px 14px rgba(10,30,55,.15)}
+.panel[hidden]{display:none}
 
-  .hexlines{ display:flex; flex-direction:column-reverse; gap:3px; width:34px; }
-  .hexlines .yao{ height:4px; border-radius:1px; }
-  .yao.yang{ background: var(--yang); }
-  .yao.yin{ display:flex; justify-content:space-between; }
-  .yao.yin span{ background: var(--yang); width:44%; height:100%; border-radius:1px; display:block; }
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:9px 18px;font-weight:500;cursor:pointer;min-height:44px;border:1px solid var(--edge);
+  background:rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.4);white-space:nowrap}
+.btn:hover{background:rgba(255,255,255,.28)}
+.btn-primary{background:rgba(255,255,255,.92);color:var(--navy);border-color:#fff}
+.btn-primary:hover{background:#fff}
+.btn:disabled{opacity:.55;cursor:default}
+.btn:active,.put:active,.card:active .ph{transform:translateY(1px)}
+.ib{background:transparent;border:0;cursor:pointer;padding:8px 12px;border-radius:999px;font-size:13.5px;color:var(--muted);min-height:40px}
+.ib:hover{background:rgba(255,255,255,.14);color:#fff}
+.danger{color:#ffb3bd}
 
-  .tile .num{ font-size:9.5px; color: var(--bronze); letter-spacing:0.06em; font-family:'Noto Serif SC',serif; }
-  .tile .nm{ font-family:'Noto Serif SC', serif; font-weight:700; font-size:14px; color:var(--ivory); line-height:1.2; text-align:center; }
+/* items toolbar */
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.search{flex:1 1 240px;position:relative}
+.search input{width:100%;min-height:46px;padding:10px 16px 10px 42px;border-radius:999px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.search input::placeholder{color:var(--faint)}
+.search input:focus{outline:none;border-color:var(--edge);background:rgba(255,255,255,.24)}
+.search svg{position:absolute;left:15px;top:50%;width:17px;height:17px;transform:translateY(-50%);opacity:.8;pointer-events:none}
+.row-scroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 4px;margin:0 -2px 6px}
+.row-scroll::-webkit-scrollbar{display:none}
+.fchip{flex:none;border-radius:999px;padding:5px 12px;font-size:13px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.12);cursor:pointer;min-height:36px;white-space:nowrap}
+.fchip[aria-pressed="true"]{background:rgba(255,255,255,.92);color:var(--navy);border-color:#fff;font-weight:600}
+.fchip .n{opacity:.7;margin-left:5px;font-variant-numeric:tabular-nums}
+.found{font-size:13px;color:var(--muted);margin:6px 6px 10px}
+.banner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between;border-radius:22px;padding:10px 12px 10px 16px;margin:4px 0 12px;font-size:14px}
 
-  /* ---------- Detail overlay ---------- */
-  .overlay{
-    position:fixed; inset:0;
-    background: rgba(10,11,13,0.72);
-    backdrop-filter: blur(3px);
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
-    z-index:50;
-    opacity:0;
-    pointer-events:none;
-    transition: opacity .25s;
-  }
-  .overlay.open{ opacity:1; pointer-events:auto; }
-  @media (min-width:720px){ .overlay{ align-items:center; } }
+/* category sections */
+.cat{border-radius:26px;padding:14px 14px 16px;margin-bottom:12px}
+.cat-h{display:flex;align-items:center;gap:8px;margin:0 2px 12px}
+.cat-h .ci{font-size:20px;line-height:1}
+.cat-h .cn{font-weight:600;font-size:16px}
+.cat-h .cc{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.cat-h .ib{margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:12px 10px}
+.card{display:flex;flex-direction:column;gap:6px;text-align:left;background:transparent;border:0;padding:0;cursor:pointer;min-width:0}
+.ph{position:relative;display:grid;place-items:center;aspect-ratio:1;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.14);border:1px solid var(--edge-soft);font-size:34px;line-height:1}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ph.hb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:hsl(var(--bh) 85% 78%)}
+.card:hover .ph{border-color:var(--edge)}
+.no,.qy{position:absolute;top:6px;font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;background:rgba(18,36,58,.62);font-variant-numeric:tabular-nums;line-height:1.6;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.no{left:6px}.qy{right:6px}
+.nm{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px;font-weight:500;line-height:1.3;overflow-wrap:anywhere}
+.un{color:var(--faint);font-style:italic;font-weight:400}
+.loc{align-self:flex-start;font-size:11.5px;line-height:1.6;padding:0 9px;border-radius:999px;border:1px solid;white-space:nowrap}
+.loc.packed{background:hsl(var(--bh) 75% 75% / .3);border-color:hsl(var(--bh) 85% 82% / .85)}
+.loc.planned{border-style:dashed;border-color:hsl(var(--bh) 85% 82% / .85);color:hsl(var(--bh) 90% 88%)}
+.loc.none{border-color:color-mix(in srgb,var(--s-none) 75%,transparent);color:var(--s-none)}
+.loc.skip{border-color:var(--edge-soft);color:var(--faint);text-decoration:line-through}
+.more{margin:18px 4px 0}
+.more-h{font-size:13px;color:var(--muted);margin:0 2px 8px}
+.empty{color:var(--muted);text-align:center;padding:28px 12px;border:1px dashed var(--edge-soft);border-radius:24px;background:rgba(255,255,255,.07)}
 
-  .panel{
-    background: var(--ink-2);
-    width:100%;
-    max-width: 640px;
-    max-height: 92vh;
-    overflow-y:auto;
-    border-radius: 18px 18px 0 0;
-    border:1px solid var(--ink-line);
-    border-bottom:none;
-    padding: 22px 22px 40px;
-    transform: translateY(24px);
-    transition: transform .3s cubic-bezier(.2,.8,.2,1);
-    position:relative;
-  }
-  .overlay.open .panel{ transform: translateY(0); }
-  @media (min-width:720px){
-    .panel{ border-radius:16px; border-bottom:1px solid var(--ink-line); max-height:86vh; }
-  }
+/* start */
+.start{border-radius:28px;padding:22px 20px}
+.start h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.1;margin:0 0 6px;text-wrap:balance}
+.start p{color:var(--muted);margin:0 0 16px;max-width:60ch;font-size:14px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.tile{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 8px 12px;border-radius:20px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.12);cursor:pointer;font-size:13.5px}
+.tile:hover{background:rgba(255,255,255,.2)}
+.tile .ti{font-size:28px;line-height:1}
 
-  .panel-drag{
-    width:36px; height:4px; border-radius:2px; background:var(--ink-line);
-    margin: 0 auto 14px;
-  }
-  .close-btn{
-    position:absolute; top:16px; right:16px;
-    width:30px;height:30px; border-radius:50%;
-    background:var(--ink-3); border:1px solid var(--ink-line);
-    color:var(--ivory-dim); font-size:16px; cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .close-btn:hover{ color:var(--ivory); border-color:var(--bronze-dim); }
+/* boxes */
+.box-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.box-tools .ib{margin-left:auto}
+.boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.boxc{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:start;text-align:left;border-radius:26px;padding:16px;cursor:pointer;width:100%}
+.boxc:hover{background:rgba(255,255,255,.22)}
+.bn{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;font-family:var(--serif);font-size:38px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums;
+  background:hsl(var(--bh) 70% 68% / .3);border:2px solid hsl(var(--bh) 85% 82%);box-shadow:0 0 18px hsl(var(--bh) 85% 70% / .45)}
+.bn.sm{width:48px;height:48px;font-size:28px;flex:none}
+.bt{display:block;font-weight:600;font-size:16px;overflow-wrap:anywhere}
+.bs{display:block;font-size:12.5px;color:var(--muted)}
+.pbar{display:block;height:6px;border-radius:999px;background:rgba(255,255,255,.16);overflow:hidden;margin:10px 0 5px}
+.pbar i{display:block;height:100%;background:hsl(var(--bh) 85% 80%);border-radius:inherit}
+.thumbs{display:flex;gap:5px;margin-top:10px;flex-wrap:wrap}
+.thumbs span{position:relative;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.14);font-size:16px;flex:none}
+.thumbs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumbs .more-n{font-size:12px;color:var(--muted)}
+.unas{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-radius:22px;padding:12px 16px;margin-top:12px;font-size:14px}
 
-  .detail-head{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding-bottom:16px;
-    border-bottom:1px solid var(--ink-line);
-    margin-bottom:16px;
-  }
-  .detail-head .hexlines .yao{ height:5px; }
-  .detail-head .hexlines{ width:46px; }
-  .detail-titles .eyebrow{
-    font-size:11px; color:var(--bronze); letter-spacing:0.1em; font-family:'Noto Serif SC',serif;
-  }
-  .detail-titles h2{
-    font-family:'Noto Serif SC', serif;
-    font-size:26px;
-    margin: 3px 0 4px;
-    color:var(--ivory);
-  }
-  .detail-titles .composition{
-    font-size:12.5px; color:var(--ivory-dim);
-  }
-  .kw-row{ display:flex; flex-wrap:wrap; gap:6px; margin: 14px 0 18px; }
-  .kw{
-    font-size:11.5px; padding:4px 10px; border-radius:999px;
-    background: rgba(176,57,44,0.12); color:#e8a99f; border:1px solid rgba(176,57,44,0.25);
-  }
+/* pack */
+.pk-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px;margin:0 -2px 12px}
+.pk-chips::-webkit-scrollbar{display:none}
+.pk-chip{flex:none;display:flex;align-items:center;gap:8px;padding:5px 14px 5px 5px;border-radius:999px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.12);cursor:pointer;min-height:46px;white-space:nowrap}
+.pk-chip .c{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;font-family:var(--serif);font-weight:600;font-size:21px;background:hsl(var(--bh) 70% 68% / .3);border:1.5px solid hsl(var(--bh) 85% 82%)}
+.pk-chip small{color:var(--muted);font-variant-numeric:tabular-nums}
+.pk-chip[aria-pressed="true"]{background:rgba(255,255,255,.92);color:var(--navy);border-color:#fff;font-weight:600}
+.pk-chip[aria-pressed="true"] .c{background:hsl(var(--bh) 80% 74%)}
+.pk-chip[aria-pressed="true"] small{color:rgba(35,64,94,.7)}
+.pk-head{display:flex;align-items:center;gap:14px;border-radius:26px;padding:16px 18px;margin-bottom:12px}
+.pk-head .m{flex:1;min-width:0}
+.pk-head .k{font-size:12.5px;color:var(--muted)}
+.pk-head .t{font-size:19px;font-weight:600;overflow-wrap:anywhere}
+.grp-h{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin:16px 6px 8px}
+.grp-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--edge-soft),transparent)}
+.rows{display:flex;flex-direction:column;gap:8px}
+.pr{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 10px 8px 8px;border-radius:20px;background:var(--glass);border:1px solid var(--edge-soft);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 var(--edge),0 8px 24px rgba(10,30,55,.1)}
+.th{position:relative;display:grid;place-items:center;width:56px;height:56px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.14);font-size:24px;line-height:1}
+.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pr-m{min-width:0;cursor:pointer;background:none;border:0;text-align:left;padding:4px 0}
+.pr-t{display:block;font-weight:500;overflow-wrap:anywhere}
+.pr-t .nn{color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px}
+.pr-s{display:block;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.put{border-radius:999px;padding:8px 14px;min-height:44px;font-weight:600;border:0;background:hsl(var(--bh) 85% 84%);color:var(--navy);cursor:pointer;white-space:nowrap;box-shadow:0 4px 14px hsl(var(--bh) 80% 60% / .35)}
+.out{border-radius:999px;padding:8px 14px;min-height:44px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.1);cursor:pointer;white-space:nowrap;color:var(--muted)}
+.tg{border-radius:999px;padding:7px 12px;min-height:40px;border:1px dashed hsl(var(--bh) 85% 82% / .9);background:transparent;cursor:pointer;white-space:nowrap;font-size:13px}
+.tg.on{border-style:solid;background:hsl(var(--bh) 75% 75% / .32);font-weight:600}
+.done-sec .pr{opacity:.82}
 
-  .section{ margin-bottom: 18px; }
-  .section .label{
-    font-size:11px; color:var(--bronze); letter-spacing:0.14em; text-transform:uppercase;
-    font-family:'Noto Serif SC',serif; margin-bottom:6px; display:flex; align-items:center; gap:8px;
-  }
-  .section .label::after{ content:''; flex:1; height:1px; background:var(--ink-line); }
-  .section p, .section .txt{
-    font-size:14.5px; line-height:1.85; color:var(--ivory);
-    margin:0;
-  }
-  .classical{
-    font-family:'Noto Serif SC', serif;
-    font-size:15px;
-    color:#d8d2bd;
-    line-height:2;
-  }
+/* sheets */
+.ov{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center;background:rgba(8,20,36,.5);
+  padding:calc(12px + env(safe-area-inset-top,0px)) 10px calc(10px + env(safe-area-inset-bottom,0px))}
+.ov[hidden]{display:none}
+.sheet{width:100%;max-width:560px;max-height:100%;overflow:auto;overscroll-behavior:contain;border-radius:28px;padding:18px 18px 20px;outline:none;
+  background:var(--sheet);border:1px solid var(--edge-soft);-webkit-backdrop-filter:blur(26px) saturate(150%);backdrop-filter:blur(26px) saturate(150%);box-shadow:inset 0 1px 0 var(--edge),0 30px 80px rgba(0,10,25,.45)}
+@media (min-width:700px){ .ov{align-items:center} }
+.sh-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.sh-h h2{margin:0;font-size:18px;font-weight:600;overflow-wrap:anywhere}
+.bx-hd{display:flex;align-items:center;gap:12px;min-width:0}
+.x{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--edge-soft);background:rgba(255,255,255,.12);cursor:pointer;font-size:15px}
+.fl{display:block;font-size:12.5px;color:var(--faint);margin:16px 4px 6px}
+.inp{width:100%;min-height:46px;padding:10px 16px;border-radius:16px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.12)}
+textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
+.inp::placeholder{color:var(--faint)}
+.inp:focus{outline:none;border-color:var(--edge);background:rgba(255,255,255,.18)}
+.row2{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.row2>div{min-width:0}
+.ph-box{display:grid;grid-template-columns:128px minmax(0,1fr);gap:14px;align-items:center}
+.ph-prev{position:relative;display:grid;place-items:center;text-align:center;width:128px;height:128px;border-radius:22px;overflow:hidden;background:rgba(255,255,255,.12);border:1px dashed var(--edge);font-size:12px;color:var(--faint)}
+.ph-prev .big{display:block;font-size:34px;margin-bottom:4px}
+.ph-prev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-btns{display:flex;flex-wrap:wrap;gap:8px}
+.ph-btns .btn{min-height:42px;padding:8px 14px}
+.chs{display:flex;flex-wrap:wrap;gap:6px}
+.ch{border-radius:999px;padding:6px 13px;font-size:13.5px;border:1px solid var(--edge-soft);background:rgba(255,255,255,.1);cursor:pointer;min-height:38px;white-space:nowrap}
+.ch:hover{background:rgba(255,255,255,.18)}
+.ch[aria-pressed="true"]{background:rgba(255,255,255,.92);color:var(--navy);border-color:#fff;font-weight:600}
+.ch.bx{--bh:210;border-color:hsl(var(--bh) 85% 82% / .7)}
+.ch.bx[aria-pressed="true"]{background:hsl(var(--bh) 85% 84%);border-color:#fff}
+.ch small{opacity:.75;margin-left:4px;font-weight:400}
+.ch.dash{border-style:dashed}
+.newcat{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:8px;margin-top:8px}
+.newcat .inp{text-align:left}
+.qty-w{display:inline-flex;align-items:center;border:1px solid var(--edge-soft);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08)}
+.qty-w button{width:46px;height:44px;border:0;background:rgba(255,255,255,.1);font-size:19px;cursor:pointer}
+.qty-w input{width:56px;height:44px;text-align:center;border:0;background:transparent;-moz-appearance:textfield;font-variant-numeric:tabular-nums}
+.qty-w input::-webkit-inner-spin-button,.qty-w input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.chk{display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px 14px;border-radius:16px;background:rgba(255,255,255,.1);cursor:pointer;font-size:14.5px}
+.chk input{width:20px;height:20px;accent-color:#7fd99a;flex:none}
+.chk[hidden]{display:none}
+.sh-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
+.sh-acts.top{margin:4px 0 14px}
+.sh-acts .ib.danger{margin-left:auto}
+.form-msg{font-size:13px;color:var(--s-none);margin-top:8px;min-height:1em}
+.hint{color:var(--muted);font-size:13.5px;margin:0 0 4px}
+.bph{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 16px}
+.slot{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sp{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:4/3;padding:8px;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.1);border:1px dashed var(--edge);color:var(--faint);font-size:12.5px;line-height:1.35;text-align:center;cursor:pointer}
+.sp:hover{background:rgba(255,255,255,.16)}
+.sp.has{border:1px solid var(--edge-soft);padding:0}
+.sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sp .big{display:block;font-size:26px;margin-bottom:4px}
+.sl{font-size:13.5px;font-weight:600;padding-left:2px}
+.sb{display:flex;flex-wrap:wrap;gap:4px}
+.sb .btn{min-height:36px;padding:5px 12px;font-size:13px}
+.sb .ib{min-height:36px;padding:5px 8px;font-size:12.5px}
+.bn.pic{position:relative;overflow:hidden;border-radius:18px;font-size:0}
+.bn.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bn.pic b{position:absolute;left:4px;bottom:4px;display:grid;place-items:center;min-width:26px;height:26px;padding:0 6px;border-radius:999px;background:hsl(var(--bh) 85% 84%);color:var(--navy);font-family:var(--serif);font-size:18px;font-weight:700;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.thumbs .dth{box-shadow:0 0 0 2px hsl(var(--bh) 85% 82%)}
+.thumbs .dth::after{content:"✓";position:absolute;right:2px;bottom:0;font-size:12px;font-weight:700;color:#fff;text-shadow:0 0 4px rgba(0,0,0,.8)}
+.pk-done{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-radius:22px;padding:10px 12px 10px 16px;margin:-4px 0 12px;font-size:14px}
+.pk-done .m{flex:1;min-width:160px}
+.pk-done .pv-th{position:relative;width:64px;height:48px;border-radius:12px;overflow:hidden;border:1px solid var(--edge-soft);padding:0;cursor:pointer;background:rgba(255,255,255,.1);flex:none}
+.pk-done .pv-th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-prev.has{cursor:zoom-in}
+.pvs{max-width:760px}
+.pvs img{display:block;width:100%;max-height:74vh;object-fit:contain;border-radius:18px;background:rgba(0,0,0,.25)}
+.bk{display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap;border-radius:24px;padding:14px 16px;margin-top:22px}
+.bk-m{flex:1 1 240px;min-width:0}
+.bk-t{font-weight:600;font-size:15px}
+.bk-s{font-size:12.5px;color:var(--muted);margin-top:2px}
+.bk-b{display:flex;gap:8px;flex-wrap:wrap}
+.copybox{width:100%;min-height:220px;font-size:13px;font-family:ui-monospace,Menlo,monospace}
 
-  .aspect-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:10px;
-  }
-  @media (max-width:420px){ .aspect-grid{ grid-template-columns:1fr; } }
-  .aspect{
-    background: var(--ink-3);
-    border:1px solid var(--ink-line);
-    border-radius:10px;
-    padding:12px 13px;
-  }
-  .aspect .a-title{
-    font-size:12px; font-weight:700; color:var(--ivory);
-    display:flex; align-items:center; gap:6px; margin-bottom:6px;
-  }
-  .aspect .a-title .dot{ width:6px;height:6px;border-radius:50%; background:var(--seal); }
-  .aspect .a-txt{ font-size:13px; line-height:1.65; color:var(--ivory-dim); }
-
-  .advice-box{
-    background: linear-gradient(135deg, rgba(176,57,44,0.14), rgba(169,130,61,0.08));
-    border:1px solid rgba(176,57,44,0.25);
-    border-radius:12px;
-    padding:14px 16px;
-  }
-  .advice-box .label{ color:#e8a99f; }
-  .advice-box p{ font-size:14px; line-height:1.8; color:var(--ivory); }
-
-  .nav-row{
-    display:flex; justify-content:space-between; gap:10px; margin-top:22px;
-  }
-  .nav-btn{
-    flex:1;
-    background:var(--ink-3); border:1px solid var(--ink-line); color:var(--ivory-dim);
-    padding:10px 14px; border-radius:10px; font-size:13px; cursor:pointer;
-    display:flex; align-items:center; gap:6px; justify-content:center;
-    font-family:'Noto Sans SC',sans-serif;
-    transition: border-color .15s, color .15s;
-  }
-  .nav-btn:hover{ border-color:var(--bronze-dim); color:var(--ivory); }
-
-  footer{
-    text-align:center;
-    padding: 10px 20px 40px;
-    color: var(--ivory-faint);
-    font-size: 11.5px;
-    line-height:1.8;
-  }
-
-  .empty-state{
-    text-align:center;
-    padding: 50px 20px;
-    color: var(--ivory-faint);
-    font-size:13.5px;
-    grid-column: 1 / -1;
-  }
-
-  /* ---------- Tool link (bagua reference) ---------- */
-  .tool-links{
-    display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:16px;
-  }
-  .tool-link{
-    font-size:12.5px;
-    color:var(--bronze);
-    background: rgba(169,130,61,0.08);
-    border:1px solid rgba(169,130,61,0.25);
-    padding:7px 14px;
-    border-radius:999px;
-    cursor:pointer;
-    font-family:'Noto Sans SC', sans-serif;
-    display:inline-flex; align-items:center; gap:6px;
-    transition: background .15s, border-color .15s;
-  }
-  .tool-link:hover{ background: rgba(169,130,61,0.16); border-color: var(--bronze); }
-
-  /* ---------- Bagua reference panel ---------- */
-  .bagua-tabs{ display:flex; gap:8px; margin-bottom:16px; }
-  .bagua-tab{
-    flex:1; text-align:center; padding:9px 6px; border-radius:10px;
-    background:var(--ink-3); border:1px solid var(--ink-line); color:var(--ivory-dim);
-    font-size:13px; cursor:pointer; font-family:'Noto Serif SC',serif;
-  }
-  .bagua-tab.active{ background:var(--seal); border-color:var(--seal); color:#f3e9d8; }
-  .bagua-diagram{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-template-rows:repeat(3,1fr);
-    gap:7px;
-    max-width:300px;
-    aspect-ratio:1/1;
-    margin: 0 auto 14px;
-  }
-  .bagua-cell{
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
-    background:var(--ink-3); border:1px solid var(--ink-line); border-radius:12px;
-    padding:6px 3px;
-  }
-  .bagua-cell.center{
-    background:transparent; border:1px dashed var(--ink-line);
-    font-size:10.5px; color:var(--ivory-faint); text-align:center; line-height:1.5; padding:4px;
-  }
-  .bagua-cell .b-hex{ display:flex; flex-direction:column-reverse; gap:2px; width:22px; margin-bottom:2px;}
-  .bagua-cell .b-hex .yao{ height:2.5px; }
-  .bagua-cell .tname{ font-family:'Noto Serif SC',serif; font-weight:700; font-size:13px; color:var(--ivory); }
-  .bagua-cell .tdir{ font-size:9.5px; color:var(--ivory-faint); }
-  .bagua-cell .tnum{ font-size:9px; color:var(--bronze); }
-  .wux-tag{
-    font-size:9.5px; padding:1px 7px; border-radius:999px; display:inline-flex; align-items:center; gap:4px;
-    color:#0f1114; font-weight:700;
-  }
-  .wux-dot{ width:7px; height:7px; border-radius:50%; display:inline-block; flex:none; }
-  .bagua-desc{ font-size:12.5px; color:var(--ivory-dim); line-height:1.8; margin: 0 0 16px; }
-  .legend-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 16px; }
-  .legend-item{ display:flex; align-items:center; gap:5px; font-size:11.5px; color:var(--ivory-dim); }
-  .cycle-box{
-    background:var(--ink-3); border:1px solid var(--ink-line); border-radius:10px;
-    padding:11px 13px; font-size:12.5px; line-height:1.9; color:var(--ivory-dim); margin-bottom:10px;
-  }
-  .cycle-box b{ color:var(--ivory); }
-
-  /* ---------- Wuxing section inside hexagram detail ---------- */
-  .wux-pair{ display:flex; gap:10px; margin-bottom:10px; }
-  .wux-col{
-    flex:1; background:var(--ink-3); border:1px solid var(--ink-line); border-radius:10px;
-    padding:10px 12px; text-align:center;
-  }
-  .wux-col .wc-label{ font-size:10.5px; color:var(--ivory-faint); margin-bottom:4px; }
-  .wux-col .wc-tri{ font-family:'Noto Serif SC',serif; font-weight:700; font-size:15px; color:var(--ivory); margin-bottom:4px; }
-  .wux-rel{
-    font-size:13px; line-height:1.75; color:var(--ivory-dim);
-    background: rgba(169,130,61,0.06); border:1px solid rgba(169,130,61,0.18);
-    border-radius:10px; padding:10px 12px;
-  }
-  .wux-rel b{ color:var(--ivory); }
-
-  /* ---------- Trigram full-detail cards ---------- */
-  .tri-detail-list{ display:flex; flex-direction:column; gap:10px; }
-  .tri-detail-card{
-    background:var(--ink-3); border:1px solid var(--ink-line); border-radius:12px; padding:13px 14px;
-  }
-  .tdc-head{ display:flex; gap:12px; align-items:flex-start; margin-bottom:8px; }
-  .tdc-head .b-hex{ width:20px; margin-top:2px; }
-  .tdc-name{ font-family:'Noto Serif SC',serif; font-weight:700; font-size:16px; color:var(--ivory); }
-  .tdc-nature{ font-size:12px; color:var(--ivory-faint); font-weight:400; }
-  .tdc-tags{ display:flex; flex-wrap:wrap; gap:5px; margin-top:6px; }
-  .tdc-tag{
-    font-size:10px; padding:2px 8px; border-radius:999px; color:var(--ivory-dim);
-    background:var(--ink-2); border:1px solid var(--ink-line);
-  }
-  .tdc-desc{ font-size:12.5px; line-height:1.85; color:var(--ivory-dim); margin:0; }
-
-  /* ---------- Hexagram imagery section ---------- */
-  .image-box{
-    background: var(--ink-3); border:1px solid var(--ink-line); border-radius:10px;
-    padding:12px 14px; font-size:13.5px; line-height:1.85; color:var(--ivory);
-  }
-
-  /* ---------- Extended correspondences (per hexagram, derived from trigrams) ---------- */
-  .extra-pair{ display:flex; gap:10px; margin-bottom:8px; }
-  .extra-card{
-    flex:1; background:var(--ink-3); border:1px solid var(--ink-line); border-radius:10px;
-    padding:11px 12px;
-  }
-  .extra-card .ec-head{
-    display:flex; align-items:center; gap:6px; margin-bottom:7px;
-    font-family:'Noto Serif SC',serif; font-weight:700; font-size:13px; color:var(--ivory);
-  }
-  .extra-card .ec-head .b-hex{ width:16px; }
-  .extra-line{ font-size:11.5px; color:var(--ivory-dim); line-height:1.75; }
-  .extra-line b{ color:var(--ivory); font-weight:600; }
-  .extra-note{ font-size:11px; color:var(--ivory-faint); line-height:1.7; margin-top:2px; }
-
-  /* ---------- Zi Wei palace badge ---------- */
-  .palace-badge{
-    flex:none; width:26px; height:26px; border-radius:50%;
-    background: var(--seal); color:#f3e9d8;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Noto Serif SC',serif; font-weight:700; font-size:12px;
-    margin-top:2px;
-  }
+.fab{position:fixed;z-index:30;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));height:56px;padding:0 24px;border-radius:999px;border:1px solid #fff;
+  background:rgba(255,255,255,.94);color:var(--navy);font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 12px 32px rgba(10,30,55,.38)}
+.toast{position:fixed;z-index:80;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:12px;max-width:calc(100% - 32px);
+  padding:9px 10px 9px 18px;border-radius:22px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;background:rgba(255,255,255,.94);color:var(--navy);box-shadow:0 10px 30px rgba(10,30,55,.3)}
+.toast span{overflow-wrap:anywhere}
+.toast:not(.act){padding-right:18px}
+.toast.show{opacity:1}
+.toast.act{pointer-events:auto}
+.toast .tb{border:0;border-radius:999px;padding:6px 14px;background:var(--navy);color:#fff;font-weight:600;cursor:pointer;flex:none}
+.busy{position:fixed;z-index:85;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-50%);padding:8px 16px;border-radius:999px;font-size:13.5px;
+  background:rgba(255,255,255,.94);color:var(--navy);box-shadow:0 10px 30px rgba(10,30,55,.3);white-space:nowrap}
+.busy[hidden]{display:none}
+@media (max-width:520px){
+  .wrap{padding-top:20px}
+  .top-r{flex-direction:row-reverse;align-items:center;justify-content:space-between;width:100%}
+  .ph-box{grid-template-columns:104px minmax(0,1fr)}
+  .ph-prev{width:104px;height:104px}
+  .pr{grid-template-columns:52px minmax(0,1fr);row-gap:6px}
+  .pr .th{width:52px;height:52px}
+  .pr>.put,.pr>.out,.pr>.tg{grid-column:2;justify-self:start;min-height:40px}
+  .boxes{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){ .toast{transition:none} }
 </style>
 </head>
 <body>
+<div class="scene" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1 class="ttl">搬家装箱</h1>
+      <div class="sub" id="sub">拍照登记 · 按类分好 · 编号装箱</div>
+    </div>
+    <div class="top-r">
+      <div class="bgwrap" id="bgWrap">
+        <button type="button" class="bgbtn glass" id="bgBtn" aria-haspopup="true" aria-expanded="false" aria-controls="bgMenu">🖼️ 换背景</button>
+        <div class="bgmenu" id="bgMenu" hidden>
+          <label class="bgitem" for="bgFile" tabindex="0" data-keyclick>上传图片</label>
+          <button type="button" class="bgitem" id="bgReset">恢复默认海面</button>
+          <div class="bghint">横图竖图都可以，会自动铺满</div>
+        </div>
+        <input type="file" id="bgFile" class="vh" accept="image/*" aria-label="选择背景图片">
+      </div>
+      <div class="sync" id="sync">正在加载…</div>
+    </div>
+  </header>
 
-<header>
-  <div class="seal-mark">卦</div>
-  <h1>周易六十四卦<small>The Book of Changes · 卦典</small></h1>
-  <p class="subtitle">按卦序或卦名搜索，查看卦画、卦辞、象辞与事业·财运·感情·健康·决策各方面解读</p>
-</header>
+  <section class="hero glass" aria-label="装箱进度">
+    <div>
+      <div class="hk" id="hK">装箱进度</div>
+      <div class="hn" id="hNum">0</div>
+    </div>
+    <div>
+      <div class="seg" id="hSeg" aria-hidden="true"></div>
+      <div class="stats" id="hStats"></div>
+    </div>
+  </section>
 
-<div class="search-wrap">
-  <div class="search-box">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input id="searchInput" type="text" inputmode="search" placeholder="输入卦序（如 1）或卦名（如 乾 / 既济）…" autocomplete="off">
+  <nav class="tabs glass" role="tablist" aria-label="视图">
+    <button class="tab" role="tab" type="button" data-tab="items" aria-selected="true">物品</button>
+    <button class="tab" role="tab" type="button" data-tab="boxes" aria-selected="false">箱子</button>
+    <button class="tab" role="tab" type="button" data-tab="pack" aria-selected="false">装箱</button>
+  </nav>
+
+  <div class="panel" id="p-items">
+    <div class="tools">
+      <label class="search" for="q">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg>
+        <input id="q" type="search" placeholder="找东西：充电器、#012、2号…" autocomplete="off" aria-label="搜索物品">
+      </label>
+      <button class="btn" type="button" data-batch>批量导入照片</button>
+    </div>
+    <div class="row-scroll" id="fCats" aria-label="按分类筛选"></div>
+    <div class="row-scroll" id="fSts" aria-label="按状态筛选"></div>
+    <div id="banner"></div>
+    <div id="itemsBody"></div>
   </div>
-  <div class="search-hint">共 64 卦 · 支持拼音首字母、卦名、卦序搜索</div>
-  <div class="tool-links">
-    <button class="tool-link" id="baguaBtn">☰ 先天八卦 · 后天八卦 · 五行对照</button>
-    <button class="tool-link" id="ziweiBtn">☰ 紫微命盘详解 · 十二宫与星曜</button>
-    <button class="tool-link" id="installBtn" style="display:none;">⭳ 安装到手机桌面</button>
+
+  <div class="panel" id="p-boxes" hidden>
+    <div class="box-tools">
+      <button class="btn" type="button" data-qbox="suitcase">＋ 行李箱</button>
+      <button class="btn" type="button" data-qbox="box">＋ 纸箱</button>
+      <button class="btn" type="button" data-qbox="bag">＋ 背包</button>
+      <button class="ib" type="button" id="copyAll">复制全部清单</button>
+    </div>
+    <div id="boxesBody"></div>
+  </div>
+
+  <div class="panel" id="p-pack" hidden></div>
+
+  <section class="bk glass" aria-labelledby="bkT">
+    <div class="bk-m">
+      <div class="bk-t" id="bkT">备份 · 换设备</div>
+      <div class="bk-s">把清单和所有照片打包成一个文件。换手机、换浏览器或者换到另一个版本时，导入这个文件就能接着用。</div>
+    </div>
+    <div class="bk-b">
+      <button class="btn" type="button" id="expBtn">导出备份</button>
+      <label class="btn" for="impIn" tabindex="0" data-keyclick>导入备份</label>
+      <input id="impIn" class="vh" type="file" accept=".json,application/json">
+    </div>
+  </section>
+</div>
+
+<button class="fab" type="button" id="fab">＋ 物品</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="busy" id="busy" role="status" hidden></div>
+
+<!-- item sheet -->
+<div class="ov" id="itemOv" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="itemT" tabindex="-1">
+    <div class="sh-h"><h2 id="itemT">添加物品</h2><button class="x" type="button" data-close="itemOv" aria-label="关闭">✕</button></div>
+    <div class="ph-box">
+      <div class="ph-prev" id="phPrev"></div>
+      <div class="ph-btns">
+        <label class="btn btn-primary" for="camIn" tabindex="0" data-keyclick>拍照</label>
+        <input id="camIn" class="vh" type="file" accept="image/*" capture="environment">
+        <label class="btn" for="libIn" tabindex="0" data-keyclick>从相册选</label>
+        <input id="libIn" class="vh" type="file" accept="image/*">
+        <button class="btn" type="button" id="aiBtn" hidden>✨ 自动识别</button>
+        <button class="ib" type="button" id="phDel" hidden>去掉照片</button>
+      </div>
+    </div>
+    <label class="fl" for="iName">名称</label>
+    <input class="inp" id="iName" maxlength="40" placeholder="例如 白色连帽卫衣、Switch 手柄" autocomplete="off">
+    <div class="fl">分类</div>
+    <div class="chs" id="iCats"></div>
+    <div class="newcat" id="newCat" hidden>
+      <input class="inp" id="ncIco" maxlength="4" placeholder="🏷️" aria-label="分类图标（一个表情）">
+      <input class="inp" id="ncName" maxlength="10" placeholder="新分类的名字" aria-label="新分类名称">
+      <button class="btn" type="button" id="ncAdd">添加</button>
+    </div>
+    <div class="fl">数量</div>
+    <div class="qty-w"><button type="button" id="qMinus" aria-label="减少">−</button><input id="iQty" type="number" min="1" max="999" inputmode="numeric" value="1" aria-label="数量"><button type="button" id="qPlus" aria-label="增加">＋</button></div>
+    <div class="fl">放进哪个箱子</div>
+    <div class="chs" id="iDest"></div>
+    <label class="chk" id="packedRow" hidden><input type="checkbox" id="iPacked"> 已经放进箱子里了</label>
+    <label class="fl" for="iNote">备注</label>
+    <textarea class="inp" id="iNote" rows="2" maxlength="200" placeholder="选填，比如：易碎、到了先拿出来"></textarea>
+    <div class="sh-acts">
+      <button class="btn btn-primary" type="button" id="iSave">保存</button>
+      <button class="btn" type="button" id="iSaveMore">保存并继续添加</button>
+      <button class="ib danger" type="button" id="iDel">删除这件</button>
+    </div>
+    <div class="form-msg" id="iMsg" aria-live="polite"></div>
   </div>
 </div>
 
-<div class="chip-row" id="chipRow"></div>
-
-<div class="grid-wrap">
-  <div class="count-line" id="countLine"></div>
-  <div class="grid" id="grid"></div>
+<!-- box detail sheet -->
+<div class="ov" id="boxOv" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="bxT" tabindex="-1">
+    <div class="sh-h"><div class="bx-hd"><span class="bn sm" id="bxN"></span><div><h2 id="bxT"></h2><span class="bs" id="bxS"></span></div></div><button class="x" type="button" data-close="boxOv" aria-label="关闭">✕</button></div>
+    <div class="sh-acts top">
+      <button class="btn btn-primary" type="button" id="bxPack">去装这个箱子</button>
+      <button class="btn" type="button" id="bxCopy">复制清单</button>
+      <button class="btn" type="button" id="bxEdit">编辑</button>
+    </div>
+    <div class="bph" id="bxPh"></div>
+    <div id="bxList"></div>
+  </div>
 </div>
 
-<footer>内容依据《周易》经传整理，事业·财运·感情·健康等解读为传统易理引申，仅供参考学习，非命理断言。</footer>
-
-<div class="overlay" id="overlay">
-  <div class="panel" id="panel"></div>
+<!-- box edit sheet -->
+<div class="ov" id="beOv" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="beT" tabindex="-1">
+    <div class="sh-h"><h2 id="beT">添加箱子</h2><button class="x" type="button" data-close="beOv" aria-label="关闭">✕</button></div>
+    <div class="row2">
+      <div style="width:96px"><label class="fl" for="bNo">编号</label><input class="inp" id="bNo" type="number" min="1" max="99" inputmode="numeric"></div>
+      <div style="flex:1 1 200px"><label class="fl" for="bName">名字</label><input class="inp" id="bName" maxlength="24" placeholder="例如 28 寸灰色行李箱" autocomplete="off"></div>
+    </div>
+    <div class="fl">类型</div>
+    <div class="chs" id="bKinds"></div>
+    <div class="row2">
+      <div style="width:150px"><label class="fl" for="bW">重量 kg（选填）</label><input class="inp" id="bW" type="number" min="0" max="99" step="0.1" inputmode="decimal" placeholder="称完再填"></div>
+      <div style="flex:1 1 200px"><label class="fl" for="bNote">备注</label><input class="inp" id="bNote" maxlength="60" placeholder="选填，比如：托运 / 随身 / 寄存" autocomplete="off"></div>
+    </div>
+    <div class="sh-acts">
+      <button class="btn btn-primary" type="button" id="bSave">保存</button>
+      <button class="ib danger" type="button" id="bDel">删除这个箱子</button>
+    </div>
+    <div class="form-msg" id="bMsg" aria-live="polite"></div>
+  </div>
 </div>
 
-<script id="hexdata" type="application/json">[{"id": 1, "name": "乾", "pinyin": "qián", "lower": "乾", "upper": "乾", "lowerNat": "天", "upperNat": "天", "bits": "111111", "judgment": "元亨利贞。", "daxiang": "天行健，君子以自强不息。", "meaning": "刚健向上，自强不息，纯阳之卦，象征创造与领导力。", "image": "龙——潜龙勿用、飞龙在天，喻德才随时位而逐步显扬。", "keywords": ["刚健", "创造", "领导", "自强"], "career": "上升期，主动进取可获重用，但防刚愎自用、盛极而衰。", "wealth": "财运旺盛，宜积极开拓，但需留有余地，防过刚而折。", "love": "感情中易占主导，需防强势压人，宜刚柔并济。", "health": "精力充沛，需防用力过度、心脑血管紧张。", "advice": "潜龙勿用，见龙在田，终日乾乾——审时度势，循序渐进，不可躁进。"}, {"id": 2, "name": "坤", "pinyin": "kūn", "lower": "坤", "upper": "坤", "lowerNat": "地", "upperNat": "地", "bits": "000000", "judgment": "元亨，利牝马之贞。君子有攸往，先迷后得主，利。西南得朋，东北丧朋。安贞吉。", "daxiang": "地势坤，君子以厚德载物。", "meaning": "柔顺包容，厚德载物，纯阴之卦，象征承载与顺从。", "image": "牝马——柔顺健行、任重致远，喻厚德载物、随和致远。", "keywords": ["柔顺", "包容", "厚德", "承载"], "career": "宜辅佐配合、脚踏实地，不宜强出头，跟随大势可获吉。", "wealth": "财运平稳渐增，宜稳健理财、聚少成多，忌冒进投机。", "love": "宜以柔顺包容经营感情，主动付出可得善果。", "health": "需注意脾胃、体力储备，宜静养调理。", "advice": "先迷后得主——不争先出头，顺势而为，厚德方能载物。"}, {"id": 3, "name": "屯", "pinyin": "zhūn", "lower": "震", "upper": "坎", "lowerNat": "雷", "upperNat": "水", "bits": "100010", "judgment": "元亨利贞，勿用有攸往，利建侯。", "daxiang": "云雷屯，君子以经纶。", "meaning": "初生艰难，云雷交汇未通，万事起头难。", "image": "磐桓乘马——车马徘徊不前，喻创业初期步履维艰、宜静待时。", "keywords": ["草创", "艰难", "待时", "建侯"], "career": "创业初期阻力多，宜寻求助力，不宜孤军冒进。", "wealth": "财运受阻，资金周转紧张，宜稳守待时，勿轻举妄动。", "love": "感情初期磨合多，需耐心经营，不宜操之过急。", "health": "易有初期不适或积劳，宜调养、勿强撑。", "advice": "勿用有攸往，利建侯——先站稳脚跟，借助外力，静待时机成熟。"}, {"id": 4, "name": "蒙", "pinyin": "méng", "lower": "坎", "upper": "艮", "lowerNat": "水", "upperNat": "山", "bits": "010001", "judgment": "亨。匪我求童蒙，童蒙求我。初筮告，再三渎，渎则不告。利贞。", "daxiang": "山下出泉，蒙；君子以果行育德。", "meaning": "蒙昧未开，如童蒙待启，需明师引导。", "image": "童蒙——蒙昧孩童待启，喻虚心求教方能启迪心智。", "keywords": ["启蒙", "求知", "谦虚", "受教"], "career": "处于学习积累阶段，宜虚心求教，不宜自以为是。", "wealth": "财务经验不足，宜谨慎请教专业意见，防被误导。", "love": "感情认知尚浅，宜多沟通了解，切忌一意孤行。", "health": "需加强健康知识学习，定期检查、防讳疾忌医。", "advice": "匪我求童蒙，童蒙求我——主动求教、诚心受教方能启蒙见亨。"}, {"id": 5, "name": "需", "pinyin": "xū", "lower": "乾", "upper": "坎", "lowerNat": "天", "upperNat": "水", "bits": "111010", "judgment": "有孚，光亨，贞吉。利涉大川。", "daxiang": "云上于天，需；君子以饮食宴乐。", "meaning": "云在天上未降雨，象征等待时机，需要耐心。", "image": "郊野待渡——密云不雨，喻蓄势待时、从容以待。", "keywords": ["等待", "耐心", "蓄势", "诚信"], "career": "时机未到，宜静观其变、养精蓄锐，不宜急于求成。", "wealth": "财运在望但未至，宜耐心持有、勿贸然进出。", "love": "缘分需要等待，不宜强求，诚心以待自有归宿。", "health": "宜静养、规律作息，饮食有节。", "advice": "有孚光亨——保持诚信与耐心，静待渡过难关的时机。"}, {"id": 6, "name": "讼", "pinyin": "sòng", "lower": "坎", "upper": "乾", "lowerNat": "水", "upperNat": "天", "bits": "010111", "judgment": "有孚，窒惕，中吉，终凶。利见大人，不利涉大川。", "daxiang": "天与水违行，讼；君子以作事谋始。", "meaning": "天水相违而行，象征争讼纷争，宜谨慎避讼。", "image": "惕惧窒塞——心怀戒惧而兴争讼，喻凡事宜早谋、慎争讼。", "keywords": ["争讼", "矛盾", "谨慎", "和解"], "career": "易生纠纷摩擦，宜以和为贵、慎防口舌之争。", "wealth": "财务纠纷风险高，签约合作务必谨慎，勿因小失大。", "love": "感情中易生争执猜忌，宜坦诚沟通，避免僵持对抗。", "health": "情绪紧张易致身心不适，宜舒缓压力、避免动怒。", "advice": "中吉终凶——争执适可而止，宜见大人调解，不宜将事情闹大。"}, {"id": 7, "name": "师", "pinyin": "shī", "lower": "坎", "upper": "坤", "lowerNat": "水", "upperNat": "地", "bits": "010000", "judgment": "贞，丈人吉，无咎。", "daxiang": "地中有水，师；君子以容民畜众。", "meaning": "地中有水，喻兵众；象征统率组织、纪律严明。", "image": "丈人统众——严整之师奉命出征，喻名正言顺方可用众。", "keywords": ["统帅", "纪律", "团队", "正道"], "career": "涉及团队管理或竞争，需有原则纪律和正当名分方能取胜。", "wealth": "宜集中资源统一调度，忌各自为政、资源分散。", "love": "感情需要一方主导协调，秉持原则、包容对方。", "health": "需自律作息、循序调养，防因操劳过度而损耗。", "advice": "丈人吉——须有德才兼备之人统领，师出有名，方可无咎。"}, {"id": 8, "name": "比", "pinyin": "bǐ", "lower": "坤", "upper": "坎", "lowerNat": "地", "upperNat": "水", "bits": "000010", "judgment": "吉。原筮元永贞，无咎。不宁方来，后夫凶。", "daxiang": "地上有水，比；先王以建万国，亲诸侯。", "meaning": "水在地上，亲密相依，象征团结亲附。", "image": "后夫凶——迟疑不速来投者反致凶险，喻亲附宜早、诚心为先。", "keywords": ["亲附", "团结", "诚信", "合作"], "career": "宜寻求合作、团结同侪，尽早确立联盟关系为佳。", "wealth": "合伙经营、抱团投资较有利，宜早定契约。", "love": "感情宜真诚亲密相依，不宜三心二意或后知后觉。", "health": "宜与人互助调养，保持良好社交与情绪支持。", "advice": "原筮元永贞——以诚信为本及早团结众人，迟疑不决则不利。"}, {"id": 9, "name": "小畜", "pinyin": "xiǎo chù", "lower": "乾", "upper": "巽", "lowerNat": "天", "upperNat": "风", "bits": "111011", "judgment": "亨。密云不雨，自我西郊。", "daxiang": "风行天上，小畜；君子以懿文德。", "meaning": "风行天上，密云不雨，力量尚小，蓄势待发。", "image": "西郊密云——云聚而未成雨，喻力量正在积蓄、尚未成势。", "keywords": ["蓄积", "小成", "克制", "待发"], "career": "阻力虽小但积累未足，宜韬光养晦、积蓄实力再图发展。", "wealth": "财富积累缓慢，宜小额稳健积累，不宜大举投资。", "love": "感情尚处磨合期，需以礼相待，耐心经营。", "health": "小恙宜及早调理，防微杜渐，不可轻忽。", "advice": "密云不雨，自我西郊——时机未熟，宜积蓄实力、修养文德以待时。"}, {"id": 10, "name": "履", "pinyin": "lǚ", "lower": "兑", "upper": "乾", "lowerNat": "泽", "upperNat": "天", "bits": "110111", "judgment": "履虎尾，不咥人，亨。", "daxiang": "上天下泽，履；君子以辩上下，定民志。", "meaning": "履虎尾而不受伤，象征谨慎行事、以礼而行。", "image": "履虎尾——如踩虎尾而不受伤，喻谨慎守礼可化险为夷。", "keywords": ["谨慎", "礼节", "履险", "处世"], "career": "处境虽有风险，若循礼守分、小心应对可化险为夷。", "wealth": "投资有风险但可控，须谨慎评估、按章行事。", "love": "感情中宜以礼相待、把握分寸，不可轻率冒犯。", "health": "需注意行动安全，防意外损伤。", "advice": "履虎尾不咥人——谦逊守礼、如履薄冰，方能化险为夷。"}, {"id": 11, "name": "泰", "pinyin": "tài", "lower": "乾", "upper": "坤", "lowerNat": "天", "upperNat": "地", "bits": "111000", "judgment": "小往大来，吉亨。", "daxiang": "天地交，泰；后以财成天地之道，辅相天地之宜，以左右民。", "meaning": "天地交泰，阴阳调和，象征通泰吉祥、上下沟通。", "image": "天地交泰——阴阳相交、万物通畅，喻上下一心、时运亨通。", "keywords": ["通泰", "和谐", "交融", "兴盛"], "career": "时运亨通，上下配合默契，宜把握良机开拓进取。", "wealth": "财运亨通，收支平衡，宜适度扩张但防乐极生悲。", "love": "感情融洽和顺，双方心意相通，宜珍惜维系。", "health": "身心调和，气血通畅，宜保持规律防止懈怠。", "advice": "小往大来——盛世勿忘居安思危，防泰极转否。"}, {"id": 12, "name": "否", "pinyin": "pǐ", "lower": "坤", "upper": "乾", "lowerNat": "地", "upperNat": "天", "bits": "000111", "judgment": "否之匪人，不利君子贞，大往小来。", "daxiang": "天地不交，否；君子以俭德辟难，不可荣以禄。", "meaning": "天地不交，闭塞不通，象征阻滞、小人道长。", "image": "天地不交——阴阳隔绝、闭塞不通，喻小人道长、宜静守待时。", "keywords": ["闭塞", "阻滞", "退守", "俭德"], "career": "时运不济、上下不通，宜韬光养晦、静待转机，不宜强出头。", "wealth": "财运受阻，宜保守节俭，避免大额投资或涉险。", "love": "感情沟通受阻，宜先自省、暂缓推进，勿强求。", "health": "气机郁滞，宜疏解压力、调整心态，防抑郁沉闷。", "advice": "俭德辟难——收敛锋芒、安贫守分，静待否极泰来。"}, {"id": 13, "name": "同人", "pinyin": "tóng rén", "lower": "离", "upper": "乾", "lowerNat": "火", "upperNat": "天", "bits": "101111", "judgment": "同人于野，亨。利涉大川，利君子贞。", "daxiang": "天与火，同人；君子以类族辨物。", "meaning": "与人同心协力，象征团结众人、光明磊落。", "image": "同人于野——旷野之中与人协力，喻胸怀坦荡、不拘门户之见。", "keywords": ["同心", "协作", "光明", "包容"], "career": "宜团结志同道合者共谋大事，开放合作可成大局。", "wealth": "合伙经营有利，公开透明的合作更易获利。", "love": "志趣相投、坦诚相待的感情更为长久。", "health": "宜与人同乐、保持社交活跃，有助身心平衡。", "advice": "同人于野，利涉大川——胸怀宽广、不拘门户之见方能成事。"}, {"id": 14, "name": "大有", "pinyin": "dà yǒu", "lower": "乾", "upper": "离", "lowerNat": "天", "upperNat": "火", "bits": "111101", "judgment": "元亨。", "daxiang": "火在天上，大有；君子以遏恶扬善，顺天休命。", "meaning": "火在天上，光耀普照，象征大有丰收、德配天命。", "image": "日丽中天——光辉普照、万物丰盛，喻德业隆盛、谦以自守。", "keywords": ["丰收", "富足", "谦德", "顺天"], "career": "事业鼎盛、成果丰硕，宜谦逊自守、遏恶扬善以保长久。", "wealth": "财运极佳，收获颇丰，宜取之有道、善加分配。", "love": "感情美满丰盈，宜懂得感恩珍惜、不可骄纵。", "health": "精力旺盛、状态良好，仍需节制、防满而致溢。", "advice": "元亨——盛极之时更需谦德自持，顺应天道方能长保。"}, {"id": 15, "name": "谦", "pinyin": "qiān", "lower": "艮", "upper": "坤", "lowerNat": "山", "upperNat": "地", "bits": "001000", "judgment": "亨，君子有终。", "daxiang": "地中有山，谦；君子以裒多益寡，称物平施。", "meaning": "地中有山，外柔内刚，象征谦逊自守、终得善果。", "image": "谦谦君子——以谦卑之心涉险渡难，喻越有才德越应自抑。", "keywords": ["谦逊", "内敛", "均衡", "善终"], "career": "谦虚低调、脚踏实地者更受信任，终能获得成就。", "wealth": "财运稳健，宜量入为出、均衡分配，忌炫耀张扬。", "love": "谦和体贴的态度更能赢得感情长久稳固。", "health": "心态平和有助健康，宜劳逸均衡、不争不躁。", "advice": "谦谦君子，卑以自牧——越是有成就越应谦逊，方能有终。"}, {"id": 16, "name": "豫", "pinyin": "yù", "lower": "坤", "upper": "震", "lowerNat": "地", "upperNat": "雷", "bits": "000100", "judgment": "利建侯行师。", "daxiang": "雷出地奋，豫；先王以作乐崇德，殷荐之上帝，以配祖考。", "meaning": "雷出地奋，象征欢愉振奋、顺势而为。", "image": "雷出地奋——雷声震动、大地欢腾，喻顺势而为、鼓舞人心。", "keywords": ["欢愉", "顺势", "准备", "团结"], "career": "时机顺遂，宜积极筹划、鼓舞人心，顺势而为可成事。", "wealth": "财运向好，宜提前规划布局，把握顺势扩张的机会。", "love": "感情愉悦融洽，宜共同营造美好氛围，增进默契。", "health": "心情愉悦有助健康，但防安逸松懈、乐极生悲。", "advice": "利建侯行师——顺应时势、未雨绸缪，居安不忘思危。"}, {"id": 17, "name": "随", "pinyin": "suí", "lower": "震", "upper": "兑", "lowerNat": "雷", "upperNat": "泽", "bits": "100110", "judgment": "元亨利贞，无咎。", "daxiang": "泽中有雷，随；君子以向晦入宴息。", "meaning": "泽中有雷，随时而动，象征灵活顺应、择善而从。", "image": "泽中雷动——随时而息、顺应变化，喻灵活变通、择善而从。", "keywords": ["顺应", "灵活", "择善", "变通"], "career": "宜审时度势、随机应变，跟随正确的方向和领导。", "wealth": "财运需顺势而为，灵活调整策略，不可固执己见。", "love": "感情中宜彼此顺应、相互迁就，方能长久和谐。", "health": "作息宜顺应自然规律，劳逸随时调整。", "advice": "随时之义大矣哉——择善而从、顺时而动，方可无咎。"}, {"id": 18, "name": "蛊", "pinyin": "gǔ", "lower": "巽", "upper": "艮", "lowerNat": "风", "upperNat": "山", "bits": "011001", "judgment": "元亨，利涉大川。先甲三日，后甲三日。", "daxiang": "山下有风，蛊；君子以振民育德。", "meaning": "山下有风，积弊已久，象征革除旧弊、重整振兴。", "image": "皿中生虫——积弊已久、亟待整治，喻革除旧弊、重整家业。", "keywords": ["整饬", "革新", "补救", "振兴"], "career": "旧问题积重难返，宜果断整顿革新，方能扭转颓势。", "wealth": "财务或经营存在旧弊，需彻查整改，止损方能回升。", "love": "感情中积压的问题需正视处理，不可回避拖延。", "health": "宿疾旧患需及时诊治调理，不可讳疾忌医。", "advice": "先甲三日，后甲三日——革新须谋定后动，前后周全考虑。"}, {"id": 19, "name": "临", "pinyin": "lín", "lower": "兑", "upper": "坤", "lowerNat": "泽", "upperNat": "地", "bits": "110000", "judgment": "元亨利贞。至于八月有凶。", "daxiang": "泽上有地，临；君子以教思无穷，容保民无疆。", "meaning": "泽上有地，居高临下，象征临近盛大、教化临民。", "image": "二阳临下——居高临下、教化于民，喻以身作则、防盛而骄。", "keywords": ["临近", "壮大", "教导", "防盛极"], "career": "事业渐入佳境、影响力扩大，宜以身作则、善待下属。", "wealth": "财运渐旺，处于上升期，宜未雨绸缪防止后劲不足。", "love": "感情渐入热络，宜真诚包容，避免因得意而懈怠。", "health": "状态渐佳，仍需居安思危，防止盛极后转衰。", "advice": "至于八月有凶——盛时当思退路，教思无穷方能长保吉祥。"}, {"id": 20, "name": "观", "pinyin": "guān", "lower": "坤", "upper": "巽", "lowerNat": "地", "upperNat": "风", "bits": "000011", "judgment": "盥而不荐，有孚颙若。", "daxiang": "风行地上，观；先王以省方观民设教。", "meaning": "风行地上，象征观察省思、以身作则、教化于民。", "image": "盥而不荐——祭祀之初庄严未献，喻以诚敬之心观照自省。", "keywords": ["观察", "省思", "示范", "教化"], "career": "宜多观察形势、修身立德，以榜样感召他人而非强制。", "wealth": "财务决策前宜多观察分析，不宜草率行事。", "love": "感情中宜多观察理解对方内心，以诚意感化而非强求。", "health": "宜静心观照自身状态，防患于未然。", "advice": "盥而不荐，有孚颙若——以诚敬庄重之心自省示人，自能得众望。"}, {"id": 21, "name": "噬嗑", "pinyin": "shì kè", "lower": "震", "upper": "离", "lowerNat": "雷", "upperNat": "火", "bits": "100101", "judgment": "亨。利用狱。", "daxiang": "雷电噬嗑；先王以明罚敕法。", "meaning": "雷电交加，象征果断决断、排除障碍。", "image": "噬肉遇毒——咬合坚物、排除障碍，喻明察果断、扫除阻碍。", "keywords": ["决断", "排障", "执法", "清障"], "career": "遇到阻碍需果断处理，明察是非、公正执行方能突破。", "wealth": "财务纠纷或障碍需果断清理，拖延反致损失扩大。", "love": "感情中的隔阂需坦率沟通解决，不可含糊拖延。", "health": "需果断就医处理病痛，不可拖延讳疾。", "advice": "利用狱——明辨是非、果断处置，方能扫除阻碍、通达顺畅。"}, {"id": 22, "name": "贲", "pinyin": "bì", "lower": "离", "upper": "艮", "lowerNat": "火", "upperNat": "山", "bits": "101001", "judgment": "亨。小利有攸往。", "daxiang": "山下有火，贲；君子以明庶政，无敢折狱。", "meaning": "山下有火，文饰有度，象征文明修饰、内外兼修。", "image": "白贲无咎——文饰终归朴素本真，喻内外兼修、重质轻华。", "keywords": ["文饰", "修养", "内涵", "适度"], "career": "形象与实力并重，宜适度包装但更要重视内在实力。", "wealth": "理财宜讲究方法与规划，不可只重外表虚饰。", "love": "感情中适度的浪漫与仪式感能增进情意，但重在真心。", "health": "注重外在保养的同时，更应重视内在调养。", "advice": "小利有攸往——文饰有度、由质而文，过度装饰反失本真。"}, {"id": 23, "name": "剥", "pinyin": "bō", "lower": "坤", "upper": "艮", "lowerNat": "地", "upperNat": "山", "bits": "000001", "judgment": "不利有攸往。", "daxiang": "山附于地，剥；上以厚下安宅。", "meaning": "山附于地，剥落将尽，象征衰败将至、宜静守待时。", "image": "床剥及肤——床足渐次剥落将危及身，喻危机步步逼近、宜静守。", "keywords": ["剥落", "衰退", "守静", "待复"], "career": "处境不利、根基受损，宜收缩防守、静待时机转变。", "wealth": "财运走弱，资产易受侵蚀，宜保守持盈、避免损耗扩大。", "love": "感情出现裂痕征兆，宜正视问题、及早修复关系根基。", "health": "体质渐虚或旧疾复发迹象，宜及早调养、固本培元。", "advice": "不利有攸往——阳消阴长之时宜静守本分，厚待根基以待复兴。"}, {"id": 24, "name": "复", "pinyin": "fù", "lower": "震", "upper": "坤", "lowerNat": "雷", "upperNat": "地", "bits": "100000", "judgment": "亨。出入无疾，朋来无咎。反复其道，七日来复，利有攸往。", "daxiang": "雷在地中，复；先王以至日闭关，商旅不行，后不省方。", "meaning": "雷在地中，一阳来复，象征否极泰来、转机初现。", "image": "一阳来复——冬至阳气初生渐长，喻否极泰来、转机初现。", "keywords": ["回归", "转机", "新生", "渐进"], "career": "低谷已过、转机初现，宜循序渐进、把握新生机遇。", "wealth": "财运开始回升，宜稳健积累，不宜急躁冒进求快。", "love": "感情出现和好或新生的契机，宜珍惜把握、循序发展。", "health": "身体机能开始恢复，宜温和调养、循序渐进康复。", "advice": "七日来复——顺应规律、把握时机复元，欲速则不达。"}, {"id": 25, "name": "无妄", "pinyin": "wú wàng", "lower": "震", "upper": "乾", "lowerNat": "雷", "upperNat": "天", "bits": "100111", "judgment": "元亨利贞。其匪正有眚，不利有攸往。", "daxiang": "天下雷行，物与无妄；先王以茂对时育万物。", "meaning": "天下雷行，物与无妄，象征真诚无妄、顺其自然。", "image": "无妄之灾——不耕而获反遭意外之祸，喻顺其自然、不可妄求。", "keywords": ["真诚", "自然", "不妄为", "守正"], "career": "宜脚踏实地、循正道行事，不可投机取巧或妄自尊大。", "wealth": "财运需靠正当途径积累，妄想不劳而获反招损失。", "love": "真诚自然的感情最为长久，勿存心机算计。", "health": "顺其自然、不妄加干预调理，过度治疗反而无益。", "advice": "其匪正有眚——但行正道、顺应自然，妄动妄求反招灾咎。"}, {"id": 26, "name": "大畜", "pinyin": "dà chù", "lower": "乾", "upper": "艮", "lowerNat": "天", "upperNat": "山", "bits": "111001", "judgment": "利贞，不家食吉，利涉大川。", "daxiang": "天在山中，大畜；君子以多识前言往行，以畜其德。", "meaning": "天在山中，蓄德积厚，象征大器蓄养、厚积薄发。", "image": "童牛之牿——及早约束童牛以防其暴，喻蓄德养才须防患未然。", "keywords": ["积蓄", "养德", "厚积", "薄发"], "career": "宜潜心积累学识才干，厚积薄发，终能担当大任。", "wealth": "财富宜稳健积蓄、长期规划，终能积少成多。", "love": "感情需要时间沉淀积累，不宜急于求成。", "health": "宜注重日常养生积累，滋补调养、固本培元。", "advice": "不家食吉——所学所蓄终为社会所用，厚积必有所成。"}, {"id": 27, "name": "颐", "pinyin": "yí", "lower": "震", "upper": "艮", "lowerNat": "雷", "upperNat": "山", "bits": "100001", "judgment": "贞吉。观颐，自求口实。", "daxiang": "山下有雷，颐；君子以慎言语，节饮食。", "meaning": "山下有雷，颐养之道，象征饮食调养、慎言养德。", "image": "朵颐垂涎——舍灵龟而贪口舌之欲，喻慎言节食、自食其力。", "keywords": ["颐养", "节制", "自养", "谨言"], "career": "宜自食其力、稳扎稳打，不依赖他人施舍。", "wealth": "理财宜量入为出、节制开支，自给自足方能长久。", "love": "感情需相互滋养扶持，言语上宜多加体谅、慎言。", "health": "直接关乎饮食健康，宜节饮食、慎言语，规律养生。", "advice": "慎言语，节饮食——修身养性从口入口出做起，涵养有节。"}, {"id": 28, "name": "大过", "pinyin": "dà guò", "lower": "巽", "upper": "兑", "lowerNat": "风", "upperNat": "泽", "bits": "011110", "judgment": "栋桡，利有攸往，亨。", "daxiang": "泽灭木，大过；君子以独立不惧，遁世无闷。", "meaning": "泽灭木，栋梁弯曲，象征非常时期、需果断应对。", "image": "枯杨生稊——老树重发新芽，喻非常之时逆境亦可焕发生机。", "keywords": ["非常", "压力", "担当", "变通"], "career": "处境压力巨大、非常规局面，需有非常之才、独立担当。", "wealth": "财务承压较大，需谨慎应对超常规风险，量力而行。", "love": "感情面临较大考验压力，需双方共同承担、灵活变通。", "health": "身心负荷较重，需警惕过度透支，适度减压调整。", "advice": "独立不惧，遁世无闷——非常之时守正持重，方能安然度过。"}, {"id": 29, "name": "坎", "pinyin": "kǎn", "lower": "坎", "upper": "坎", "lowerNat": "水", "upperNat": "水", "bits": "010010", "judgment": "习坎，有孚，维心亨，行有尚。", "daxiang": "水洊至，习坎；君子以常德行，习教事。", "meaning": "重重险陷，象征重重困难、以诚渡险。", "image": "重险相习——水流层层险陷交叠，喻身处困境唯诚可渡。", "keywords": ["险陷", "考验", "诚信", "渡厄"], "career": "面临重重困难险阻，宜保持内心诚信坚定，逐步渡过难关。", "wealth": "财务风险较高，宜谨慎防范、避免涉险投机。", "love": "感情面临考验波折，唯有真诚坚守方能共渡难关。", "health": "需警惕反复发作的隐患，宜持之以恒地调理护养。", "advice": "维心亨，行有尚——身处险境唯诚心坚定、脚踏实地方可渡厄。"}, {"id": 30, "name": "离", "pinyin": "lí", "lower": "离", "upper": "离", "lowerNat": "火", "upperNat": "火", "bits": "101101", "judgment": "利贞，亨。畜牝牛，吉。", "daxiang": "明两作，离；大人以继明照于四方。", "meaning": "光明相继，象征光明附丽、文明照耀。", "image": "日昃鼓缶——夕阳西下仍击缶而歌，喻顺应时运、坦然处之。", "keywords": ["光明", "依附", "文明", "持续"], "career": "事业如日中天，需依托正确方向和团队方能持续光明。", "wealth": "财运光明但需依托稳妥渠道，防虚火过旺。", "love": "感情热烈光明，需彼此依附扶持，勿因光耀而自负。", "health": "心火易旺，宜清心降火、劳逸有度。", "advice": "畜牝牛吉——保持柔顺谦和之德以承载光明，方能长久。"}, {"id": 31, "name": "咸", "pinyin": "xián", "lower": "艮", "upper": "兑", "lowerNat": "山", "upperNat": "泽", "bits": "001110", "judgment": "亨，利贞，取女吉。", "daxiang": "山上有泽，咸；君子以虚受人。", "meaning": "山上有泽，二气相感，象征男女相感、以诚相待。", "image": "咸其辅颊——感应由足趾渐至面颊，喻真情感应、循序渐深。", "keywords": ["感应", "相恋", "真诚", "交流"], "career": "人际感应良好，宜真诚沟通、以心换心促成合作。", "wealth": "财运需靠人脉感召与信任积累，真诚待人方能获利。", "love": "正值情投意合、良缘相感之时，宜真诚以对、把握良机。", "health": "身心感应敏锐，宜多留意情绪对身体的影响。", "advice": "虚受人——以谦虚开放之心感应他人，方能心意相通。"}, {"id": 32, "name": "恒", "pinyin": "héng", "lower": "巽", "upper": "震", "lowerNat": "风", "upperNat": "雷", "bits": "011100", "judgment": "亨，无咎，利贞，利有攸往。", "daxiang": "雷风，恒；君子以立不易方。", "meaning": "雷风相与，长久不变，象征恒心持久、坚守正道。", "image": "雷风相与——雷厉风行、长相伴随，喻夫妇之道贵在恒久如一。", "keywords": ["恒久", "坚持", "稳定", "持守"], "career": "宜坚持既定方向、持之以恒，切忌朝令夕改。", "wealth": "财运稳定细水长流，宜长期坚持稳健策略。", "love": "感情贵在长久坚持、彼此忠诚，不可见异思迁。", "health": "健康贵在坚持规律作息运动，非一朝一夕之功。", "advice": "立不易方——恒久之道在于坚定方向、始终如一。"}, {"id": 33, "name": "遁", "pinyin": "dùn", "lower": "艮", "upper": "乾", "lowerNat": "山", "upperNat": "天", "bits": "001111", "judgment": "亨，小利贞。", "daxiang": "天下有山，遁；君子以远小人，不恶而严。", "meaning": "天下有山，小人渐长，象征知机而退、远离是非。", "image": "肥遁无不利——退隐山林、心宽体胖，喻知机而退、明哲保身。", "keywords": ["退守", "远离", "知机", "自守"], "career": "局势对己不利，宜及早抽身引退、避开是非漩涡。", "wealth": "宜见好就收、及时止损，不可恋战贪多。", "love": "若感情已现裂痕征兆，宜理性抽身，不必强留。", "health": "宜适度休养、远离劳累源头，及早调整生活方式。", "advice": "远小人，不恶而严——退而不失尊严，明哲保身而非消极逃避。"}, {"id": 34, "name": "大壮", "pinyin": "dà zhuàng", "lower": "乾", "upper": "震", "lowerNat": "天", "upperNat": "雷", "bits": "111100", "judgment": "利贞。", "daxiang": "雷在天上，大壮；君子以非礼弗履。", "meaning": "雷在天上，阳刚强盛，象征力量强盛、宜守礼而行。", "image": "羝羊触藩——公羊猛撞篱笆反被困角，喻恃强冒进反受其累。", "keywords": ["强盛", "刚健", "克制", "守礼"], "career": "事业势头强劲，宜乘势而上，但需守礼有度、防恃强冒进。", "wealth": "财运旺盛，宜把握机遇扩张，但不可贪多冒进。", "love": "感情热烈主动，宜适度克制、尊重对方，勿强势压人。", "health": "精力充沛易致用力过猛，宜量力而行、防运动损伤。", "advice": "非礼弗履——强盛之时更需守礼有度，否则壮而致凶。"}, {"id": 35, "name": "晋", "pinyin": "jìn", "lower": "坤", "upper": "离", "lowerNat": "地", "upperNat": "火", "bits": "000101", "judgment": "康侯用锡马蕃庶，昼日三接。", "daxiang": "明出地上，晋；君子以自昭明德。", "meaning": "明出地上，象征晋升向上、光明前进。", "image": "晋如鼫鼠——如大鼠般贪多疑惧难安，喻晋升之时戒贪多务得。", "keywords": ["晋升", "进步", "光明", "顺遂"], "career": "事业顺遂上升，深受赏识提拔，宜积极展现才能。", "wealth": "财运渐入佳境，收入稳步提升，宜把握晋升良机。", "love": "感情关系日渐明朗深入，宜坦诚以对、共同进步。", "health": "精神状态积极向上，宜保持良好心态促进康复。", "advice": "自昭明德——晋升之时更应彰显自身德行才能，实至名归。"}, {"id": 36, "name": "明夷", "pinyin": "míng yí", "lower": "离", "upper": "坤", "lowerNat": "火", "upperNat": "地", "bits": "101000", "judgment": "利艰贞。", "daxiang": "明入地中，明夷；君子以莅众，用晦而明。", "meaning": "明入地中，光明受损，象征韬光养晦、忍辱负重。", "image": "明夷垂翼——飞鸟光明受损、低翼而飞，喻贤者受困仍守节不移。", "keywords": ["韬晦", "隐忍", "自守", "待时"], "career": "处境不利、才能受压，宜韬光养晦、内敛锋芒以自保。", "wealth": "财运受阻或有损失，宜低调守成，避免张扬冒险。", "love": "感情中受到误解或压抑，宜暂时隐忍、耐心等待转机。", "health": "身心承压易致郁结，宜调节情绪、内养正气。", "advice": "用晦而明——外示柔顺内守光明，艰难时期尤重气节坚守。"}, {"id": 37, "name": "家人", "pinyin": "jiā rén", "lower": "离", "upper": "巽", "lowerNat": "火", "upperNat": "风", "bits": "101011", "judgment": "利女贞。", "daxiang": "风自火出，家人；君子以言有物而行有恒。", "meaning": "风自火出，象征家庭和睦、各正其位。", "image": "闲有家——治家宜先立规矩以防患未然，喻齐家先正己身。", "keywords": ["家庭", "和睦", "本分", "治家"], "career": "宜像治家一般讲求秩序分工，团队各司其职方能兴旺。", "wealth": "家庭财务宜共同规划、量入为出，家和万事兴。", "love": "婚姻家庭运佳，宜各尽本分、言而有信、以身作则。", "health": "家庭氛围和睦有助身心健康，宜重视家人关怀。", "advice": "言有物而行有恒——治家治业贵在言行一致、恪守本分。"}, {"id": 38, "name": "睽", "pinyin": "kuí", "lower": "兑", "upper": "离", "lowerNat": "泽", "upperNat": "火", "bits": "110101", "judgment": "小事吉。", "daxiang": "上火下泽，睽；君子以同而异。", "meaning": "火泽相违，志趣相背，象征暂时乖离、异中求同。", "image": "见豕负涂——恍见污泥载豕、满车皆鬼，喻猜疑生幻象，宜释疑求同。", "keywords": ["分歧", "隔阂", "求同", "沟通"], "career": "团队或合作中存在分歧对立，宜求同存异、小心处理。", "wealth": "财务合作中意见不合，宜多方沟通协调，避免决裂。", "love": "感情出现隔阂误会，需耐心沟通化解，不宜彻底决裂。", "health": "情绪易波动对立，宜疏导心结、调和身心矛盾。", "advice": "同而异——在分歧中寻求包容理解，异中求同小事可吉。"}, {"id": 39, "name": "蹇", "pinyin": "jiǎn", "lower": "艮", "upper": "坎", "lowerNat": "山", "upperNat": "水", "bits": "001010", "judgment": "利西南，不利东北。利见大人，贞吉。", "daxiang": "山上有水，蹇；君子以反身修德。", "meaning": "山上有水，行走艰难，象征前路险阻、宜反身修德。", "image": "王臣蹇蹇——为国事艰难跋涉、在所不辞，喻遇阻挺身、忠于职守。", "keywords": ["险阻", "受挫", "自省", "借力"], "career": "前进道路遭遇重重障碍，宜暂缓推进、反躬自省，借助贵人相助。", "wealth": "财运受阻、资金周转困难，宜谨慎保守、寻求外援。", "love": "感情遭遇现实阻碍，需彼此体谅扶持、共渡难关。", "health": "行动或病情受阻不畅，宜耐心调养、寻求良医相助。", "advice": "反身修德——遇阻不宜强行，宜反省自身、借助贵人渡过难关。"}, {"id": 40, "name": "解", "pinyin": "xiè", "lower": "坎", "upper": "震", "lowerNat": "水", "upperNat": "雷", "bits": "010100", "judgment": "利西南。无所往，其来复吉。有攸往，夙吉。", "daxiang": "雷雨作，解；君子以赦过宥罪。", "meaning": "雷雨交作，郁结舒解，象征困境解除、宽释释怀。", "image": "田获三狐——田猎中猎获三只狐狸，喻困扰解除、清理积患。", "keywords": ["解脱", "释放", "宽恕", "新生"], "career": "困境逐渐解除，宜把握时机推进，但不宜纠缠旧怨。", "wealth": "财务压力得以缓解，宜及时清理旧账、轻装上阵。", "love": "感情中的误会矛盾得以化解，宜宽容释怀、重新开始。", "health": "身心郁结得以舒解，宜借此机会调养恢复元气。", "advice": "赦过宥罪——困境已解，宜宽以待人，尽早了结旧怨轻装前行。"}, {"id": 41, "name": "损", "pinyin": "sǔn", "lower": "兑", "upper": "艮", "lowerNat": "泽", "upperNat": "山", "bits": "110001", "judgment": "有孚，元吉，无咎，可贞，利有攸往。曷之用，二簋可用享。", "daxiang": "山下有泽，损；君子以惩忿窒欲。", "meaning": "山下有泽，损下益上，象征节制克己、有舍有得。", "image": "损刚益柔——减损刚强以增益柔顺，喻克己让利、终成大义。", "keywords": ["节制", "克己", "舍得", "诚信"], "career": "需暂时牺牲部分利益以成全大局，克制欲望方能长远获益。", "wealth": "财运需先舍后得，宜节制开支、量力而行，忌贪多冒进。", "love": "感情中需懂得付出与牺牲，克制自我以成全对方。", "health": "需节制饮食欲望、克制不良嗜好，方能养身。", "advice": "惩忿窒欲——损己利人非损，克制情欲私念反能成就长远。"}, {"id": 42, "name": "益", "pinyin": "yì", "lower": "震", "upper": "巽", "lowerNat": "雷", "upperNat": "风", "bits": "100011", "judgment": "利有攸往，利涉大川。", "daxiang": "风雷，益；君子以见善则迁，有过则改。", "meaning": "风雷相益，损上益下，象征增益进取、见善则迁。", "image": "或击之——外力或有冲击仍需持心以恒，喻增益之时不可懈怠初心。", "keywords": ["增益", "进取", "施予", "改过"], "career": "时运有利、贵人相助，宜积极进取、勇于开拓新局面。", "wealth": "财运渐增，宜把握有利时机拓展，同时乐善好施更添福报。", "love": "感情关系日渐增进，宜相互扶持、共同成长进步。", "health": "身体状况渐有改善，宜积极调养、见效即巩固。", "advice": "见善则迁，有过则改——把握有利时机进取，并勇于自我改善。"}, {"id": 43, "name": "夬", "pinyin": "guài", "lower": "乾", "upper": "兑", "lowerNat": "天", "upperNat": "泽", "bits": "111110", "judgment": "扬于王庭，孚号有厉。告自邑，不利即戎，利有攸往。", "daxiang": "泽上于天，夬；君子以施禄及下，居德则忌。", "meaning": "泽上于天，决而不疑，象征果决行动、清除小人。", "image": "壮于前趾——脚趾先行、示意果决前行，喻决断行事宜谋定后动。", "keywords": ["决断", "清除", "警惕", "果敢"], "career": "需果断清除积弊或障碍，行动前宜先礼后兵、师出有名。", "wealth": "需果断处理不良资产或纠纷，但不可诉诸激进手段。", "love": "感情中需果断解决拖延已久的问题，勿再犹豫不决。", "health": "需果断处理隐患病症，不可再拖延忽视。", "advice": "不利即戎，利有攸往——果决行事但避免激烈冲突，循序推进为宜。"}, {"id": 44, "name": "姤", "pinyin": "gòu", "lower": "巽", "upper": "乾", "lowerNat": "风", "upperNat": "天", "bits": "011111", "judgment": "女壮，勿用取女。", "daxiang": "天下有风，姤；后以施命诰四方。", "meaning": "天下有风，一阴始生，象征不期而遇、慎防渐长。", "image": "系于金柅——以金属车闸制止车轮，喻遇微阴初生、宜及早制约。", "keywords": ["相遇", "萌芽", "警惕", "慎始"], "career": "新的机会或变数悄然出现，宜留心观察、谨慎应对。", "wealth": "需警惕看似微小的风险因素，防止日后坐大成患。", "love": "或有意外的邂逅缘分，宜理性判断、不可轻率托付。", "health": "小病小恙初现苗头，宜及早重视、防微杜渐。", "advice": "女壮，勿用取女——初生之势虽小，仍需谨慎对待、慎始防微。"}, {"id": 45, "name": "萃", "pinyin": "cuì", "lower": "坤", "upper": "兑", "lowerNat": "地", "upperNat": "泽", "bits": "000110", "judgment": "亨。王假有庙，利见大人，亨，利贞。用大牲吉，利有攸往。", "daxiang": "泽上于地，萃；君子以除戎器，戒不虞。", "meaning": "泽上于地，人心聚合，象征聚集人才、共襄盛举。", "image": "萃如嗟如——聚而复散、令人叹息，喻聚合人心需以诚相待。", "keywords": ["聚合", "团结", "共襄", "防患"], "career": "宜广纳贤才、凝聚团队力量，共同成就一番事业。", "wealth": "宜集中资源合力经营，聚合人脉资金以壮大声势。", "love": "感情或家族聚会融洽，宜珍惜团聚时光、增进情谊。", "health": "宜结伴调养、互相扶持，同时需防聚集处的健康隐患。", "advice": "除戎器，戒不虞——人心聚合之时更需未雨绸缪、防患未然。"}, {"id": 46, "name": "升", "pinyin": "shēng", "lower": "巽", "upper": "坤", "lowerNat": "风", "upperNat": "地", "bits": "011000", "judgment": "元亨，用见大人，勿恤，南征吉。", "daxiang": "地中生木，升；君子以顺德，积小以高大。", "meaning": "地中生木，柔顺上升，象征稳步上升、循序渐进。", "image": "升虚邑——如入无人之邑畅行无阻，喻上升之路顺畅、宜守正渐进。", "keywords": ["上升", "渐进", "谦逊", "顺势"], "career": "事业稳步上升，宜脚踏实地、循序渐进，终能崭露头角。", "wealth": "财运稳步增长，宜持续积累、切勿急躁冒进求快。", "love": "感情稳步加深，宜自然发展、水到渠成。", "health": "体能状态逐步提升，宜坚持规律调养、循序渐进恢复。", "advice": "积小以高大——升迁之道贵在顺德渐进，一步一个脚印。"}, {"id": 47, "name": "困", "pinyin": "kùn", "lower": "坎", "upper": "兑", "lowerNat": "水", "upperNat": "泽", "bits": "010110", "judgment": "亨，贞，大人吉，无咎，有言不信。", "daxiang": "泽无水，困；君子以致命遂志。", "meaning": "泽无水，身处困境，象征逆境考验、守志不移。", "image": "臀困株木——坐卧枯木之上、进退维谷，喻身处困境仍需坚守心志。", "keywords": ["困顿", "考验", "坚守", "信念"], "career": "处境艰难受困，纵有理却难获信任，宜坚守志向、静待转机。", "wealth": "财务陷入困顿窘迫，宜量入为出、渡过难关。", "love": "感情中言语难以取信，宜以行动而非言语证明真心。", "health": "身心俱疲、状态低迷，宜坚持调养、切勿灰心放弃。", "advice": "致命遂志——身处困境更应坚守本心志向，逆境亦能成就人格。"}, {"id": 48, "name": "井", "pinyin": "jǐng", "lower": "巽", "upper": "坎", "lowerNat": "风", "upperNat": "水", "bits": "011010", "judgment": "改邑不改井，无丧无得，往来井井。汔至亦未繘井，羸其瓶，凶。", "daxiang": "木上有水，井；君子以劳民劝相。", "meaning": "木上有水，井养不穷，象征滋养他人、恒常有用。", "image": "井渫不食——井水已淘净却无人食用，喻怀才不遇仍应静待任用。", "keywords": ["滋养", "恒常", "利他", "修井"], "career": "宜像水井一样默默奉献滋养他人，稳固自身根基修养。", "wealth": "财源需细水长流、持续经营，切忌半途而废前功尽弃。", "love": "感情贵在持续滋养、相互扶持，不可半途懈怠。", "health": "需持续调养固本，防止调理不彻底而反复。", "advice": "羸其瓶，凶——功亏一篑最为可惜，行百里者半九十，务必善始善终。"}, {"id": 49, "name": "革", "pinyin": "gé", "lower": "离", "upper": "兑", "lowerNat": "火", "upperNat": "泽", "bits": "101110", "judgment": "已日乃孚，元亨利贞，悔亡。", "daxiang": "泽中有火，革；君子以治历明时。", "meaning": "泽中有火，变革除旧，象征顺势变革、革故鼎新。", "image": "巩用黄牛——以黄牛皮革坚固捆缚，喻变革之初宜先固本待时。", "keywords": ["变革", "除旧", "时机", "信服"], "career": "变革时机已经成熟，宜果断推进改革创新，但需师出有名。", "wealth": "财务或经营模式需与时俱进变革，因循守旧恐失良机。", "love": "感情关系或需重新调整定位，顺应变化、坦诚沟通。", "health": "需改变旧有不良生活习惯，方能革除病根。", "advice": "已日乃孚——变革需取信于人、时机成熟后方可推行，操之过急反生悔。"}, {"id": 50, "name": "鼎", "pinyin": "dǐng", "lower": "巽", "upper": "离", "lowerNat": "风", "upperNat": "火", "bits": "011101", "judgment": "元吉，亨。", "daxiang": "木上有火，鼎；君子以正位凝命。", "meaning": "木上有火，鼎新烹饪，象征稳重承担、汇聚人才。", "image": "鼎折覆餗——鼎足折断、倾覆佳肴，喻力不胜任、慎选托付之人。", "keywords": ["稳重", "承担", "汇聚", "任重"], "career": "宜稳重承担重任，善用人才资源，成就一番新气象。", "wealth": "财运吉祥，宜汇聚多方资源共谋发展，稳中求进。", "love": "感情关系趋于稳定成熟，宜共同承担责任、经营家庭。", "health": "宜注重饮食调养，滋补身体、稳固根基。", "advice": "正位凝命——身居其位应端正自身、凝聚使命，方能担当大任。"}, {"id": 51, "name": "震", "pinyin": "zhèn", "lower": "震", "upper": "震", "lowerNat": "雷", "upperNat": "雷", "bits": "100100", "judgment": "亨。震来虩虩，笑言哑哑。震惊百里，不丧匕鬯。", "daxiang": "洊雷，震；君子以恐惧修省。", "meaning": "雷声震动，惊而后定，象征警醒自省、临危不乱。", "image": "震来虩虩——雷声乍响、令人惶恐自省，喻遇变不乱、修省避祸。", "keywords": ["震动", "警醒", "自省", "镇定"], "career": "或遇突发变故或强烈竞争冲击，宜保持镇定、以修省应对。", "wealth": "财务可能遭遇突发波动，宜提前防范、保持冷静应对。", "love": "感情中或有突发冲突或惊扰，宜冷静沟通、不宜慌乱。", "health": "需警惕突发状况，保持心态平稳、及时就医。", "advice": "恐惧修省——震惊之余更应自我反省修养，方能转危为安。"}, {"id": 52, "name": "艮", "pinyin": "gèn", "lower": "艮", "upper": "艮", "lowerNat": "山", "upperNat": "山", "bits": "001001", "judgment": "艮其背，不获其身，行其庭，不见其人，无咎。", "daxiang": "兼山，艮；君子以思不出其位。", "meaning": "山之静止，止于当止，象征止静自守、克制欲念。", "image": "艮背不获身——止定如背部不动而无欲，喻止于当止、内心安定。", "keywords": ["静止", "克制", "内省", "守分"], "career": "宜稳守本分、不妄动躁进，明确职责范围、专注当下。", "wealth": "财运宜静守稳健，不宜频繁进出或盲目扩张。", "love": "感情宜保持适当距离与分寸，不可强求或过度介入。", "health": "宜静心养神、减少妄动耗神，有助身心安定。", "advice": "思不出其位——各安其位、止于当止，内心笃定方能无咎。"}, {"id": 53, "name": "渐", "pinyin": "jiàn", "lower": "艮", "upper": "巽", "lowerNat": "山", "upperNat": "风", "bits": "001011", "judgment": "女归吉，利贞。", "daxiang": "山上有木，渐；君子以居贤德善俗。", "meaning": "山上有木，循序渐进，象征稳步发展、按部就班。", "image": "鸿渐于陆——鸿雁循序渐进、迁徙栖息，喻循序渐进、按部就班。", "keywords": ["渐进", "稳步", "守正", "善俗"], "career": "事业发展宜循序渐进、按部就班，不可急躁求快。", "wealth": "财富积累宜稳扎稳打，长期规划胜过短期投机。", "love": "感情宜循序渐进发展，如女子出嫁般郑重而不仓促。", "health": "康复调养需循序渐进，切忌操之过急、欲速不达。", "advice": "居贤德善俗——渐进之道贵在坚守正道、涵养品德以化育风气。"}, {"id": 54, "name": "归妹", "pinyin": "guī mèi", "lower": "兑", "upper": "震", "lowerNat": "泽", "upperNat": "雷", "bits": "110100", "judgment": "征凶，无攸利。", "daxiang": "泽上有雷，归妹；君子以永终知敝。", "meaning": "泽上有雷，名不正而行，象征名分不正、宜谨慎行事。", "image": "帝乙归妹——尊贵之女下嫁犹须谨慎，喻名分处置须思虑长远。", "keywords": ["名分", "谨慎", "克制", "长远"], "career": "处境或名分有所不正，宜谨慎行事、量力而为，不可躁进冒失。", "wealth": "财务安排需考虑长远、名正言顺，避免不正当途径获利。", "love": "感情关系中名分或有不妥，宜三思而后行，不宜仓促决定。", "health": "需注重长期调养而非急功近利，方能长久获益。", "advice": "永终知敝——凡事须思虑长远结果，慎重对待关系的名分与归宿。"}, {"id": 55, "name": "丰", "pinyin": "fēng", "lower": "离", "upper": "震", "lowerNat": "火", "upperNat": "雷", "bits": "101100", "judgment": "亨，王假之，勿忧，宜日中。", "daxiang": "雷电皆至，丰；君子以折狱致刑。", "meaning": "雷电皆至，光明盛大，象征丰盛鼎盛、盛极当忧。", "image": "日中见斗——正午时分竟见星斗晦暗，喻盛极之中当防忽现之患。", "keywords": ["丰盛", "鼎盛", "忧患", "持中"], "career": "事业处于鼎盛丰收之时，宜居安思危、防止盛极而衰。", "wealth": "财运丰厚、收获颇丰，宜合理分配、不可挥霍无度。", "love": "感情丰盈美满，宜珍惜当下、维系长久，勿因得意而疏忽。", "health": "状态处于顶峰，仍需注意劳逸平衡，防盛极转衰。", "advice": "宜日中——盛大之时如日中天，更应把握分寸、防止过犹不及。"}, {"id": 56, "name": "旅", "pinyin": "lǚ", "lower": "艮", "upper": "离", "lowerNat": "山", "upperNat": "火", "bits": "001101", "judgment": "小亨，旅贞吉。", "daxiang": "山上有火，旅；君子以明慎用刑，而不留狱。", "meaning": "山上有火，羁旅在外，象征漂泊不定、宜谨慎柔顺。", "image": "鸟焚其巢——羁旅漂泊如鸟巢被焚，喻旅居在外、谨言慎行为要。", "keywords": ["漂泊", "谨慎", "柔顺", "适应"], "career": "处于变动漂泊、身处异地之境，宜谨言慎行、随遇而安。", "wealth": "财运不稳定，宜量入为出、避免大额投资异地事务。", "love": "感情或聚少离多，宜彼此体谅、保持联系与信任。", "health": "奔波劳顿易致身心疲惫，宜注意休息调养、量力而行。", "advice": "明慎用刑，不留狱——羁旅之时行事宜谨慎周全、不留后患。"}, {"id": 57, "name": "巽", "pinyin": "xùn", "lower": "巽", "upper": "巽", "lowerNat": "风", "upperNat": "风", "bits": "011011", "judgment": "小亨，利有攸往，利见大人。", "daxiang": "随风，巽；君子以申命行事。", "meaning": "风行无孔不入，柔顺渐进，象征谦逊顺从、反复申命。", "image": "巽在床下——过度谦卑、俯首于床下，喻谦逊固好但不可卑弱失度。", "keywords": ["谦逊", "渐入", "顺从", "沟通"], "career": "宜以谦和柔顺的方式推进事务，反复沟通说明更易获支持。", "wealth": "财运渐进温和增长，宜循序渐进、避免强硬手段。", "love": "感情宜以柔克刚、耐心沟通，不宜强求硬碰。", "health": "宜温和调理，如风般徐徐渐进，不可急于求成。", "advice": "申命行事——谦逊柔顺并非软弱，反复申明立场方能事成。"}, {"id": 58, "name": "兑", "pinyin": "duì", "lower": "兑", "upper": "兑", "lowerNat": "泽", "upperNat": "泽", "bits": "110110", "judgment": "亨，利贞。", "daxiang": "丽泽，兑；君子以朋友讲习。", "meaning": "两泽相连，喜悦交流，象征欣悦沟通、朋友讲习。", "image": "引兑未宁——被牵引而喜、内心难安，喻交游取悦宜出于诚而非谄媚。", "keywords": ["喜悦", "沟通", "交流", "分享"], "career": "人际关系融洽、沟通顺畅，宜多与同侪交流切磋、共同进步。", "wealth": "财运在愉悦融洽的合作氛围中较易获利，宜广结善缘。", "love": "感情氛围愉悦和睦，宜多交流分享、增进彼此了解。", "health": "心情愉悦有助身心健康，宜多参与令人愉快的社交活动。", "advice": "朋友讲习——以喜悦之心与人交流切磋，方能相互增益。"}, {"id": 59, "name": "涣", "pinyin": "huàn", "lower": "坎", "upper": "巽", "lowerNat": "水", "upperNat": "风", "bits": "010011", "judgment": "亨。王假有庙，利涉大川，利贞。", "daxiang": "风行水上，涣；先王以享于帝立庙。", "meaning": "风行水上，涣然冰释，象征涣散离析、宜凝聚人心。", "image": "涣汗大号——如大汗淋漓、号令四方，喻涣散之际当发大令以聚人心。", "keywords": ["涣散", "凝聚", "化解", "重整"], "career": "团队或局面出现涣散离心迹象，宜及时凝聚人心、重整旗鼓。", "wealth": "财务资源分散消耗，宜集中管理、防止无谓流失。", "love": "感情或有渐行渐远的迹象，宜及时沟通挽回、重建信任。", "health": "身体机能涣散虚耗，宜及时调养固本、避免精力过度分散。", "advice": "享于帝立庙——涣散之时宜借助共同信念或仪式凝聚人心。"}, {"id": 60, "name": "节", "pinyin": "jié", "lower": "兑", "upper": "坎", "lowerNat": "泽", "upperNat": "水", "bits": "110010", "judgment": "亨。苦节不可贞。", "daxiang": "泽上有水，节；君子以制数度，议德行。", "meaning": "泽上有水，节制有度，象征节制有度、量入为出。", "image": "甘节之吉——以适度甘美之节自守，喻节制有度方能长保亨通。", "keywords": ["节制", "规律", "适度", "自律"], "career": "宜制定合理规范和界限，有节有度地推进工作计划。", "wealth": "理财贵在节制有度、量入为出，忌过度节俭或挥霍两极端。", "love": "感情需把握分寸尺度，过犹不及，适度节制更显珍重。", "health": "饮食起居宜有节制规律，过度或不足皆非所宜。", "advice": "苦节不可贞——节制虽好但不可过苦过严，适中有度方为长久之道。"}, {"id": 61, "name": "中孚", "pinyin": "zhōng fú", "lower": "兑", "upper": "巽", "lowerNat": "泽", "upperNat": "风", "bits": "110011", "judgment": "豚鱼吉，利涉大川，利贞。", "daxiang": "泽上有风，中孚；君子以议狱缓死。", "meaning": "泽上有风，诚信中孚，象征内心诚信、感通万物。", "image": "鸣鹤在阴——鹤鸣幽谷、其子相和，喻至诚之心必有共鸣感应。", "keywords": ["诚信", "真诚", "感通", "信任"], "career": "以诚信为本待人处事，即便艰难险阻也能以真诚感召他人。", "wealth": "财务往来讲求诚信为本，信誉良好者更易获得支持。", "love": "感情贵在内心真诚相通，诚信是维系关系的根本。", "health": "保持内心平和真诚有助身心和谐，诚实面对自身状况。", "advice": "豚鱼吉——至诚之心可感通一切，即使微小之物亦能感化。"}, {"id": 62, "name": "小过", "pinyin": "xiǎo guò", "lower": "艮", "upper": "震", "lowerNat": "山", "upperNat": "雷", "bits": "001100", "judgment": "亨，利贞，可小事，不可大事。飞鸟遗之音，不宜上，宜下，大吉。", "daxiang": "山上有雷，小过；君子以行过乎恭，丧过乎哀，用过乎俭。", "meaning": "山上有雷，宜小不宜大，象征谨小慎微、恭俭有度。", "image": "飞鸟遗音——飞鸟掠过、徒留鸣声，喻行事宜低调收敛、不宜张扬。", "keywords": ["谨慎", "守分", "恭俭", "不宜大事"], "career": "目前宜专注处理细节小事，不宜好高骛远、贸然行大事。", "wealth": "财务宜精打细算、谨慎节俭，不宜进行大额冒险投资。", "love": "感情宜从细节小事上体贴用心，不宜好高骛远期望过高。", "health": "宜注重生活细节调养，行事不宜过度劳累或过度节俭。", "advice": "宜下不宜上——行事宜低调谨慎、脚踏实地，不可好高骛远。"}, {"id": 63, "name": "既济", "pinyin": "jì jì", "lower": "离", "upper": "坎", "lowerNat": "火", "upperNat": "水", "bits": "101010", "judgment": "亨小，利贞。初吉终乱。", "daxiang": "水在火上，既济；君子以思患而豫防之。", "meaning": "水在火上，功成之时，象征事已成功、慎终如始。", "image": "曳轮濡尾——拖曳车轮、狐狸湿尾，喻大功告成仍需谨防功亏一篑。", "keywords": ["功成", "圆满", "居安思危", "慎终"], "career": "事业已获阶段性成功，切忌懈怠，宜居安思危、防患未然。", "wealth": "财运已达阶段性圆满，宜妥善守成，避免因得意而挥霍失守。", "love": "感情已趋圆满稳定，仍需用心经营，勿因安稳而懈怠。", "health": "身体状况已获改善，仍需持续保养，防止病情反复。", "advice": "思患而豫防之——事成之后更要提前防范隐患，善始善终。"}, {"id": 64, "name": "未济", "pinyin": "wèi jì", "lower": "坎", "upper": "离", "lowerNat": "水", "upperNat": "火", "bits": "010101", "judgment": "亨。小狐汔济，濡其尾，无攸利。", "daxiang": "火在水上，未济；君子以慎辨物居方。", "meaning": "火在水上，功业未成，象征尚未成功、谨慎以进。", "image": "濡尾汔济——小狐渡河将成未成而濡湿其尾，喻功业未竟仍需谨慎前行。", "keywords": ["未成", "渐进", "谨慎", "新局"], "career": "事业尚在过渡未竟之时，宜谨慎推进、不可急躁冒进求成。", "wealth": "财运尚未稳定成形，宜稳健布局、不可孤注一掷。", "love": "感情关系尚在发展未定之中，宜耐心经营、不急于求成定论。", "health": "调养尚未完全见效，宜持之以恒、循序渐进巩固疗效。", "advice": "慎辨物居方——事虽未成，只要审慎辨明方向、脚踏实地终将有成。"}]</script>
+<!-- batch sheet -->
+<div class="ov" id="baOv" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="baT" tabindex="-1">
+    <div class="sh-h"><h2 id="baT">批量导入照片</h2><button class="x" type="button" data-close="baOv" aria-label="关闭">✕</button></div>
+    <p class="hint">从相册一次选多张，每张照片变成一件物品，编号按顺序自动排。</p>
+    <div class="fl">分类</div>
+    <div class="chs" id="baCats"></div>
+    <div class="fl">放进哪个箱子</div>
+    <div class="chs" id="baDest"></div>
+    <label class="chk" id="baAiRow" hidden><input type="checkbox" id="baAi" checked> 用 Claude 自动识别每件的名称</label>
+    <div class="sh-acts">
+      <label class="btn btn-primary" for="baIn" tabindex="0" data-keyclick>选择照片（可多选）</label>
+      <input id="baIn" class="vh" type="file" accept="image/*" multiple>
+    </div>
+  </div>
+</div>
+
+<!-- confirm -->
+<div class="ov" id="cfOv" hidden>
+  <div class="sheet" role="alertdialog" aria-modal="true" aria-labelledby="cfT" aria-describedby="cfB" tabindex="-1" style="max-width:420px">
+    <div class="sh-h"><h2 id="cfT"></h2></div>
+    <p class="hint" id="cfB"></p>
+    <div class="sh-acts"><button class="btn btn-primary" type="button" id="cfOk"></button><button class="btn" type="button" data-close="cfOv">取消</button></div>
+  </div>
+</div>
+
+<!-- photo viewer -->
+<div class="ov" id="pvOv" hidden>
+  <div class="sheet pvs" role="dialog" aria-modal="true" aria-labelledby="pvT" tabindex="-1">
+    <div class="sh-h"><h2 id="pvT">照片</h2><button class="x" type="button" data-close="pvOv" aria-label="关闭">✕</button></div>
+    <img id="pvImg" alt="">
+  </div>
+</div>
+<input id="bxCam" class="vh" type="file" accept="image/*" capture="environment" aria-label="拍箱子照片">
+<input id="bxLib" class="vh" type="file" accept="image/*" aria-label="从相册选箱子照片">
+
+<!-- export -->
+<div class="ov" id="exOv" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="exT" tabindex="-1" style="max-width:460px">
+    <div class="sh-h"><h2 id="exT">备份已经打包好</h2><button class="x" type="button" data-close="exOv" aria-label="关闭">✕</button></div>
+    <p class="hint" id="exInfo"></p>
+    <div class="sh-acts">
+      <button class="btn btn-primary" type="button" id="exSave">保存备份文件</button>
+      <button class="btn" type="button" id="exShare" hidden>分享 / 发给自己</button>
+    </div>
+    <p class="hint" id="exTip" style="margin-top:14px"></p>
+  </div>
+</div>
+
+<!-- copy fallback -->
+<div class="ov" id="txOv" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="txT" tabindex="-1">
+    <div class="sh-h"><h2 id="txT">清单</h2><button class="x" type="button" data-close="txOv" aria-label="关闭">✕</button></div>
+    <p class="hint">这里没法自动复制，长按下面的文字全选后复制。</p>
+    <textarea class="inp copybox" id="txBox" readonly aria-label="清单文字"></textarea>
+  </div>
+</div>
+
 <script>
-const DATA = JSON.parse(document.getElementById('hexdata').textContent);
-const grid = document.getElementById('grid');
-const overlay = document.getElementById('overlay');
-const panel = document.getElementById('panel');
-const searchInput = document.getElementById('searchInput');
-const countLine = document.getElementById('countLine');
-const chipRow = document.getElementById('chipRow');
+(function(){
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const lid = () => 'l' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  const pad3 = n => '#' + String(n || 0).padStart(3, '0');
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
-const TRIGRAMS = ["乾","坤","震","巽","坎","离","艮","兑"];
+  const CATS0 = [
+    {key:'clothes', name:'衣物', ico:'👕'},
+    {key:'bedding', name:'床上用品', ico:'🛏️'},
+    {key:'daily',   name:'日常用品', ico:'🧴'},
+    {key:'merch',   name:'周边', ico:'🧸'},
+    {key:'study',   name:'学习用品', ico:'📚'},
+    {key:'fun',     name:'娱乐用品', ico:'🎮'},
+    {key:'tech',    name:'电子产品', ico:'🔌'},
+    {key:'kitchen', name:'厨房用品', ico:'🍳'},
+    {key:'docs',    name:'证件文件', ico:'📄'},
+    {key:'other',   name:'其他', ico:'📦'}
+  ];
+  const KINDS = { suitcase:{ico:'🧳', name:'行李箱'}, box:{ico:'📦', name:'纸箱'}, bag:{ico:'🎒', name:'背包'} };
+  const BOX_HUES = [205, 24, 145, 275, 48, 335, 178, 98, 232, 8];
+  const ST = {
+    packed: {name:'已装入', c:'var(--s-packed)'},
+    planned:{name:'待放入', c:'var(--s-planned)'},
+    none:   {name:'未分配', c:'var(--s-none)'},
+    skip:   {name:'不带走', c:'var(--s-skip)'}
+  };
+  const LSK = { items:'move-items-v1', boxes:'move-boxes-v1', cats:'move-cats-v1', tab:'move-tab-v1', cur:'move-cur-v1' };
 
-// 八卦对照：五行、家族、先天/后天方位与数、对应节气
-const TRI_META = {
-  "乾": {wuxing:"金", family:"父",   fuxiNum:1, fuxiDir:"南",  fuxiSlot:"t",  houtianNum:6, houtianDir:"西北", houtianSlot:"br", season:"立冬",
-         virtue:"健", body:"首", animal:"马", color:"白（一说大赤）", objects:"天、君、玉、金、寒冰、圆、大赤"},
-  "兑": {wuxing:"金", family:"少女", fuxiNum:2, fuxiDir:"东南", fuxiSlot:"tl", houtianNum:7, houtianDir:"西",   houtianSlot:"r",  season:"秋分",
-         virtue:"悦", body:"口", animal:"羊", color:"白",       objects:"泽、巫、口舌、毁折、附决、少女"},
-  "离": {wuxing:"火", family:"中女", fuxiNum:3, fuxiDir:"东",  fuxiSlot:"l",  houtianNum:9, houtianDir:"南",   houtianSlot:"t",  season:"夏至",
-         virtue:"丽（附丽）", body:"目", animal:"雉（野鸡）", color:"赤（红）", objects:"火、日、电、甲胄、戈兵、龟鳖"},
-  "震": {wuxing:"木", family:"长男", fuxiNum:4, fuxiDir:"东北", fuxiSlot:"bl", houtianNum:3, houtianDir:"东",   houtianSlot:"l",  season:"春分",
-         virtue:"动", body:"足", animal:"龙", color:"青绿",     objects:"雷、长子、大涂（大路）、苍筤竹、决躁"},
-  "巽": {wuxing:"木", family:"长女", fuxiNum:5, fuxiDir:"西南", fuxiSlot:"tr", houtianNum:4, houtianDir:"东南", houtianSlot:"tl", season:"立夏",
-         virtue:"入", body:"股", animal:"鸡", color:"青绿",     objects:"风、木、绳直、工、白、进退不果"},
-  "坎": {wuxing:"水", family:"中男", fuxiNum:6, fuxiDir:"西",  fuxiSlot:"r",  houtianNum:1, houtianDir:"北",   houtianSlot:"b",  season:"冬至",
-         virtue:"陷", body:"耳", animal:"豕（猪）", color:"黑", objects:"水、沟渎、隐伏、弓轮、月、盗"},
-  "艮": {wuxing:"土", family:"少男", fuxiNum:7, fuxiDir:"西北", fuxiSlot:"br", houtianNum:8, houtianDir:"东北", houtianSlot:"bl", season:"立春",
-         virtue:"止", body:"手", animal:"狗", color:"黄",       objects:"山、径路、小石、门阙、鼠"},
-  "坤": {wuxing:"土", family:"母",   fuxiNum:8, fuxiDir:"北",  fuxiSlot:"b",  houtianNum:2, houtianDir:"西南", houtianSlot:"tr", season:"立秋",
-         virtue:"顺", body:"腹", animal:"牛", color:"黄（一说黑）", objects:"地、母、布、釜、大车、吝啬、均"},
-};
-const WUX_COLOR = {"金":"var(--wx-jin)","木":"var(--wx-mu)","水":"var(--wx-shui)","火":"var(--wx-huo)","土":"var(--wx-tu)"};
-const WUX_BITS = {"乾":"111","坤":"000","震":"100","巽":"011","坎":"010","离":"101","艮":"001","兑":"110"};
-const TRI_NATURE = {"乾":"天","坤":"地","震":"雷","巽":"风","坎":"水","离":"火","艮":"山","兑":"泽"};
-const SHENG = {"木":"火","火":"土","土":"金","金":"水","水":"木"};
-const KE = {"木":"土","土":"水","水":"火","火":"金","金":"木"};
+  let items = [], boxes = [], customCats = [];
+  let db = null, assets = null, sampleNS = null, aiOff = false, aiImages;
+  let tab = 'items', fCat = 'all', fSt = 'all', q = '', pkCat = 'all', cur = null;
 
-function triFullDesc(tri){
-  const m = TRI_META[tri];
-  return `${tri}，卦德为「${m.virtue}」，自然象为${TRI_NATURE[tri]}，五行属${m.wuxing}，色属${m.color}。先天方位在${m.fuxiDir}（先天第${m.fuxiNum}位），后天方位在${m.houtianDir}（后天第${m.houtianNum}位），后天对应「${m.season}」前后节气。家族属${m.family}，人体应${m.body}，动物取象为${m.animal}。《说卦传》广象另有：${m.objects}等。`;
-}
-
-function wuxTag(el){
-  return `<span class="wux-tag" style="background:${WUX_COLOR[el]}"><span></span>${el}</span>`;
-}
-
-function wuxRelation(u, l){
-  if(u === l) return {type:"比和", desc:`上下卦同属「${u}」气，力量集中纯一，行事专注但需留意过刚或过柔失衡，宜刚柔调剂。`};
-  if(SHENG[l] === u) return {type:"相生（下生上）", desc:`下卦「${l}」生上卦「${u}」，根基对外发力顺畅，气脉相生、内蓄滋养外发，做事较为顺遂省力。`};
-  if(SHENG[u] === l) return {type:"相生（上生下）", desc:`上卦「${u}」生下卦「${l}」，外在资源反哺根基，利于内部积累沉淀，但对外拓展稍显气泄，宜稳中求进。`};
-  if(KE[l] === u) return {type:"相克（下克上）", desc:`下卦「${l}」克上卦「${u}」，根基对外在形成制约，向外发展易受掣肘，需调和内外、循序化解。`};
-  if(KE[u] === l) return {type:"相克（上克下）", desc:`上卦「${u}」克下卦「${l}」，外在压制根基，行事宜柔中带刚，防止压力积压过甚。`};
-  return {type:"", desc:""};
-}
-
-function triExtraCard(tri, role){
-  const m = TRI_META[tri];
-  return `<div class="extra-card">
-    <div class="ec-head">${miniHexHTML(WUX_BITS[tri])}${role}卦 · ${tri}（${TRI_NATURE[tri]}）</div>
-    <div class="extra-line"><b>方位</b>：后天${m.houtianDir} ／ 先天${m.fuxiDir}</div>
-    <div class="extra-line"><b>人体</b>：${m.body}</div>
-    <div class="extra-line"><b>动物</b>：${m.animal}</div>
-    <div class="extra-line"><b>物品类象</b>：${m.objects}</div>
-  </div>`;
-}
-
-function hexLinesHTML(bits, big){
-  // bits: 6 chars, index0 = bottom line
-  let out = '';
-  for(let i=0;i<6;i++){
-    if(bits[i] === '1'){
-      out += `<div class="yao yang"></div>`;
-    } else {
-      out += `<div class="yao yin"><span></span><span></span></div>`;
-    }
+  /* ---------- helpers ---------- */
+  const allCats = () => [...CATS0.slice(0, -1), ...customCats, CATS0[CATS0.length - 1]];
+  const catOf = k => allCats().find(c => c.key === k) || CATS0[CATS0.length - 1];
+  const catOrder = k => { const i = allCats().findIndex(c => c.key === k); return i < 0 ? 999 : i; };
+  const boxById = id => id ? boxes.find(b => b.id === id) || null : null;
+  const sortedBoxes = () => boxes.slice().sort((a, b) => (a.no || 0) - (b.no || 0));
+  const boxHue = b => BOX_HUES[(((b && b.no) || 1) - 1) % BOX_HUES.length];
+  const boxTitle = b => b.name || (KINDS[b.kind] || KINDS.suitcase).name;
+  const nextNo = () => items.reduce((m, i) => Math.max(m, i.no || 0), 0) + 1;
+  const nextBoxNo = () => { const used = new Set(boxes.map(b => b.no)); let n = 1; while (used.has(n)) n++; return n; };
+  const byCatNo = (a, b) => catOrder(catOf(a.cat).key) - catOrder(catOf(b.cat).key) || (a.no || 0) - (b.no || 0);
+  function st(it){ if (it.skip) return 'skip'; if (!boxById(it.box)) return 'none'; return it.packed ? 'packed' : 'planned'; }
+  const itemLabel = it => `${pad3(it.no)} ${it.name || '未命名'}`;
+  function matchQ(it, qq){
+    const c = catOf(it.cat), b = boxById(it.box);
+    const hay = [it.name, it.note, c.name, pad3(it.no), String(it.no), b ? b.no + '号' : '', b ? boxTitle(b) : '', it.skip ? '不带走' : ''].join(' ').toLowerCase();
+    return qq.split(/\s+/).filter(Boolean).every(w => hay.includes(w));
   }
-  return `<div class="hexlines">${out}</div>`;
-}
 
-function miniHexHTML(bits3){
-  let out = '';
-  for(let i=0;i<3;i++){
-    if(bits3[i]==='1') out += `<div class="yao yang"></div>`;
-    else out += `<div class="yao yin"><span></span><span></span></div>`;
+  function lsGet(k, d){ try{ const r = localStorage.getItem(k); return r ? JSON.parse(r) : d; }catch(e){ return d; } }
+  function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); return true; }catch(e){ return false; } }
+  let warnedQuota = false;
+  function persist(){
+    if (db) return;
+    const ok = lsSet(LSK.items, items) & lsSet(LSK.boxes, boxes) & lsSet(LSK.cats, customCats);
+    if (!ok && !warnedQuota){ warnedQuota = true; toast('浏览器存储满了，刷新后可能会丢失最新的修改'); }
   }
-  return `<div class="b-hex">${out}</div>`;
-}
 
-function baguaCellHTML(tri, mode){
-  const m = TRI_META[tri];
-  const num = mode==='fuxi' ? m.fuxiNum : m.houtianNum;
-  const dir = mode==='fuxi' ? m.fuxiDir : m.houtianDir;
-  return `<div class="bagua-cell">
-    ${miniHexHTML(WUX_BITS[tri])}
-    <div class="tname">${tri}</div>
-    <div class="tdir">${dir}</div>
-    ${wuxTag(m.wuxing)}
-    <div class="tnum">第${num}位</div>
-  </div>`;
-}
-
-function renderBaguaDiagram(mode){
-  const slots = {tl:null,t:null,tr:null,l:null,r:null,bl:null,b:null,br:null};
-  TRIGRAMS.forEach(tri=>{
-    const slot = mode==='fuxi' ? TRI_META[tri].fuxiSlot : TRI_META[tri].houtianSlot;
-    slots[slot] = tri;
-  });
-  const centerLabel = mode==='fuxi' ? '先天八卦<br>伏羲圆图' : '后天八卦<br>文王圆图';
-  return `<div class="bagua-diagram">
-    ${baguaCellHTML(slots.tl, mode)}
-    ${baguaCellHTML(slots.t, mode)}
-    ${baguaCellHTML(slots.tr, mode)}
-    ${baguaCellHTML(slots.l, mode)}
-    <div class="bagua-cell center">${centerLabel}</div>
-    ${baguaCellHTML(slots.r, mode)}
-    ${baguaCellHTML(slots.bl, mode)}
-    ${baguaCellHTML(slots.b, mode)}
-    ${baguaCellHTML(slots.br, mode)}
-  </div>`;
-}
-
-function baguaFamilyTable(){
-  return `<div class="cycle-box">${TRIGRAMS.map(t=>{
-    const m = TRI_META[t];
-    return `<b>${t}</b>为${m.family}（${m.wuxing}）· 后天对应「${m.season}」前后 &nbsp;`;
-  }).join('<br>')}</div>`;
-}
-
-function renderTrigramDetailList(){
-  return `<div class="tri-detail-list">${TRIGRAMS.map(tri=>{
-    const m = TRI_META[tri];
-    return `<div class="tri-detail-card">
-      <div class="tdc-head">
-        ${miniHexHTML(WUX_BITS[tri])}
-        <div class="tdc-title">
-          <div class="tdc-name">${tri}<span class="tdc-nature">（${TRI_NATURE[tri]}）</span></div>
-          <div class="tdc-tags">
-            ${wuxTag(m.wuxing)}
-            <span class="tdc-tag">卦德·${m.virtue}</span>
-            <span class="tdc-tag">${m.family}</span>
-            <span class="tdc-tag">人体·${m.body}</span>
-            <span class="tdc-tag">动物·${m.animal}</span>
-          </div>
-        </div>
-      </div>
-      <p class="tdc-desc">${triFullDesc(tri)}</p>
-    </div>`;
-  }).join('')}</div>`;
-}
-
-function openBaguaPanel(mode){
-  mode = mode || 'fuxi';
-  panel.innerHTML = `
-    <div class="panel-drag"></div>
-    <button class="close-btn" id="closeBtn">✕</button>
-    <div class="detail-titles" style="margin-bottom:14px;">
-      <div class="eyebrow">八卦对照</div>
-      <h2 style="font-size:22px;">先天八卦 · 后天八卦 · 五行</h2>
-    </div>
-
-    <div class="bagua-tabs">
-      <div class="bagua-tab ${mode==='fuxi'?'active':''}" data-mode="fuxi">先天八卦</div>
-      <div class="bagua-tab ${mode==='houtian'?'active':''}" data-mode="houtian">后天八卦</div>
-      <div class="bagua-tab ${mode==='detail'?'active':''}" data-mode="detail">八卦详解</div>
-    </div>
-
-    ${mode==='detail' ? renderTrigramDetailList() : `
-    <div id="baguaDiagramWrap">${renderBaguaDiagram(mode)}</div>
-
-    <p class="bagua-desc">${mode==='fuxi'
-      ? '先天八卦由伏羲所创，依「天地定位，山泽通气，雷风相薄，水火不相射」排列，乾南坤北、离东坎西，两两相对之数皆合九，体现宇宙生成的自然对待之理，多用于推演卦序与卦理根本。'
-      : '后天八卦相传为文王所定，依洛书数理排布（坎一坤二震三巽四中五乾六兑七艮八离九），对应四时节气与方位，是风水堪舆、择时择向最常用的八卦体系。'}</p>
-
-    <div class="section">
-      <div class="label">五行对照</div>
-      <div class="legend-row">
-        <div class="legend-item"><span class="wux-dot" style="background:var(--wx-jin)"></span>金：乾、兑</div>
-        <div class="legend-item"><span class="wux-dot" style="background:var(--wx-mu)"></span>木：震、巽</div>
-        <div class="legend-item"><span class="wux-dot" style="background:var(--wx-shui)"></span>水：坎</div>
-        <div class="legend-item"><span class="wux-dot" style="background:var(--wx-huo)"></span>火：离</div>
-        <div class="legend-item"><span class="wux-dot" style="background:var(--wx-tu)"></span>土：艮、坤</div>
-      </div>
-      <div class="cycle-box">
-        五行相生：<b>木→火→土→金→水→木</b>（依次相生，循环不息）<br>
-        五行相克：<b>木→土→水→火→金→木</b>（隔位相克，制约平衡）
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="label">八卦 · 家族 · 五行 · 节气</div>
-      ${baguaFamilyTable()}
-    </div>
-    `}
-  `;
-  overlay.classList.add('open');
-  document.getElementById('closeBtn').addEventListener('click', closeDetail);
-  panel.querySelectorAll('.bagua-tab').forEach(t=>{
-    t.addEventListener('click', ()=> openBaguaPanel(t.dataset.mode));
-  });
-  panel.scrollTop = 0;
-}
-
-document.getElementById('baguaBtn').addEventListener('click', ()=> openBaguaPanel('fuxi'));
-
-// ===================== 紫微斗数参考数据 =====================
-const PALACES = [
-  {name:"命宫", tags:"性格,才华,外貌,一生格局", desc:"十二宫之首，是整张命盘的核心，代表与生俱来的性格特质、外在气质、天赋才能，也是判断一生总体格局与际遇的根本依据。命宫若无主星坐守，传统上借对宫（迁移宫）星曜「借星安宫」来看。"},
-  {name:"兄弟宫", tags:"兄弟姐妹,平辈,合伙人", desc:"主兄弟姐妹的缘分深浅、手足情谊，也可延伸观察合伙人、同侪之间的互动关系与相互助力的大小。"},
-  {name:"夫妻宫", tags:"婚姻,配偶,感情状况", desc:"观察配偶的性格外貌、婚姻感情的顺逆、缘分早晚，是论及姻缘时最重要的宫位，常与命宫互为对宫参看。"},
-  {name:"子女宫", tags:"子女缘分,晚辈,部属,桃花", desc:"主子女的多寡缘分、亲子关系，传统上也用来观察下属晚辈的相处，以及夫妻间的亲密互动状况。"},
-  {name:"财帛宫", tags:"财运,赚钱方式,理财能力", desc:"观察一生财运的旺弱、获取钱财的方式与来源、理财能力的高低，是论财最主要的宫位。"},
-  {name:"疾厄宫", tags:"健康,体质,易患疾病", desc:"主先天体质强弱、容易罹患的疾病类型，也可作为判断意外伤灾、健康隐患的重要参考。"},
-  {name:"迁移宫", tags:"外出,旅行,社交表现,机遇变动", desc:"观察出外运势、异地发展、社交场合中的表现与外在形象，是命宫的对宫，代表命主呈现给外界的一面。"},
-  {name:"仆役宫（交友宫）", tags:"朋友,部属,人际关系", desc:"主朋友、下属、同事等平行或从属人际关系的和谐程度，以及能否得到他人的助力与支持。"},
-  {name:"官禄宫（事业宫）", tags:"事业,工作,成就,社会地位", desc:"观察事业发展方向、工作性质、职场成就与社会地位，是论事业最核心的宫位，也常与财帛宫、命宫形成三方四正互看。"},
-  {name:"田宅宫", tags:"不动产,居住环境,祖业", desc:"主不动产、房产运势、居住环境的优劣，也代表祖业根基与家庭财富的积累状况。"},
-  {name:"福德宫", tags:"精神享受,兴趣爱好,内心世界,福分", desc:"观察精神生活的富足程度、兴趣嗜好、内心价值观，以及先天福分的厚薄，是论「心灵层面」最重要的宫位。"},
-  {name:"父母宫", tags:"父母关系,长辈缘分,上司关系", desc:"主与父母的缘分深浅、相处状况，也可延伸观察与上司、长辈、师长之间的关系。"},
-];
-
-const MAIN_STARS = [
-  {name:"紫微", wuxing:"土", group:"紫微星系 · 帝星", trait:"尊贵,领导,权威,自尊心强", desc:"斗数中地位最尊的帝王之星，象征领导力与统御能力，喜与吉星同宫、忌与煞星同宫；入命者多具尊贵气质、自尊心强，宜从事管理或领导性质的工作。"},
-  {name:"天机", wuxing:"木", group:"紫微星系", trait:"智慧,谋略,善变,分析力强", desc:"主智慧谋略之星，反应灵敏、善于分析策划，但性格容易多虑善变，入命者头脑灵活，适合从事策划、咨询、宗教哲理相关的工作。"},
-  {name:"太阳", wuxing:"火", group:"紫微星系 · 中天", trait:"光明,权势,博爱,奉献", desc:"象征光明正大、博爱奉献的精神，具领导魅力与事业心，日生人（白天出生）力量更旺，入命者性格开朗热情，重视名声与社会地位。"},
-  {name:"武曲", wuxing:"金", group:"紫微星系 · 财星", trait:"果决,刚毅,理财,行动力强", desc:"正财星，性格刚毅果断、行动力强，擅长理财与执行，入命者做事雷厉风行，也易显固执，适合金融、军警、技术等专业领域。"},
-  {name:"天同", wuxing:"水", group:"紫微星系 · 福星", trait:"温和,享受,知足,随和", desc:"主福气与享受之星，性情温和、随遇而安，入命者性格柔顺乐观、重视生活品质，但需防安逸而缺乏进取心。"},
-  {name:"廉贞", wuxing:"火", group:"紫微星系 · 次桃花", trait:"多变,权谋,感情丰富,原则性强", desc:"兼具正邪两面的复杂星曜，善谋略也重感情，入命者个性鲜明、爱恨分明，喜与吉星同宫化权谋为正途，遇煞星则易生是非纠纷。"},
-  {name:"天府", wuxing:"土", group:"天府星系 · 财库星", trait:"稳重,包容,善守成,重规矩", desc:"财库之星，性格稳重宽厚、善于守成理财，入命者做事踏实可靠、包容心强，是仅次于紫微的重要主星。"},
-  {name:"太阴", wuxing:"水", group:"天府星系 · 中天", trait:"柔美,细腻,母性,内敛", desc:"象征柔美细腻与母性关怀，主田宅不动产运势，夜生人（夜间出生）力量更旺，入命者性格温婉体贴、重视家庭与情感生活。"},
-  {name:"贪狼", wuxing:"木（一说兼属水）", group:"天府星系 · 桃花星", trait:"多才多艺,交际广,欲望强,善变通", desc:"兼具才艺与欲望的桃花星，多才多艺、擅长交际应酬，入命者兴趣广泛、适应力强，但也容易流于物欲享受，需注意情感与欲望的节制。"},
-  {name:"巨门", wuxing:"水（一说兼属金）", group:"天府星系 · 是非星", trait:"善辩,直言,多疑,专业口才", desc:"主口舌是非之星，口才犀利、善于分析辩论，入命者言辞直率但也容易招惹是非误会，适合从事教学、传播、法律等以口才见长的行业。"},
-  {name:"天相", wuxing:"水", group:"天府星系 · 印星", trait:"忠诚,辅佐,注重形象,公正", desc:"印绶之星，象征忠诚辅佐与公正形象，入命者重视仪表与信用、善于协调折衷，适合担任幕僚、顾问等辅佐性质的角色。"},
-  {name:"天梁", wuxing:"土", group:"天府星系 · 荫星", trait:"稳重,清高,逢凶化吉,长者风范", desc:"荫庇之星，具长者风范与逢凶化吉的特质，入命者性格清高正直、乐于助人，也可能流于固执己见，适合从事医药、宗教、监察等行业。"},
-  {name:"七杀", wuxing:"金", group:"天府星系 · 将星", trait:"肃杀,果决,冲劲十足,独立自主", desc:"将帅之星，性格刚烈果决、冲劲十足，入命者独立自主、不畏艰难，适合开创性强的事业，但需注意冲动躁进带来的风险。"},
-  {name:"破军", wuxing:"水", group:"天府星系 · 耗星", trait:"变革,冲动,破旧立新,不畏艰险", desc:"主变革与消耗之星，性格勇于破旧立新、不畏艰险，入命者敢于冒险开创，但情绪起伏较大、人生波动也相对明显，宜在动荡中寻求突破。"},
-];
-
-function palaceCardHTML(p, idx){
-  return `<div class="tri-detail-card">
-    <div class="tdc-head">
-      <div class="palace-badge">${idx+1}</div>
-      <div class="tdc-title">
-        <div class="tdc-name">${p.name}</div>
-        <div class="tdc-tags">${p.tags.split(',').map(t=>`<span class="tdc-tag">${t}</span>`).join('')}</div>
-      </div>
-    </div>
-    <p class="tdc-desc">${p.desc}</p>
-  </div>`;
-}
-
-function starCardHTML(s){
-  return `<div class="tri-detail-card">
-    <div class="tdc-head">
-      ${wuxTag(s.wuxing.slice(0,1))}
-      <div class="tdc-title">
-        <div class="tdc-name">${s.name}<span class="tdc-nature">（${s.wuxing}）</span></div>
-        <div class="tdc-tags"><span class="tdc-tag">${s.group}</span>${s.trait.split(',').map(t=>`<span class="tdc-tag">${t}</span>`).join('')}</div>
-      </div>
-    </div>
-    <p class="tdc-desc">${s.desc}</p>
-  </div>`;
-}
-
-function renderPalaceList(){
-  return `<p class="bagua-desc">紫微命盘由十二个宫位组成，围绕命宫依序排列。分析吉凶时，除本宫外还要参看其「对宫」与左右两个「三合宫」，四者合称<b style="color:var(--ivory)">三方四正</b>，是紫微斗数最基本的观察范围。</p>
-  <div class="tri-detail-list">${PALACES.map((p,i)=>palaceCardHTML(p,i)).join('')}</div>`;
-}
-
-function renderStarList(){
-  return `<p class="bagua-desc">十四主星分属两大星系：<b style="color:var(--ivory)">紫微星系</b>（紫微、天机、太阳、武曲、天同、廉贞）与<b style="color:var(--ivory)">天府星系</b>（天府、太阴、贪狼、巨门、天相、天梁、七杀、破军），各星依附紫微或天府所在宫位、按固定顺序排列于命盘之中。</p>
-  <div class="tri-detail-list">${MAIN_STARS.map(starCardHTML).join('')}</div>`;
-}
-
-function renderNumberList(){
-  return `
-  <div class="section">
-    <div class="label">五行局（起盘数字）</div>
-    <div class="cycle-box">
-      <b>水二局（2）</b>、<b>木三局（3）</b>、<b>金四局（4）</b>、<b>土五局（5）</b>、<b>火六局（6）</b><br><br>
-      由出生年干支的「纳音五行」决定，是排盘时定位紫微星的关键依据；局数同时也是<b>大限起运虚岁</b>——例如水二局 2 岁起运、木三局 3 岁起运，以此类推。
-    </div>
-  </div>
-  <div class="section">
-    <div class="label">大限与小限</div>
-    <div class="cycle-box">
-      <b>大限</b>：每十年为一大限，自起运年龄依序行经十二宫，用于观察十年间的整体运势走向。<br><br>
-      <b>小限</b>：以一年为单位，按虚岁逐年行经十二宫（男女、阴阳年起法不同），用于细看流年运势。
-    </div>
-  </div>
-  <div class="section">
-    <div class="label">六吉星</div>
-    <div class="cycle-box">
-      <b>文昌、文曲</b>——主科甲文墨、才华学识<br>
-      <b>左辅、右弼</b>——主助力、贵人提携<br>
-      <b>天魁、天钺</b>——主贵人、机遇<br><br>
-      六吉星入命宫或三方四正，多主逢凶化吉、得人扶助。
-    </div>
-  </div>
-  <div class="section">
-    <div class="label">六煞星</div>
-    <div class="cycle-box">
-      <b>擎羊、陀罗</b>——主刑克、阻碍拖延<br>
-      <b>火星、铃星</b>——主冲动、突发波折<br>
-      <b>地空、地劫</b>——主破财、空幻不实<br><br>
-      六煞星入命宫或三方四正，多主起伏波折，需趋吉避凶、谨慎应对。
-    </div>
-  </div>`;
-}
-
-function openZiweiPanel(mode){
-  mode = mode || 'palace';
-  panel.innerHTML = `
-    <div class="panel-drag"></div>
-    <button class="close-btn" id="closeBtn">✕</button>
-    <div class="detail-titles" style="margin-bottom:14px;">
-      <div class="eyebrow">命理参考</div>
-      <h2 style="font-size:22px;">紫微斗数 · 命盘详解</h2>
-    </div>
-    <p class="bagua-desc" style="margin-top:-6px;">本页为紫微命盘的通用读盘参考，说明十二宫、十四主星与关键数字、辅星的基本含义。个人命盘需依出生年、月、日、时（农历）精确排定星曜位置，此处暂不提供自动排盘功能。</p>
-
-    <div class="bagua-tabs">
-      <div class="bagua-tab ${mode==='palace'?'active':''}" data-mode="palace">十二宫</div>
-      <div class="bagua-tab ${mode==='star'?'active':''}" data-mode="star">十四主星</div>
-      <div class="bagua-tab ${mode==='number'?'active':''}" data-mode="number">数字与辅星</div>
-    </div>
-
-    ${mode==='palace' ? renderPalaceList() : mode==='star' ? renderStarList() : renderNumberList()}
-  `;
-  overlay.classList.add('open');
-  document.getElementById('closeBtn').addEventListener('click', closeDetail);
-  panel.querySelectorAll('.bagua-tab').forEach(t=>{
-    t.addEventListener('click', ()=> openZiweiPanel(t.dataset.mode));
-  });
-  panel.scrollTop = 0;
-}
-
-document.getElementById('ziweiBtn').addEventListener('click', ()=> openZiweiPanel('palace'));
-
-function tileHTML(h, idx){
-  return `<button class="tile" data-id="${h.id}" style="animation-delay:${Math.min(idx*10,400)}ms" aria-label="第${h.id}卦 ${h.name}">
-    ${hexLinesHTML(h.bits)}
-    <div class="num">${String(h.id).padStart(2,'0')}</div>
-    <div class="nm">${h.name}</div>
-  </button>`;
-}
-
-function renderGrid(list){
-  if(list.length === 0){
-    grid.innerHTML = `<div class="empty-state">未找到匹配的卦象<br>试试输入卦序 1–64 或卦名，如「乾」「坤」「既济」</div>`;
-    countLine.textContent = '';
-    return;
+  let toastT = 0, toastAct = null;
+  function toast(msg, act){
+    const t = $('toast');
+    t.innerHTML = `<span>${esc(msg)}</span>${act ? `<button type="button" class="tb">${esc(act.label)}</button>` : ''}`;
+    toastAct = act || null;
+    t.classList.add('show'); t.classList.toggle('act', !!act);
+    clearTimeout(toastT);
+    toastT = setTimeout(() => { t.classList.remove('show', 'act'); toastAct = null; }, act ? 5000 : 2300);
   }
-  grid.innerHTML = list.map((h,i)=>tileHTML(h,i)).join('');
-  countLine.textContent = `显示 ${list.length} / 64 卦`;
-  grid.querySelectorAll('.tile').forEach(t=>{
-    t.addEventListener('click', ()=> openDetail(parseInt(t.dataset.id)));
+  $('toast').addEventListener('click', e => {
+    if (!e.target.closest('.tb') || !toastAct) return;
+    const a = toastAct; toastAct = null; $('toast').classList.remove('show', 'act'); a.fn();
   });
-}
+  const busy = m => { const el = $('busy'); if (m){ el.textContent = m; el.hidden = false; } else el.hidden = true; };
+  const errMsg = e => e && e.code === 'quota_exceeded' ? '存储空间满了，删掉一些照片再试'
+    : e && (e.code === 'permission_denied' || e.code === 'forbidden') ? '没有保存权限，只有页面主人可以修改'
+    : '保存失败，请检查网络后再试';
+  async function safe(fn, ok){
+    try{ const r = await fn(); if (ok) toast(ok); return r; }
+    catch(e){ console.error(e); toast(errMsg(e)); }
+  }
 
-function renderChips(){
-  chipRow.innerHTML = TRIGRAMS.map(t=>`<div class="chip" data-tri="${t}">${t}卦</div>`).join('') + `<div class="chip" data-tri="__all">全部</div>`;
-  chipRow.querySelectorAll('.chip').forEach(c=>{
-    c.addEventListener('click', ()=>{
-      chipRow.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
-      c.classList.add('active');
-      const tri = c.dataset.tri;
-      searchInput.value = '';
-      if(tri === '__all'){ renderGrid(DATA); }
-      else { renderGrid(DATA.filter(h=> h.upper===tri || h.lower===tri)); }
+  /* ---------- data writes (optimistic, then db or localStorage) ---------- */
+  async function put(col, id, data){
+    (col === 'items' ? items : boxes).push({id, ...data});
+    scheduleRender();
+    if (db) await db.doc(`${col}/${id}`).set(data); else persist();
+  }
+  async function patch(col, id, p){
+    const o = (col === 'items' ? items : boxes).find(x => x.id === id);
+    if (o) Object.assign(o, p);
+    scheduleRender();
+    if (db) await db.doc(`${col}/${id}`).update(p); else persist();
+  }
+  async function drop(col, id){
+    if (col === 'items') items = items.filter(x => x.id !== id); else boxes = boxes.filter(x => x.id !== id);
+    scheduleRender();
+    if (db) await db.doc(`${col}/${id}`).delete(); else persist();
+  }
+  async function saveCats(){
+    scheduleRender();
+    if (db) await db.doc('settings/cats').set({list: customCats}); else persist();
+  }
+
+  /* ---------- photos ---------- */
+  let idbP = null;
+  function idb(){
+    if (!idbP) idbP = new Promise((res, rej) => {
+      try{
+        const r = indexedDB.open('move-photos', 1);
+        r.onupgradeneeded = () => r.result.createObjectStore('p');
+        r.onsuccess = () => res(r.result);
+        r.onerror = () => rej(r.error);
+      }catch(e){ rej(e); }
     });
-  });
-  chipRow.querySelector('[data-tri="__all"]').classList.add('active');
-}
+    return idbP;
+  }
+  function idbReq(mode, fn){
+    return idb().then(d => new Promise((res, rej) => {
+      const t = d.transaction('p', mode), r = fn(t.objectStore('p'));
+      t.oncomplete = () => res(r && r.result); t.onerror = () => rej(t.error); t.onabort = () => rej(t.error);
+    }));
+  }
+  const idbPut = (k, v) => idbReq('readwrite', s => s.put(v, k));
+  const idbGet = k => idbReq('readonly', s => s.get(k));
+  const idbDel = k => idbReq('readwrite', s => s.delete(k));
+  const urlCache = new Map(), urlPending = new Set();
+  function photoURL(ref){
+    if (!ref) return '';
+    if (ref.startsWith('idb:')){
+      const k = ref.slice(4);
+      if (urlCache.has(k)) return urlCache.get(k);
+      if (!urlPending.has(k)){
+        urlPending.add(k);
+        idbGet(k).then(b => { if (b){ urlCache.set(k, URL.createObjectURL(b)); scheduleRender(); if (E) paintPhoto(); } }).catch(() => {});
+      }
+      return '';
+    }
+    return '/_blob/' + ref;
+  }
+  async function blobOf(ref){
+    if (!ref) return null;
+    if (ref.startsWith('idb:')) return idbGet(ref.slice(4));
+    const r = await fetch('/_blob/' + ref); if (!r.ok) throw new Error('fetch'); return r.blob();
+  }
+  async function storePhoto(blob){
+    if (db && assets){ const r = await assets.upload(blob); return r.id; }
+    const k = lid(); await idbPut(k, blob); return 'idb:' + k;
+  }
+  function dropPhoto(ref){
+    if (!ref) return;
+    if (ref.startsWith('idb:')){ idbDel(ref.slice(4)).catch(() => {}); return; }
+    if (assets) assets.delete(ref).catch(() => {});
+  }
+  function shrink(file, max, qual){
+    return new Promise((res, rej) => {
+      const url = URL.createObjectURL(file), img = new Image();
+      img.onload = () => {
+        const k = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+        const c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(b => b ? res(b) : rej(new Error('encode')), 'image/jpeg', qual);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); rej(new Error('load')); };
+      img.src = url;
+    });
+  }
+  document.addEventListener('error', e => { const t = e.target; if (t && t.tagName === 'IMG') t.style.display = 'none'; }, true);
+  const thumb = it => { const u = photoURL(it.photo); return u ? `<img src="${esc(u)}" alt="" loading="lazy" decoding="async">` : `<span aria-hidden="true">${esc(catOf(it.cat).ico)}</span>`; };
 
-function pinyinInitials(py){
-  return py.split(' ').map(s=>s[0]).join('');
-}
-
-function doSearch(q){
-  q = q.trim().toLowerCase();
-  chipRow.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
-  if(!q){ chipRow.querySelector('[data-tri="__all"]').classList.add('active'); renderGrid(DATA); return; }
-  const asNum = parseInt(q);
-  const results = DATA.filter(h=>{
-    if(!isNaN(asNum) && h.id === asNum) return true;
-    if(h.name.includes(q)) return true;
-    if(h.pinyin.toLowerCase().includes(q)) return true;
-    if(pinyinInitials(h.pinyin).includes(q)) return true;
-    if(h.keywords.some(k=>k.includes(q))) return true;
+  /* ---------- Claude recognition ---------- */
+  const aiAvail = () => !!sampleNS && !aiOff;
+  async function identify(blob){
+    if (!aiAvail()) throw {code:'unavailable'};
+    if (aiImages === undefined){
+      try{ const l = await sampleNS.limits(); aiImages = !(l && l.images === false); }catch(e){ aiImages = true; }
+    }
+    if (!aiImages) throw {code:'no_images'};
+    const cats = allCats();
+    const prompt = `这是搬家前给一件物品拍的照片。请识别照片里的主要物品，给出：
+- name：简短的中文名称，2 到 10 个字，带上能区分的特征（颜色、品牌、用途），例如「白色连帽卫衣」「Switch 手柄」「宜家台灯」。看不清品牌就不要写品牌，不要编造。
+- cat：从下面的分类里选一个最合适的 key（"周边"指动漫、游戏、偶像相关的吧唧、立牌、玩偶、海报等）：
+${cats.map(c => `${c.key} = ${c.name}`).join('\n')}
+- qty：照片里同一种东西的件数，看不出来就填 1。
+只回复一个 JSON 对象，例如 {"name":"白色连帽卫衣","cat":"clothes","qty":1}`;
+    const r = await sampleNS.json(prompt, {images:[blob], modelTier:'quick'});
+    if (!r || typeof r !== 'object') return null;
+    const keys = cats.map(c => c.key);
+    return {
+      name: String(r.name || '').trim().slice(0, 24),
+      cat: keys.includes(r.cat) ? r.cat : 'other',
+      qty: clamp(parseInt(r.qty, 10) || 1, 1, 99)
+    };
+  }
+  function aiFail(e){
+    const c = e && e.code;
+    if (c === 'not_granted'){ aiOff = true; scheduleRender(); if (E) paintPhoto(); toast('没有允许使用 Claude，自动识别已关闭'); return true; }
+    if (c === 'no_images' || c === 'unavailable'){ aiOff = true; scheduleRender(); if (E) paintPhoto(); toast('这个打开方式不支持识别照片'); return true; }
+    if (c === 'rate_limited'){ toast('识别得太频繁了，等一会儿再试'); return true; }
+    toast('没认出来，手动填一下吧');
     return false;
+  }
+
+  /* ---------- rendering ---------- */
+  let rq = 0;
+  function scheduleRender(){ if (rq) return; rq = requestAnimationFrame(() => { rq = 0; render(); }); }
+  function render(){
+    renderHero();
+    if (tab === 'items') renderItems();
+    if (tab === 'boxes') renderBoxes();
+    if (tab === 'pack') renderPack();
+    if (!$('boxOv').hidden) renderBoxSheet();
+    $('fab').textContent = tab === 'boxes' ? '＋ 箱子' : '＋ 物品';
+  }
+
+  function counts(){ const c = {packed:0, planned:0, none:0, skip:0}; items.forEach(i => c[st(i)]++); return c; }
+  function renderHero(){
+    const c = counts(), total = items.length, carry = total - c.skip;
+    $('hNum').innerHTML = total ? `${c.packed}<small>/ ${carry} 件已装入</small>` : `0<small>件物品</small>`;
+    $('hK').textContent = !total ? '还没有登记物品' : carry && c.packed === carry ? '全部装好了 🎉' : '装箱进度';
+    $('hSeg').innerHTML = total ? ['packed', 'planned', 'none', 'skip'].map(k => c[k] ? `<i style="width:${c[k] / total * 100}%;background:${ST[k].c}"></i>` : '').join('') : '';
+    $('hStats').innerHTML = ['packed', 'planned', 'none', 'skip'].map(k =>
+      `<button type="button" class="stat" data-stat="${k}" style="--c:${ST[k].c}"><span class="d"></span>${ST[k].name}<b>${c[k]}</b></button>`).join('') +
+      `<button type="button" class="stat" data-tabgo="boxes" style="--c:#ffffff"><span class="d"></span>箱子<b>${boxes.length}</b></button>`;
+    $('sub').textContent = total ? `共 ${total} 件 · 编号 ${pad3(1)} 到 ${pad3(nextNo() - 1)}` : '拍照登记 · 按类分好 · 编号装箱';
+  }
+
+  function locPill(it){
+    const s = st(it);
+    if (s === 'skip') return '<span class="loc skip">不带走</span>';
+    if (s === 'none') return '<span class="loc none">未分配</span>';
+    const b = boxById(it.box);
+    return `<span class="loc ${s}" style="--bh:${boxHue(b)}">${b.no}号${s === 'packed' ? ' ✓' : ' · 待放'}</span>`;
+  }
+  function card(it){
+    const b = !it.skip && boxById(it.box);
+    return `<button type="button" class="card" data-item="${esc(it.id)}"${b ? ` style="--bh:${boxHue(b)}"` : ''} aria-label="${esc(itemLabel(it))}，${ST[st(it)].name}">
+      <span class="ph${b ? ' hb' : ''}">${thumb(it)}<span class="no">${pad3(it.no)}</span>${it.qty > 1 ? `<span class="qy">×${it.qty}</span>` : ''}</span>
+      <span class="nm${it.name ? '' : ' un'}">${it.name ? esc(it.name) : '未命名'}</span>${locPill(it)}</button>`;
+  }
+  function renderItems(){
+    const qq = q.trim().toLowerCase(), cats = allCats(), cnt = {};
+    items.forEach(i => { const k = catOf(i.cat).key; cnt[k] = (cnt[k] || 0) + 1; });
+    if (fCat !== 'all' && !cats.some(c => c.key === fCat)) fCat = 'all';
+    $('fCats').innerHTML = !items.length ? '' : `<button type="button" class="fchip" data-fcat="all" aria-pressed="${fCat === 'all'}">全部<span class="n">${items.length}</span></button>` +
+      cats.filter(c => cnt[c.key] || fCat === c.key).map(c => `<button type="button" class="fchip" data-fcat="${c.key}" aria-pressed="${fCat === c.key}">${esc(c.ico)} ${esc(c.name)}<span class="n">${cnt[c.key] || 0}</span></button>`).join('');
+    $('fSts').innerHTML = items.length ? [['all', '全部状态'], ['none', '未分配'], ['planned', '待放入'], ['packed', '已装入'], ['skip', '不带走']]
+      .map(([k, n]) => `<button type="button" class="fchip" data-fst="${k}" aria-pressed="${fSt === k}">${n}</button>`).join('') : '';
+    const unnamed = items.filter(i => !i.name && i.photo).length;
+    $('banner').innerHTML = unnamed && aiAvail() && !aiRunning
+      ? `<div class="banner glass"><span>有 ${unnamed} 件还没写名字</span><button type="button" class="btn btn-primary" id="aiAll">✨ 让 Claude 自动识别</button></div>` : '';
+
+    if (!items.length){
+      $('itemsBody').innerHTML = `<section class="start glass"><h2>选个分类，拍第一件</h2>
+        <p>每件东西拍一张照，会自动编号 #001、#002…。装箱的时候把它们分到 1号、2号箱子里，之后搜名字就知道在哪个箱子。</p>
+        <div class="tiles">${cats.map(c => `<button type="button" class="tile" data-addcat="${c.key}"><span class="ti">${esc(c.ico)}</span>${esc(c.name)}</button>`).join('')}</div>
+        <div class="sh-acts"><button type="button" class="btn" data-batch>一次导入很多张照片</button></div></section>`;
+      return;
+    }
+    const filtering = !!qq || fCat !== 'all' || fSt !== 'all';
+    const list = items.filter(i => (fCat === 'all' || catOf(i.cat).key === fCat) && (fSt === 'all' || st(i) === fSt) && (!qq || matchQ(i, qq)));
+    let html = filtering ? `<div class="found">${list.length ? `找到 ${list.length} 件` : ''}</div>` : '';
+    let any = false;
+    for (const c of cats){
+      const its = list.filter(i => catOf(i.cat).key === c.key).sort((a, b) => (a.no || 0) - (b.no || 0));
+      if (!its.length) continue;
+      any = true;
+      html += `<section class="cat glass"><div class="cat-h"><span class="ci" aria-hidden="true">${esc(c.ico)}</span><span class="cn">${esc(c.name)}</span><span class="cc">${its.length} 件</span>
+        <button type="button" class="ib" data-addcat="${c.key}">＋ 添加</button></div><div class="grid">${its.map(card).join('')}</div></section>`;
+    }
+    if (!any) html += `<div class="empty">${qq ? `没有找到「${esc(q.trim())}」，换个关键词试试` : '这个筛选下没有物品'}</div>`;
+    if (!filtering){
+      const rest = cats.filter(c => !cnt[c.key]);
+      if (rest.length) html += `<section class="more"><div class="more-h">其他分类</div><div class="chs">${rest.map(c => `<button type="button" class="ch" data-addcat="${c.key}">＋ ${esc(c.ico)} ${esc(c.name)}</button>`).join('')}</div></section>`;
+    }
+    $('itemsBody').innerHTML = html;
+  }
+
+  function boxStats(b){
+    const its = items.filter(i => i.box === b.id && !i.skip);
+    return {its, packed: its.filter(i => i.packed).length};
+  }
+  function renderBoxes(){
+    const bs = sortedBoxes(), c = counts();
+    if (!bs.length){
+      $('boxesBody').innerHTML = `<section class="start glass"><h2>先给箱子编号</h2>
+        <p>在每个行李箱、纸箱上贴张纸写好 1、2、3，然后用上面的按钮添加，编号会自动对上。名字和重量之后可以再改。</p></section>`;
+      return;
+    }
+    $('boxesBody').innerHTML = `<div class="boxes">${bs.map(b => {
+      const {its, packed} = boxStats(b), k = KINDS[b.kind] || KINDS.suitcase, pct = its.length ? packed / its.length * 100 : 0;
+      const shown = its.slice().sort(byCatNo).slice(0, 7);
+      const meta = [k.ico + ' ' + k.name, b.weight ? b.weight + ' kg' : '', b.note || ''].filter(Boolean).join(' · ');
+      return `<button type="button" class="boxc glass" data-box="${esc(b.id)}" style="--bh:${boxHue(b)}">
+        ${b.photo ? `<span class="bn pic"><img src="${esc(photoURL(b.photo))}" alt="" loading="lazy"><b>${b.no}</b></span>` : `<span class="bn">${b.no}</span>`}
+        <span><span class="bt">${b.no}号 · ${esc(boxTitle(b))}</span><span class="bs">${esc(meta)}</span>
+        <span class="pbar"><i style="width:${pct}%"></i></span>
+        <span class="bs">${its.length ? `已放入 ${packed} / ${its.length} 件` : '还是空的'}</span>
+        ${shown.length || b.donePhoto ? `<span class="thumbs">${b.donePhoto ? `<span class="dth" title="装完的样子"><img src="${esc(photoURL(b.donePhoto))}" alt="装完的样子" loading="lazy"></span>` : ''}${shown.map(i => `<span>${thumb(i)}</span>`).join('')}${its.length > 7 ? `<span class="more-n">+${its.length - 7}</span>` : ''}</span>` : ''}</span></button>`;
+    }).join('')}</div>` +
+    (c.none ? `<div class="unas glass"><span>还有 <b>${c.none}</b> 件没分配箱子</span><button type="button" class="btn" data-tabgo="pack">去装箱</button></div>` : '');
+  }
+
+  function renderPack(){
+    const el = $('p-pack'), bs = sortedBoxes();
+    if (!bs.length){
+      el.innerHTML = `<section class="start glass"><h2>先添加箱子</h2><p>给每个行李箱或纸箱编个号，然后就可以在这里一件件放进去，放一件点一下。</p>
+        <div class="sh-acts"><button class="btn btn-primary" type="button" data-qbox="suitcase">＋ 行李箱</button><button class="btn" type="button" data-qbox="box">＋ 纸箱</button><button class="btn" type="button" data-qbox="bag">＋ 背包</button></div></section>`;
+      return;
+    }
+    if (!boxById(cur)) cur = bs[0].id;
+    const b = boxById(cur), h = boxHue(b), {its, packed} = boxStats(b);
+    let todo = items.filter(i => !i.skip && !(i.packed && boxById(i.box)));
+    const cats = [...new Set(todo.map(i => catOf(i.cat).key))].sort((x, y) => catOrder(x) - catOrder(y));
+    if (pkCat !== 'all' && !cats.includes(pkCat)) pkCat = 'all';
+    if (pkCat !== 'all') todo = todo.filter(i => catOf(i.cat).key === pkCat);
+    const g1 = todo.filter(i => i.box === b.id).sort(byCatNo);
+    const g2 = todo.filter(i => !boxById(i.box)).sort(byCatNo);
+    const g3 = todo.filter(i => boxById(i.box) && i.box !== b.id).sort(byCatNo);
+    const done = its.filter(i => i.packed).sort(byCatNo);
+    const grp = (title, arr) => arr.length ? `<div class="grp-h">${title} · ${arr.length}</div><div class="rows">${arr.map(i => packRow(i, b, 'todo')).join('')}</div>` : '';
+    el.innerHTML = `<div class="pk-chips" role="group" aria-label="选择正在装的箱子">${bs.map(x => { const s = boxStats(x);
+        return `<button type="button" class="pk-chip" data-cur="${esc(x.id)}" aria-pressed="${x.id === b.id}" style="--bh:${boxHue(x)}"><span class="c">${x.no}</span>${esc(boxTitle(x))}<small>${s.packed}/${s.its.length}</small></button>`; }).join('')}</div>
+      <section class="pk-head glass" style="--bh:${h}"><span class="bn sm">${b.no}</span><div class="m"><div class="k">正在装</div><div class="t">${b.no}号 · ${esc(boxTitle(b))}</div><div class="k">已放入 ${packed} 件${its.length - packed ? ` · 还有 ${its.length - packed} 件计划放这里` : ''}</div></div>
+        <button type="button" class="ib" data-box="${esc(b.id)}">看清单</button></section>
+      ${packed && packed === its.length ? `<div class="pk-done glass">${b.donePhoto
+        ? `<button type="button" class="pv-th" data-view="donePhoto" data-sbox="${esc(b.id)}" aria-label="看 ${b.no}号装完的照片"><img src="${esc(photoURL(b.donePhoto))}" alt=""></button><span class="m">${b.no}号装完了，照片已存</span><label class="btn" for="bxCam" tabindex="0" data-keyclick data-slot="donePhoto" data-sbox="${esc(b.id)}">重拍</label>`
+        : `<span class="m">${b.no}号里的东西都放好了，合上之前拍一张？</span><label class="btn btn-primary" for="bxCam" tabindex="0" data-keyclick data-slot="donePhoto" data-sbox="${esc(b.id)}">📷 拍装完的样子</label>`}</div>` : ''}
+      ${cats.length > 1 ? `<div class="row-scroll" aria-label="按分类筛选"><button type="button" class="fchip" data-pkcat="all" aria-pressed="${pkCat === 'all'}">全部</button>${cats.map(k => { const c = catOf(k);
+        return `<button type="button" class="fchip" data-pkcat="${k}" aria-pressed="${pkCat === k}">${esc(c.ico)} ${esc(c.name)}</button>`; }).join('')}</div>` : ''}
+      ${todo.length ? grp(`计划放进 ${b.no}号的`, g1) + grp('还没分配的', g2) + grp('计划放别的箱子', g3)
+        : `<div class="empty">${items.length ? '没有要装的东西了 👏' : '还没有登记物品，先点右下角「＋ 物品」拍一件'}</div>`}
+      ${done.length ? `<div class="done-sec"><div class="grp-h">已经放进 ${b.no}号 · ${done.length}</div><div class="rows">${done.map(i => packRow(i, b, 'done')).join('')}</div></div>` : ''}`;
+  }
+  function packRow(it, b, mode){
+    const c = catOf(it.cat), ob = boxById(it.box);
+    const info = [c.ico + ' ' + c.name, mode === 'todo' && ob && ob.id !== b.id ? `原计划 ${ob.no}号` : '', it.note || ''].filter(Boolean).join(' · ');
+    return `<div class="pr" style="--bh:${boxHue(b)}"><span class="th">${thumb(it)}</span>
+      <button type="button" class="pr-m" data-item="${esc(it.id)}"><span class="pr-t"><span class="nn">${pad3(it.no)}</span> ${it.name ? esc(it.name) : '<span class="un">未命名</span>'}${it.qty > 1 ? ` ×${it.qty}` : ''}</span><span class="pr-s">${esc(info)}</span></button>
+      ${mode === 'todo' ? `<button type="button" class="put" data-put="${esc(it.id)}">放进 ${b.no}号</button>` : `<button type="button" class="out" data-out="${esc(it.id)}">拿出来</button>`}</div>`;
+  }
+
+  /* ---------- tabs & global clicks ---------- */
+  function setTab(t){
+    tab = t; lsSet(LSK.tab, t);
+    document.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === t)));
+    ['items', 'boxes', 'pack'].forEach(x => $('p-' + x).hidden = x !== t);
+    render();
+  }
+  document.querySelector('.tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if (b) setTab(b.dataset.tab); });
+  $('q').addEventListener('input', e => { q = e.target.value; renderItems(); });
+
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-item],[data-addcat],[data-box],[data-put],[data-out],[data-cur],[data-fcat],[data-fst],[data-pkcat],[data-stat],[data-tabgo],[data-qbox],[data-batch],[data-close],[data-tg],[data-view],[data-unslot],[data-snap],#aiAll');
+    if (!t) return;
+    const d = t.dataset;
+    if (d.close){ closeSheet(d.close); return; }
+    if (d.view){ const b = boxById(d.sbox); if (b && b[d.view]) openViewer(photoURL(b[d.view]), `${b.no}号 · ${SLOTS[d.view]}`); return; }
+    if (d.snap){ slotTarget = {box: d.sbox, slot: d.snap}; $('bxCam').click(); return; }
+    if (d.unslot){ unslot(d.sbox, d.unslot); return; }
+    if (d.item != null){ openItem(d.item); return; }
+    if (d.addcat){ openItem(null, {cat: d.addcat}); return; }
+    if (d.box != null){ openBox(d.box); return; }
+    if (d.put){ putIn(d.put); return; }
+    if (d.out){ const it = items.find(x => x.id === d.out); if (it) safe(() => patch('items', it.id, {packed:false}), `${itemLabel(it)} 拿出来了`); return; }
+    if (d.tg){ const it = items.find(x => x.id === d.tg); if (it) safe(() => patch('items', it.id, {packed: !it.packed})); return; }
+    if (d.cur){ cur = d.cur; lsSet(LSK.cur, cur); renderPack(); return; }
+    if (d.fcat){ fCat = d.fcat; renderItems(); return; }
+    if (d.fst){ fSt = d.fst; renderItems(); return; }
+    if (d.pkcat){ pkCat = d.pkcat; renderPack(); return; }
+    if (d.stat){ fSt = d.stat; fCat = 'all'; setTab('items'); return; }
+    if (d.tabgo){ setTab(d.tabgo); return; }
+    if (d.qbox){ quickBox(d.qbox); return; }
+    if (d.batch != null){ openBatch(); return; }
+    if (t.id === 'aiAll'){ aiAllUnnamed(); return; }
   });
-  renderGrid(results);
-}
-
-searchInput.addEventListener('input', (e)=> doSearch(e.target.value));
-
-function openDetail(id){
-  const h = DATA.find(x=>x.id===id);
-  if(!h) return;
-  panel.innerHTML = `
-    <div class="panel-drag"></div>
-    <button class="close-btn" id="closeBtn">✕</button>
-    <div class="detail-head">
-      ${hexLinesHTML(h.bits, true)}
-      <div class="detail-titles">
-        <div class="eyebrow">第 ${h.id} 卦 · ${h.pinyin}</div>
-        <h2>${h.name}</h2>
-        <div class="composition">${h.upperNat}${h.upper} 上 ／ ${h.lowerNat}${h.lower} 下 &nbsp;·&nbsp; ${h.upperNat}${h.lowerNat}${h.name}</div>
-      </div>
-    </div>
-
-    <div class="kw-row">${h.keywords.map(k=>`<span class="kw">${k}</span>`).join('')}</div>
-
-    <div class="section">
-      <div class="label">五行对应</div>
-      <div class="wux-pair">
-        <div class="wux-col">
-          <div class="wc-label">上卦</div>
-          <div class="wc-tri">${h.upper}</div>
-          ${wuxTag(TRI_META[h.upper].wuxing)}
-        </div>
-        <div class="wux-col">
-          <div class="wc-label">下卦</div>
-          <div class="wc-tri">${h.lower}</div>
-          ${wuxTag(TRI_META[h.lower].wuxing)}
-        </div>
-      </div>
-      <div class="wux-rel"><b>${wuxRelation(TRI_META[h.upper].wuxing, TRI_META[h.lower].wuxing).type}</b> — ${wuxRelation(TRI_META[h.upper].wuxing, TRI_META[h.lower].wuxing).desc}</div>
-    </div>
-
-    <div class="section">
-      <div class="label">延伸类象 · 方位 / 人体 / 动物 / 物品</div>
-      <div class="extra-pair">
-        ${triExtraCard(h.upper, '上')}
-        ${triExtraCard(h.lower, '下')}
-      </div>
-      <div class="extra-note">※ 以上按《说卦传》八卦类象，依本卦上、下卦组合推衍而得，供参考对照，非六十四卦独立定象。</div>
-    </div>
-
-    <div class="section">
-      <div class="label">卦辞 · 彖</div>
-      <p class="classical">${h.judgment}</p>
-    </div>
-
-    <div class="section">
-      <div class="label">象辞 · 大象</div>
-      <p class="classical">${h.daxiang}</p>
-    </div>
-
-    <div class="section">
-      <div class="label">意象</div>
-      <div class="image-box">${h.image}</div>
-    </div>
-
-    <div class="section">
-      <div class="label">卦意</div>
-      <p class="txt">${h.meaning}</p>
-    </div>
-
-    <div class="section">
-      <div class="label">诸事解读</div>
-      <div class="aspect-grid">
-        <div class="aspect"><div class="a-title"><span class="dot"></span>事业</div><div class="a-txt">${h.career}</div></div>
-        <div class="aspect"><div class="a-title"><span class="dot"></span>财运</div><div class="a-txt">${h.wealth}</div></div>
-        <div class="aspect"><div class="a-title"><span class="dot"></span>感情</div><div class="a-txt">${h.love}</div></div>
-        <div class="aspect"><div class="a-title"><span class="dot"></span>健康</div><div class="a-txt">${h.health}</div></div>
-      </div>
-    </div>
-
-    <div class="section advice-box">
-      <div class="label">决策提示</div>
-      <p>${h.advice}</p>
-    </div>
-
-    <div class="nav-row">
-      <button class="nav-btn" id="prevBtn">← 上一卦</button>
-      <button class="nav-btn" id="nextBtn">下一卦 →</button>
-    </div>
-  `;
-  overlay.classList.add('open');
-  document.getElementById('closeBtn').addEventListener('click', closeDetail);
-  document.getElementById('prevBtn').addEventListener('click', ()=> openDetail(h.id===1?64:h.id-1));
-  document.getElementById('nextBtn').addEventListener('click', ()=> openDetail(h.id===64?1:h.id+1));
-  panel.scrollTop = 0;
-}
-
-function closeDetail(){ overlay.classList.remove('open'); }
-overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeDetail(); });
-document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDetail(); });
-
-renderChips();
-renderGrid(DATA);
-
-// ---------- PWA: service worker + install prompt ----------
-if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  document.addEventListener('keydown', e => {
+    const lab = e.target.closest && e.target.closest('label[data-keyclick]');
+    if (lab && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); lab.click(); return; }
+    if (e.key === 'Escape' && openStack.length) closeSheet(openStack[openStack.length - 1]);
   });
-}
-let deferredInstallPrompt = null;
-const installBtn = document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredInstallPrompt = e;
-  installBtn.style.display = 'inline-flex';
-});
-installBtn.addEventListener('click', async () => {
-  if (!deferredInstallPrompt) return;
-  deferredInstallPrompt.prompt();
-  await deferredInstallPrompt.userChoice;
-  deferredInstallPrompt = null;
-  installBtn.style.display = 'none';
-});
-window.addEventListener('appinstalled', () => {
-  installBtn.style.display = 'none';
-});
+  $('fab').addEventListener('click', () => {
+    if (tab === 'boxes') openBoxEdit(null);
+    else if (tab === 'pack' && boxById(cur)) openItem(null, {dest: cur, packed: true});
+    else openItem(null, {cat: fCat !== 'all' ? fCat : undefined});
+  });
+
+  function putIn(id){
+    const it = items.find(x => x.id === id), b = boxById(cur); if (!it || !b) return;
+    const prev = {box: it.box || null, packed: !!it.packed, skip: !!it.skip};
+    safe(() => patch('items', id, {box: b.id, packed: true, skip: false}));
+    toast(`${itemLabel(it)} → ${b.no}号 ✓`, {label:'撤销', fn: () => safe(() => patch('items', id, prev))});
+  }
+
+  /* ---------- sheets ---------- */
+  const openStack = [];
+  let askRes = null;
+  function openSheet(id){
+    const o = $(id);
+    o.hidden = false; o.style.zIndex = 50 + openStack.length;
+    if (!openStack.includes(id)) openStack.push(id);
+    document.documentElement.classList.add('locked');
+    o.querySelector('.sheet').scrollTop = 0;
+    setTimeout(() => o.querySelector('.sheet').focus({preventScroll:true}), 20);
+  }
+  function closeSheet(id){
+    const o = $(id); if (o.hidden) return;
+    o.hidden = true;
+    const i = openStack.indexOf(id); if (i >= 0) openStack.splice(i, 1);
+    if (!openStack.length) document.documentElement.classList.remove('locked');
+    if (id === 'cfOv' && askRes){ const r = askRes; askRes = null; r(false); }
+    if (id === 'itemOv'){ if (E && E.url) URL.revokeObjectURL(E.url); E = null; aiTok++; }
+    if (id === 'boxOv') openBoxId = null;
+  }
+  document.querySelectorAll('.ov').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeSheet(o.id); }));
+  function ask(title, body, ok){
+    return new Promise(res => {
+      $('cfT').textContent = title; $('cfB').textContent = body; $('cfOk').textContent = ok;
+      askRes = res; openSheet('cfOv');
+    });
+  }
+  $('cfOk').addEventListener('click', () => { const r = askRes; askRes = null; closeSheet('cfOv'); if (r) r(true); });
+
+  async function copyText(text, title){
+    try{ await navigator.clipboard.writeText(text); toast('已复制，可以直接粘贴发出去'); }
+    catch(e){ $('txT').textContent = title || '清单'; $('txBox').value = text; openSheet('txOv'); setTimeout(() => { $('txBox').focus(); $('txBox').select(); }, 60); }
+  }
+  function boxText(b){
+    const {its, packed} = boxStats(b), k = KINDS[b.kind] || KINDS.suitcase;
+    const head = `【${b.no}号 · ${boxTitle(b)}】${k.name}${b.weight ? ' · ' + b.weight + 'kg' : ''}${b.note ? ' · ' + b.note : ''}  已放入 ${packed}/${its.length}`;
+    const lines = its.slice().sort(byCatNo).map(i => `${pad3(i.no)} ${i.name || '未命名'}${i.qty > 1 ? ' ×' + i.qty : ''}（${catOf(i.cat).name}）${i.packed ? '' : ' 还没放'}`);
+    return [head, ...(lines.length ? lines : ['（空）'])].join('\n');
+  }
+  $('copyAll').addEventListener('click', () => {
+    const c = counts();
+    const parts = sortedBoxes().map(boxText);
+    const none = items.filter(i => st(i) === 'none').sort(byCatNo);
+    if (none.length) parts.push(['【还没分配】', ...none.map(i => `${pad3(i.no)} ${i.name || '未命名'}${i.qty > 1 ? ' ×' + i.qty : ''}`)].join('\n'));
+    const skip = items.filter(i => i.skip).sort(byCatNo);
+    if (skip.length) parts.push(['【不带走】', ...skip.map(i => `${pad3(i.no)} ${i.name || '未命名'}`)].join('\n'));
+    if (!parts.length){ toast('还没有内容可以复制'); return; }
+    copyText(`搬家清单 · 共 ${items.length} 件，已装入 ${c.packed} 件\n\n` + parts.join('\n\n'), '全部清单');
+  });
+
+  /* ---------- item sheet ---------- */
+  let E = null, aiTok = 0, busyItem = false, aiRunning = false;
+  const NAME_PH = $('iName').placeholder;
+  const iMsg = m => { $('iMsg').textContent = m || ''; };
+  function openItem(id, preset){
+    preset = preset || {};
+    const it = id ? items.find(x => x.id === id) : null;
+    if (id && !it) return;
+    E = {
+      id: it ? it.id : null,
+      cat: it ? catOf(it.cat).key : (preset.cat || 'clothes'),
+      catLocked: !!(it || preset.cat),
+      dest: it ? (it.skip ? 'skip' : (boxById(it.box) ? it.box : '')) : (preset.dest || ''),
+      photo: it ? it.photo || null : null, blob: null, url: null, removed: false, aiName: ''
+    };
+    $('itemT').textContent = it ? `${pad3(it.no)} · 修改` : `添加物品 · 将编号 ${pad3(nextNo())}`;
+    $('iName').value = it ? it.name || '' : '';
+    $('iQty').value = it ? it.qty || 1 : 1;
+    $('iNote').value = it ? it.note || '' : '';
+    $('iPacked').checked = it ? !!it.packed : !!preset.packed;
+    $('iSaveMore').hidden = !!it; $('iDel').hidden = !it; $('newCat').hidden = true;
+    $('aiBtn').disabled = false; $('aiBtn').textContent = '✨ 自动识别'; $('iName').placeholder = NAME_PH;
+    iMsg(''); paintPhoto(); paintCats(); paintDest();
+    openSheet('itemOv');
+  }
+  function paintPhoto(){
+    if (!E) return;
+    const src = E.url || (E.removed ? '' : photoURL(E.photo));
+    $('phPrev').classList.toggle('has', !!src);
+    $('phPrev').innerHTML = src ? `<img src="${esc(src)}" alt="物品照片预览">` : `<span><span class="big" aria-hidden="true">${esc(catOf(E.cat).ico)}</span>还没有照片</span>`;
+    $('phDel').hidden = !src && !(E.photo && !E.removed);
+    $('aiBtn').hidden = !(src || (E.photo && !E.removed)) || !aiAvail();
+  }
+  function paintCats(){
+    $('iCats').innerHTML = allCats().map(c => `<button type="button" class="ch" data-icat="${c.key}" aria-pressed="${E.cat === c.key}">${esc(c.ico)} ${esc(c.name)}</button>`).join('') +
+      `<button type="button" class="ch dash" id="ncToggle" aria-expanded="${!$('newCat').hidden}">＋ 新分类</button>`;
+  }
+  function destChips(sel, attr){
+    return `<button type="button" class="ch" ${attr}="" aria-pressed="${sel === ''}">暂不分配</button>` +
+      sortedBoxes().map(b => `<button type="button" class="ch bx" ${attr}="${esc(b.id)}" style="--bh:${boxHue(b)}" aria-pressed="${sel === b.id}">${b.no}号<small>${esc(boxTitle(b))}</small></button>`).join('') +
+      `<button type="button" class="ch dash" ${attr}="+new">＋ 新箱子</button>` +
+      `<button type="button" class="ch" ${attr}="skip" aria-pressed="${sel === 'skip'}">不带走</button>`;
+  }
+  function paintDest(){
+    $('iDest').innerHTML = destChips(E.dest, 'data-idest');
+    const b = boxById(E.dest);
+    $('packedRow').hidden = !b;
+    if (b) $('packedRow').lastChild.textContent = ` 已经放进 ${b.no}号了`;
+  }
+  $('iCats').addEventListener('click', e => {
+    const c = e.target.closest('[data-icat]');
+    if (c){ E.cat = c.dataset.icat; E.catLocked = true; paintCats(); paintPhoto(); return; }
+    if (e.target.closest('#ncToggle')){ $('newCat').hidden = !$('newCat').hidden; paintCats(); if (!$('newCat').hidden) $('ncName').focus(); }
+  });
+  $('ncAdd').addEventListener('click', () => {
+    const name = $('ncName').value.trim(); if (!name){ $('ncName').focus(); return; }
+    if (allCats().some(c => c.name === name)){ E.cat = allCats().find(c => c.name === name).key; }
+    else {
+      const ico = $('ncIco').value.trim() || '🏷️', key = 'c' + Date.now().toString(36);
+      customCats = [...customCats, {key, name, ico}];
+      safe(saveCats);
+      E.cat = key;
+    }
+    E.catLocked = true; $('ncName').value = ''; $('ncIco').value = ''; $('newCat').hidden = true; paintCats(); paintPhoto();
+  });
+  $('iDest').addEventListener('click', async e => {
+    const c = e.target.closest('[data-idest]'); if (!c) return;
+    let v = c.dataset.idest;
+    if (v === '+new'){ v = await quickBox('suitcase'); if (!v || !E) return; }
+    E.dest = v; paintDest();
+  });
+  $('qMinus').addEventListener('click', () => { $('iQty').value = clamp((parseInt($('iQty').value, 10) || 1) - 1, 1, 999); });
+  $('qPlus').addEventListener('click', () => { $('iQty').value = clamp((parseInt($('iQty').value, 10) || 1) + 1, 1, 999); });
+
+  async function onPick(e){
+    const f = e.target.files && e.target.files[0]; e.target.value = '';
+    if (!f || !E) return;
+    iMsg('正在处理照片…');
+    try{
+      const b = await shrink(f, 1280, .82);
+      if (!E) return;
+      if (E.url) URL.revokeObjectURL(E.url);
+      E.blob = b; E.url = URL.createObjectURL(b); E.removed = false;
+      iMsg(''); paintPhoto();
+      if (aiAvail() && (!$('iName').value.trim() || $('iName').value === E.aiName)) aiFill();
+    }catch(err){ iMsg('这张照片打不开，换一张试试'); }
+  }
+  $('camIn').addEventListener('change', onPick);
+  $('libIn').addEventListener('change', onPick);
+  $('phDel').addEventListener('click', () => {
+    if (E.url) URL.revokeObjectURL(E.url);
+    E.blob = null; E.url = null; E.removed = true; paintPhoto();
+  });
+  $('aiBtn').addEventListener('click', aiFill);
+  async function aiFill(){
+    if (!E) return;
+    const tok = ++aiTok, btn = $('aiBtn');
+    btn.disabled = true; btn.textContent = '✨ 识别中…';
+    $('iName').placeholder = 'Claude 正在看照片…';
+    try{
+      const blob = E.blob || await blobOf(E.photo);
+      if (!blob) throw new Error('noblob');
+      const r = await identify(blob);
+      if (tok !== aiTok || !E || !r) return;
+      const cur = $('iName').value.trim();
+      if (r.name && (!cur || cur === E.aiName)){ $('iName').value = r.name; E.aiName = r.name; }
+      if (!E.catLocked){ E.cat = r.cat; paintCats(); }
+      if (r.qty > 1 && $('iQty').value === '1') $('iQty').value = r.qty;
+    }catch(err){ if (tok === aiTok) aiFail(err); }
+    finally{ if (tok === aiTok){ btn.disabled = false; btn.textContent = '✨ 自动识别'; $('iName').placeholder = NAME_PH; paintPhoto(); } }
+  }
+
+  async function saveItem(more){
+    if (busyItem || !E) return;
+    const name = $('iName').value.trim();
+    const hasPhoto = !!E.blob || (E.photo && !E.removed);
+    if (!name && !hasPhoto){ iMsg('拍张照或者写个名字，至少一样'); $('iName').focus(); return; }
+    const b = boxById(E.dest);
+    const data = {
+      name, cat: E.cat, qty: clamp(parseInt($('iQty').value, 10) || 1, 1, 999),
+      note: $('iNote').value.trim().slice(0, 200),
+      box: b ? b.id : null, packed: b ? $('iPacked').checked : false, skip: E.dest === 'skip'
+    };
+    busyItem = true; $('iSave').disabled = $('iSaveMore').disabled = true;
+    const ed = E;
+    try{
+      let oldPhoto = null;
+      if (ed.blob){ iMsg('正在上传照片…'); data.photo = await storePhoto(ed.blob); oldPhoto = ed.photo; }
+      else if (ed.removed){ data.photo = null; oldPhoto = ed.photo; }
+      else data.photo = ed.photo || null;
+      if (ed.id){
+        await patch('items', ed.id, data);
+        toast('已保存');
+      } else {
+        data.no = nextNo(); data.createdAt = Date.now();
+        await put('items', lid(), data);
+        toast(`已登记 ${pad3(data.no)}${name ? ' ' + name : ''}${b ? ` → ${b.no}号` : ''}`);
+      }
+      if (oldPhoto) dropPhoto(oldPhoto);
+      if (more && E === ed){
+        if (E.url) URL.revokeObjectURL(E.url);
+        Object.assign(E, {blob:null, url:null, photo:null, removed:false, aiName:''});
+        $('iName').value = ''; $('iQty').value = 1; $('iNote').value = '';
+        $('itemT').textContent = `添加物品 · 将编号 ${pad3(nextNo())}`;
+        iMsg(''); paintPhoto();
+        $('itemOv').querySelector('.sheet').scrollTop = 0;
+      } else closeSheet('itemOv');
+    }catch(e){ console.error(e); iMsg(errMsg(e)); }
+    finally{ busyItem = false; $('iSave').disabled = $('iSaveMore').disabled = false; }
+  }
+  $('iSave').addEventListener('click', () => saveItem(false));
+  $('iSaveMore').addEventListener('click', () => saveItem(true));
+  $('iDel').addEventListener('click', async () => {
+    const it = E && items.find(x => x.id === E.id); if (!it) return;
+    if (!await ask('删除这件物品？', `${itemLabel(it)} 和它的照片会一起删掉，编号不会被重复使用。`, '删除')) return;
+    closeSheet('itemOv');
+    await safe(() => drop('items', it.id), '已删除');
+    dropPhoto(it.photo);
+  });
+
+  /* ---------- boxes ---------- */
+  async function quickBox(kind){
+    const no = nextBoxNo(), id = lid();
+    await safe(() => put('boxes', id, {no, name:'', kind, weight:null, note:'', photo:null, donePhoto:null, createdAt: Date.now()}), `已添加 ${no}号${KINDS[kind].name}`);
+    if (!cur){ cur = id; lsSet(LSK.cur, cur); }
+    return boxById(id) ? id : null;
+  }
+  let openBoxId = null, BE = null;
+  function openBox(id){ if (!boxById(id)) return; openBoxId = id; renderBoxSheet(); openSheet('boxOv'); }
+  function renderBoxSheet(){
+    const b = boxById(openBoxId);
+    if (!b){ closeSheet('boxOv'); return; }
+    const {its, packed} = boxStats(b), k = KINDS[b.kind] || KINDS.suitcase;
+    $('boxOv').querySelector('.sheet').style.setProperty('--bh', boxHue(b));
+    $('bxN').textContent = b.no;
+    $('bxT').textContent = `${b.no}号 · ${boxTitle(b)}`;
+    $('bxS').textContent = [k.ico + ' ' + k.name, b.weight ? b.weight + ' kg' : '', b.note || '', `已放入 ${packed} / ${its.length} 件`].filter(Boolean).join(' · ');
+    $('bxPh').innerHTML = slotHTML(b, 'photo') + slotHTML(b, 'donePhoto');
+    $('bxList').innerHTML = its.length ? `<div class="rows">${its.slice().sort(byCatNo).map(i => {
+      const c = catOf(i.cat);
+      return `<div class="pr" style="--bh:${boxHue(b)}"><span class="th">${thumb(i)}</span>
+        <button type="button" class="pr-m" data-item="${esc(i.id)}"><span class="pr-t"><span class="nn">${pad3(i.no)}</span> ${i.name ? esc(i.name) : '<span class="un">未命名</span>'}${i.qty > 1 ? ` ×${i.qty}` : ''}</span><span class="pr-s">${esc(c.ico + ' ' + c.name + (i.note ? ' · ' + i.note : ''))}</span></button>
+        <button type="button" class="tg${i.packed ? ' on' : ''}" data-tg="${esc(i.id)}" aria-pressed="${!!i.packed}">${i.packed ? '✓ 已放入' : '标记已放入'}</button></div>`;
+    }).join('')}</div>` : '<div class="empty">这个箱子还是空的。点「去装这个箱子」开始往里放东西。</div>';
+  }
+  $('bxPack').addEventListener('click', () => { cur = openBoxId; lsSet(LSK.cur, cur); closeSheet('boxOv'); setTab('pack'); window.scrollTo({top:0}); });
+  $('bxCopy').addEventListener('click', () => { const b = boxById(openBoxId); if (b) copyText(boxText(b), `${b.no}号清单`); });
+  $('bxEdit').addEventListener('click', () => openBoxEdit(openBoxId));
+
+  function openBoxEdit(id){
+    const b = id ? boxById(id) : null;
+    BE = {id: b ? b.id : null, kind: b ? b.kind || 'suitcase' : 'suitcase'};
+    $('beT').textContent = b ? `编辑 ${b.no}号` : '添加箱子';
+    $('bNo').value = b ? b.no : nextBoxNo();
+    $('bName').value = b ? b.name || '' : '';
+    $('bW').value = b && b.weight != null ? b.weight : '';
+    $('bNote').value = b ? b.note || '' : '';
+    $('bDel').hidden = !b; $('bMsg').textContent = '';
+    paintKinds(); openSheet('beOv');
+  }
+  function paintKinds(){
+    $('bKinds').innerHTML = Object.entries(KINDS).map(([k, v]) => `<button type="button" class="ch" data-kind="${k}" aria-pressed="${BE.kind === k}">${v.ico} ${v.name}</button>`).join('');
+  }
+  $('bKinds').addEventListener('click', e => { const c = e.target.closest('[data-kind]'); if (c){ BE.kind = c.dataset.kind; paintKinds(); } });
+  $('bSave').addEventListener('click', async () => {
+    const no = parseInt($('bNo').value, 10);
+    if (!no || no < 1 || no > 99){ $('bMsg').textContent = '编号填 1 到 99 之间的数字'; return; }
+    if (boxes.some(b => b.no === no && b.id !== BE.id)){ $('bMsg').textContent = `已经有 ${no}号了，换一个编号`; return; }
+    const w = parseFloat($('bW').value);
+    const data = {no, name: $('bName').value.trim(), kind: BE.kind, weight: isFinite(w) && w > 0 ? Math.round(w * 10) / 10 : null, note: $('bNote').value.trim()};
+    const id = BE.id;
+    closeSheet('beOv');
+    if (id) await safe(() => patch('boxes', id, data), '已保存');
+    else { const nid = lid(); await safe(() => put('boxes', nid, {...data, createdAt: Date.now()}), `已添加 ${no}号`); if (!cur){ cur = nid; lsSet(LSK.cur, cur); } }
+  });
+  $('bDel').addEventListener('click', async () => {
+    const b = boxById(BE && BE.id); if (!b) return;
+    const {its} = boxStats(b);
+    if (!await ask(`删除 ${b.no}号？`, its.length ? `里面登记的 ${its.length} 件会变回「未分配」，物品本身不会删掉。` : '这个箱子是空的。', '删除箱子')) return;
+    closeSheet('beOv'); closeSheet('boxOv');
+    await safe(async () => {
+      for (const i of items.filter(x => x.box === b.id)) await patch('items', i.id, {box:null, packed:false});
+      await drop('boxes', b.id);
+      dropPhoto(b.photo); dropPhoto(b.donePhoto);
+    }, `已删除 ${b.no}号`);
+  });
+
+  /* ---------- box photos ---------- */
+  const SLOTS = {photo:'箱子外观', donePhoto:'装完的样子'};
+  let slotTarget = null;
+  function slotHTML(b, slot){
+    const u = photoURL(b[slot]), id = esc(b.id);
+    const empty = slot === 'photo' ? '<span><span class="big" aria-hidden="true">🧳</span>拍一下箱子外观<br>到时候好认</span>' : '<span><span class="big" aria-hidden="true">📦</span>装完、合上之前<br>拍一张</span>';
+    return `<div class="slot">
+      <button type="button" class="sp${u ? ' has' : ''}" ${u ? `data-view="${slot}"` : `data-snap="${slot}"`} data-sbox="${id}" aria-label="${u ? '查看' : '拍'}${b.no}号${SLOTS[slot]}">${u ? `<img src="${esc(u)}" alt="">` : empty}</button>
+      <span class="sl">${SLOTS[slot]}</span>
+      <span class="sb"><label class="btn" for="bxCam" tabindex="0" data-keyclick data-slot="${slot}" data-sbox="${id}">${u ? '重拍' : '拍照'}</label><label class="btn" for="bxLib" tabindex="0" data-keyclick data-slot="${slot}" data-sbox="${id}">相册</label>${u ? `<button type="button" class="ib" data-unslot="${slot}" data-sbox="${id}">去掉</button>` : ''}</span></div>`;
+  }
+  document.addEventListener('click', e => { const l = e.target.closest('label[data-slot]'); if (l) slotTarget = {box: l.dataset.sbox, slot: l.dataset.slot}; }, true);
+  async function onSlotPick(e){
+    const f = e.target.files && e.target.files[0]; e.target.value = '';
+    const t = slotTarget; slotTarget = null;
+    if (!f || !t) return;
+    const b = boxById(t.box); if (!b) return;
+    busy(`正在保存 ${b.no}号${SLOTS[t.slot]}…`);
+    try{
+      const blob = await shrink(f, 1600, .82);
+      const ref = await storePhoto(blob);
+      const old = b[t.slot];
+      await patch('boxes', b.id, {[t.slot]: ref});
+      if (old) dropPhoto(old);
+      toast(`${b.no}号${SLOTS[t.slot]}已保存`);
+    }catch(err){ console.error(err); toast(err && err.message === 'load' ? '这张照片打不开，换一张试试' : errMsg(err)); }
+    finally{ busy(null); }
+  }
+  $('bxCam').addEventListener('change', onSlotPick);
+  $('bxLib').addEventListener('change', onSlotPick);
+  async function unslot(boxId, slot){
+    const b = boxById(boxId); if (!b || !b[slot]) return;
+    if (!await ask(`去掉${SLOTS[slot]}照片？`, `${b.no}号的这张照片会被删除，箱子和里面的物品不受影响。`, '去掉照片')) return;
+    const old = b[slot];
+    await safe(() => patch('boxes', b.id, {[slot]: null}), '照片已去掉');
+    dropPhoto(old);
+  }
+  function openViewer(src, title){
+    if (!src) return;
+    $('pvImg').src = src; $('pvImg').alt = title; $('pvT').textContent = title;
+    openSheet('pvOv');
+  }
+  $('phPrev').addEventListener('click', () => {
+    const img = $('phPrev').querySelector('img');
+    if (img) openViewer(img.src, $('iName').value.trim() || '物品照片');
+  });
+
+  /* ---------- backup: export / import ---------- */
+  const BK_APP = 'move-packing';
+  const inClaude = !!(window.claude && typeof window.claude.use === 'function');
+  let downloadsNS = null, bkBusy = false, EX = null;
+  const str = (v, n) => String(v == null ? '' : v).slice(0, n);
+  const two = n => String(n).padStart(2, '0');
+  const fmtSize = b => b < 1048576 ? Math.max(1, Math.round(b / 1024)) + ' KB' : (b / 1048576).toFixed(1) + ' MB';
+  function fmtTime(iso){ const d = new Date(iso); return isNaN(d) ? '' : `${d.getMonth() + 1}月${d.getDate()}日 ${two(d.getHours())}:${two(d.getMinutes())}`; }
+  function blobToDataURL(b){ return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(r.error); r.readAsDataURL(b); }); }
+  function dataURLToBlob(u){
+    const m = /^data:([^;,]+)?(;base64)?,([\s\S]*)$/.exec(u || ''); if (!m) return null;
+    const type = m[1] || 'image/jpeg';
+    if (!m[2]) return new Blob([decodeURIComponent(m[3])], {type});
+    const bin = atob(m[3]), a = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i);
+    return new Blob([a], {type});
+  }
+
+  $('expBtn').addEventListener('click', prepareExport);
+  async function prepareExport(){
+    if (!items.length && !boxes.length){ toast('还没有内容可以备份'); return; }
+    if (bkBusy || aiRunning) return;
+    bkBusy = true;
+    try{
+      const refs = [...new Set([...items.map(i => i.photo), ...boxes.flatMap(b => [b.photo, b.donePhoto])].filter(Boolean))];
+      const photos = {}; let miss = 0;
+      for (let n = 0; n < refs.length; n++){
+        busy(`正在打包照片 ${n + 1} / ${refs.length}…`);
+        try{ const b = await blobOf(refs[n]); if (b) photos[refs[n]] = await blobToDataURL(b); else miss++; }catch(e){ miss++; }
+      }
+      busy('正在生成备份文件…');
+      const payload = {app: BK_APP, version: 1, exportedAt: new Date().toISOString(), items, boxes, cats: customCats, photos};
+      const blob = new Blob([JSON.stringify(payload)], {type: 'application/json'});
+      const d = new Date();
+      EX = {blob, filename: `搬家清单备份-${d.getFullYear()}${two(d.getMonth() + 1)}${two(d.getDate())}-${two(d.getHours())}${two(d.getMinutes())}.json`};
+      $('exInfo').textContent = `里面有 ${items.length} 件物品、${boxes.length} 个箱子、${Object.keys(photos).length} 张照片，文件大约 ${fmtSize(blob.size)}。` + (miss ? `有 ${miss} 张照片没读到，没放进去。` : '');
+      let canShare = false;
+      if (!inClaude && navigator.canShare){ try{ canShare = navigator.canShare({files: [new File([blob], EX.filename, {type: 'application/json'})]}); }catch(e){} }
+      $('exShare').hidden = !canShare;
+      $('exSave').hidden = inClaude && !downloadsNS;
+      $('exTip').textContent = inClaude && !downloadsNS ? '这个打开方式不能保存文件，换到电脑浏览器打开这个页面再导出。'
+        : '在 iPhone 上，文件会存到「文件」App 的「下载」文件夹里。' + (canShare ? '也可以点「分享」，用 AirDrop 或者微信发给自己。' : '') + '到另一个设备打开网页，点「导入备份」选这个文件就行。';
+      openSheet('exOv');
+    } finally { busy(null); bkBusy = false; }
+  }
+  $('exSave').addEventListener('click', async () => {
+    if (!EX) return;
+    if (downloadsNS){
+      try{ await downloadsNS.save({filename: EX.filename, data: EX.blob}); toast('备份已保存'); closeSheet('exOv'); }
+      catch(e){ const c = e && e.code; if (c === 'declined') return; toast(c === 'rate_limited' ? '稍等一下再点' : '这里没法保存文件，换个浏览器试试'); }
+      return;
+    }
+    try{
+      const url = URL.createObjectURL(EX.blob), a = document.createElement('a');
+      a.href = url; a.download = EX.filename; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+      toast('备份文件已下载');
+    }catch(e){ toast('下载失败，试试「分享」'); }
+  });
+  $('exShare').addEventListener('click', async () => {
+    if (!EX) return;
+    try{ await navigator.share({files: [new File([EX.blob], EX.filename, {type: 'application/json'})], title: '搬家清单备份'}); }
+    catch(e){ if (e && e.name === 'AbortError') return; toast('分享失败，试试「保存备份文件」'); }
+  });
+
+  $('impIn').addEventListener('change', async e => {
+    const f = e.target.files && e.target.files[0]; e.target.value = '';
+    if (!f) return;
+    if (bkBusy || aiRunning){ toast('等手头的处理完再导入'); return; }
+    let data;
+    try{ data = JSON.parse(await f.text()); }catch(err){ toast('这个文件打不开，要选导出的那个 .json 备份'); return; }
+    if (!data || data.app !== BK_APP || !Array.isArray(data.items) || !Array.isArray(data.boxes)){ toast('这不是搬家清单的备份文件'); return; }
+    const when = data.exportedAt ? fmtTime(data.exportedAt) : '';
+    const body = `这个备份${when ? `是 ${when} 导出的，` : ''}里面有 ${data.items.length} 件物品、${data.boxes.length} 个箱子。` +
+      (items.length || boxes.length ? `导入后会替换掉现在这里的 ${items.length} 件物品和 ${boxes.length} 个箱子。` : '');
+    if (!await ask('导入这个备份？', body, '导入')) return;
+    await runImport(data);
+  });
+  async function runImport(data){
+    bkBusy = true;
+    const oldItems = items.slice(), oldBoxes = boxes.slice();
+    const photos = data.photos && typeof data.photos === 'object' ? data.photos : {};
+    const refs = Object.keys(photos), map = new Map();
+    let pf = 0;
+    try{
+      for (let n = 0; n < refs.length; n++){
+        busy(`正在导入照片 ${n + 1} / ${refs.length}…`);
+        try{ const b = dataURLToBlob(photos[refs[n]]); if (b) map.set(refs[n], await storePhoto(b)); else pf++; }catch(e){ console.error(e); pf++; }
+      }
+      const P = r => (r && map.get(r)) || null;
+      const boxMap = new Map();
+      busy('正在写入箱子…');
+      for (const b of data.boxes){
+        if (!b || typeof b !== 'object') continue;
+        const id = lid(); boxMap.set(b.id, id);
+        await put('boxes', id, {no: clamp(parseInt(b.no, 10) || nextBoxNo(), 1, 99), name: str(b.name, 24), kind: KINDS[b.kind] ? b.kind : 'suitcase',
+          weight: typeof b.weight === 'number' && isFinite(b.weight) ? b.weight : null, note: str(b.note, 60), photo: P(b.photo), donePhoto: P(b.donePhoto), createdAt: +b.createdAt || Date.now()});
+      }
+      for (let n = 0; n < data.items.length; n++){
+        const i = data.items[n]; if (!i || typeof i !== 'object') continue;
+        if (n % 5 === 0) busy(`正在写入物品 ${n + 1} / ${data.items.length}…`);
+        const bx = boxMap.get(i.box) || null;
+        await put('items', lid(), {name: str(i.name, 40), cat: str(i.cat || 'other', 40), qty: clamp(parseInt(i.qty, 10) || 1, 1, 999), note: str(i.note, 200),
+          box: bx, packed: !!i.packed && !!bx, skip: !!i.skip, photo: P(i.photo), no: parseInt(i.no, 10) || nextNo(), createdAt: +i.createdAt || Date.now()});
+      }
+      customCats = Array.isArray(data.cats) ? data.cats.filter(c => c && c.key && c.name).map(c => ({key: str(c.key, 40), name: str(c.name, 10), ico: str(c.ico || '🏷️', 4)})) : [];
+      await saveCats();
+      busy('正在清理旧数据…');
+      for (const i of oldItems){ await drop('items', i.id); dropPhoto(i.photo); }
+      for (const b of oldBoxes){ await drop('boxes', b.id); dropPhoto(b.photo); dropPhoto(b.donePhoto); }
+      cur = data.boxes[0] ? boxMap.get(data.boxes[0].id) || null : null; lsSet(LSK.cur, cur);
+      fCat = 'all'; fSt = 'all'; pkCat = 'all';
+      toast(`导入完成：${data.items.length} 件物品、${data.boxes.length} 个箱子${pf ? `，有 ${pf} 张照片没导进来` : ''}`);
+    }catch(e){ console.error(e); toast('导入中断了，' + errMsg(e)); }
+    finally{ busy(null); bkBusy = false; scheduleRender(); }
+  }
+
+  /* ---------- background ---------- */
+  const BG_KEY = '__bg';
+  let bgId = null, bgLocalURL = null;
+  function applyBg(src){
+    const sc = document.querySelector('.scene');
+    if (src){ sc.style.backgroundImage = `linear-gradient(rgba(12,28,48,.2),rgba(12,28,48,.45)),url("${src}")`; sc.classList.add('has-img'); }
+    else { sc.style.backgroundImage = ''; sc.classList.remove('has-img'); }
+  }
+  function bgMenu(open){ $('bgMenu').hidden = !open; $('bgBtn').setAttribute('aria-expanded', String(open)); }
+  $('bgBtn').addEventListener('click', e => { e.stopPropagation(); bgMenu($('bgMenu').hidden); });
+  document.addEventListener('click', e => { if (!$('bgWrap').contains(e.target)) bgMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('bgMenu').hidden){ bgMenu(false); $('bgBtn').focus(); } });
+  function loadLocalBg(){
+    idbGet(BG_KEY).then(b => {
+      if (db) return;
+      if (bgLocalURL){ URL.revokeObjectURL(bgLocalURL); bgLocalURL = null; }
+      if (b){ bgLocalURL = URL.createObjectURL(b); applyBg(bgLocalURL); } else applyBg(null);
+    }).catch(() => {});
+  }
+  $('bgFile').addEventListener('change', async e => {
+    bgMenu(false);
+    const f = e.target.files && e.target.files[0]; e.target.value = '';
+    if (!f) return;
+    busy('正在更换背景…');
+    try{
+      const blob = await shrink(f, 2400, .86);
+      if (db && assets){
+        const r = await assets.upload(blob);
+        const old = bgId; bgId = r.id;
+        applyBg('/_blob/' + r.id);
+        await db.doc('settings/bg').set({assetId: r.id});
+        if (old && old !== r.id) assets.delete(old).catch(() => {});
+      } else {
+        await idbPut(BG_KEY, blob);
+        if (bgLocalURL) URL.revokeObjectURL(bgLocalURL);
+        bgLocalURL = URL.createObjectURL(blob); applyBg(bgLocalURL);
+      }
+      toast('背景已更换');
+    }catch(err){ console.error(err); toast(err && err.message === 'load' ? '这张图片打不开，换一张试试' : '更换失败，换一张图片试试'); }
+    finally{ busy(null); }
+  });
+  $('bgReset').addEventListener('click', async () => {
+    bgMenu(false); applyBg(null);
+    idbDel(BG_KEY).catch(() => {});
+    if (bgLocalURL){ URL.revokeObjectURL(bgLocalURL); bgLocalURL = null; }
+    if (db){
+      const old = bgId; bgId = null;
+      await safe(() => db.doc('settings/bg').set({assetId: null}));
+      if (old && assets) assets.delete(old).catch(() => {});
+    }
+    toast('已恢复默认海面');
+  });
+  loadLocalBg();
+
+  /* ---------- batch import ---------- */
+  let BA = {cat:'auto', dest:''};
+  function openBatch(){
+    if (BA.cat === 'auto' && !aiAvail()) BA.cat = 'other';
+    if (BA.dest && BA.dest !== 'skip' && !boxById(BA.dest)) BA.dest = '';
+    paintBatch(); openSheet('baOv');
+  }
+  function paintBatch(){
+    $('baCats').innerHTML = (aiAvail() ? `<button type="button" class="ch" data-bacat="auto" aria-pressed="${BA.cat === 'auto'}">✨ 让 Claude 分</button>` : '') +
+      allCats().map(c => `<button type="button" class="ch" data-bacat="${c.key}" aria-pressed="${BA.cat === c.key}">${esc(c.ico)} ${esc(c.name)}</button>`).join('');
+    $('baDest').innerHTML = destChips(BA.dest, 'data-badest');
+    $('baAiRow').hidden = !aiAvail() || BA.cat === 'auto';
+  }
+  $('baCats').addEventListener('click', e => { const c = e.target.closest('[data-bacat]'); if (c){ BA.cat = c.dataset.bacat; paintBatch(); } });
+  $('baDest').addEventListener('click', async e => {
+    const c = e.target.closest('[data-badest]'); if (!c) return;
+    let v = c.dataset.badest;
+    if (v === '+new'){ v = await quickBox('suitcase'); if (!v) return; }
+    BA.dest = v; paintBatch();
+  });
+  $('baIn').addEventListener('change', e => {
+    const files = [...(e.target.files || [])]; e.target.value = '';
+    if (!files.length) return;
+    closeSheet('baOv'); runBatch(files);
+  });
+  async function runBatch(files){
+    if (aiRunning){ toast('上一批还在处理，等它完成'); return; }
+    const useAI = aiAvail() && (BA.cat === 'auto' || $('baAi').checked);
+    const dest = BA.dest, b = boxById(dest);
+    aiRunning = true; scheduleRender();
+    let ok = 0, named = 0, failed = 0, stopAI = false;
+    try{
+      for (let n = 0; n < files.length; n++){
+        busy(`正在导入 ${n + 1} / ${files.length}${useAI && !stopAI ? ' · 识别中' : ''}…`);
+        try{
+          const blob = await shrink(files[n], 1280, .82);
+          const photo = await storePhoto(blob);
+          const id = lid(), no = nextNo();
+          await put('items', id, {name:'', cat: BA.cat === 'auto' ? 'other' : BA.cat, qty:1, note:'', box: b ? b.id : null, packed:false, skip: dest === 'skip', photo, no, createdAt: Date.now()});
+          ok++;
+          if (useAI && !stopAI){
+            try{
+              const r = await identify(blob);
+              if (r){ const p = {name: r.name}; if (BA.cat === 'auto') p.cat = r.cat; if (r.qty > 1) p.qty = r.qty; await patch('items', id, p); named++; }
+            }catch(err){ if (err && ['rate_limited', 'not_granted', 'no_images', 'unavailable'].includes(err.code)){ stopAI = true; aiFail(err); } }
+          }
+        }catch(err){ console.error(err); failed++; }
+      }
+    } finally {
+      aiRunning = false; busy(null); scheduleRender();
+    }
+    toast(`导入了 ${ok} 件${named ? `，识别出 ${named} 件的名字` : ''}${failed ? `，${failed} 张没成功` : ''}`);
+  }
+  async function aiAllUnnamed(){
+    if (aiRunning) return;
+    const list = items.filter(i => !i.name && i.photo).sort((a, b) => a.no - b.no);
+    if (!list.length) return;
+    aiRunning = true; scheduleRender();
+    let named = 0;
+    try{
+      for (let n = 0; n < list.length; n++){
+        busy(`Claude 正在识别 ${n + 1} / ${list.length}…`);
+        try{
+          const blob = await blobOf(list[n].photo); if (!blob) continue;
+          const r = await identify(blob);
+          if (r && r.name){
+            const p = {name: r.name}; if (catOf(list[n].cat).key === 'other') p.cat = r.cat; if (r.qty > 1 && (list[n].qty || 1) === 1) p.qty = r.qty;
+            await patch('items', list[n].id, p); named++;
+          }
+        }catch(err){ if (err && ['rate_limited', 'not_granted', 'no_images', 'unavailable'].includes(err.code)){ aiFail(err); break; } console.error(err); }
+      }
+    } finally { aiRunning = false; busy(null); scheduleRender(); }
+    if (named) toast(`识别出 ${named} 件的名字`);
+  }
+
+  /* ---------- boot ---------- */
+  const setSync = (txt, dot) => { $('sync').textContent = txt; $('sync').style.setProperty('--dot', dot || 'rgba(255,255,255,.5)'); };
+  items = lsGet(LSK.items, []); boxes = lsGet(LSK.boxes, []); customCats = lsGet(LSK.cats, []);
+  cur = lsGet(LSK.cur, null);
+  const t0 = lsGet(LSK.tab, 'items'); if (['items', 'boxes', 'pack'].includes(t0)) tab = t0;
+  setTab(tab);
+  setSync('数据保存在这个浏览器里');
+
+  (async () => {
+    try{ downloadsNS = inClaude ? await window.claude.use('downloads') : null; }catch(e){ downloadsNS = null; }
+  })();
+  (async () => {
+    try{ sampleNS = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('sample') : null; }catch(e){ sampleNS = null; }
+    scheduleRender();
+  })();
+  (async () => {
+    let d = null;
+    try{ d = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('db') : null; }catch(e){ d = null; }
+    if (!d) return;
+    db = d;
+    try{ assets = await window.claude.use('assets'); }catch(e){ assets = null; }
+    setSync('正在同步…');
+    const slow = setTimeout(() => setSync('同步有点慢，稍等一下…', 'var(--s-planned)'), 10000);
+    const fail = err => {
+      console.error(err); clearTimeout(slow);
+      db = null; items = lsGet(LSK.items, []); boxes = lsGet(LSK.boxes, []); customCats = lsGet(LSK.cats, []);
+      setSync('云端同步不可用，暂存在这个浏览器里', 'var(--s-none)'); loadLocalBg(); scheduleRender();
+    };
+    db.collection('items').onSnapshot(s => {
+      clearTimeout(slow);
+      items = s.docs.map(x => ({id: x.id, ...x.data()}));
+      setSync('已同步 · 换手机或电脑打开也能看到', 'var(--s-packed)');
+      scheduleRender();
+    }, fail);
+    db.collection('boxes').onSnapshot(s => { boxes = s.docs.map(x => ({id: x.id, ...x.data()})); scheduleRender(); }, fail);
+    db.doc('settings/bg').onSnapshot(s => {
+      const v = s.exists ? s.data() : null;
+      bgId = (v && v.assetId) || null;
+      applyBg(bgId ? '/_blob/' + bgId : null);
+    }, err => console.error(err));
+    db.doc('settings/cats').onSnapshot(s => {
+      const v = s.exists ? s.data() : null;
+      customCats = v && Array.isArray(v.list) ? v.list : [];
+      scheduleRender();
+    }, err => console.error(err));
+  })();
+})();
 </script>
 </body>
 </html>
